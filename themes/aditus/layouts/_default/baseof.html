@@ -1,0 +1,104 @@
+<!doctype html>
+
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+
+    <link href="/dist/images/icons/favicon.ico" rel="shortcut icon">
+    <link href="/dist/images/icons/touch.png" rel="apple-touch-icon-precomposed">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+
+    <link rel='stylesheet' href='/dist/styles/main.css' media='all' />
+
+    <script type='text/javascript' src='dist/scripts/main.js'></script>
+
+  </head>
+
+  <body class="{{ $.Param "body_classes"  | default ""}}{{ with getenv "HUGO_ENV" }} {{ . }}{{ end }}">
+    <div class="wrapper">
+
+      <header class="header clear" role="banner">
+
+          <div class="menu-div">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <nav class="mobile-nav" role="navigation">
+            <img src="/dist/images/logo.png" alt="Logo" class="logo-mobile">
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#opportunity">Opportunity</a></li>
+              <li><a href="#membership">Aditus Membership</a></li>
+              <li><a href="#access">All Round Access</a></li>
+              <li><a href="#privacy">Uniquely Private</a></li>
+              <li><a href="#team">Team</a></li>
+              <li><a href="#aditus-token">Token Utility</a></li>
+              <li><a href="#tokensale">Token Sale</a></li>
+            </ul>
+          </nav>
+          <div class="scrolled-header scrolled">
+            <a class="fixed-logo" href="#"><img src="/dist/images/logo.png" alt="Logo" /></a>
+            <nav class="nav" role="navigation">
+              <ul>
+                <li><a href="#">Home</a></li>
+              <li><a href="#opportunity">Opportunity</a></li>
+              <li><a href="#membership">Aditus Membership</a></li>
+              <li><a href="#access">All Round Access</a></li>
+              <li><a href="#privacy">Uniquely Private</a></li>
+              <li><a href="#team">Team</a></li>
+              <li><a href="#aditus-token">Token Utility</a></li>
+              <li><a href="#tokensale">Token Sale</a></li>
+              </ul>
+            </nav>
+          </div>
+          <nav class="nav absolute" role="navigation">
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#opportunity">Opportunity</a></li>
+              <li><a href="#membership">Aditus Membership</a></li>
+              <li><a href="#access">All Round Access</a></li>
+              <li><a href="#privacy">Uniquely Private</a></li>
+              <li><a href="#team">Team</a></li>
+              <li><a href="#aditus-token">Token Utility</a></li>
+              <li><a href="#tokensale">Token Sale</a></li>
+            </ul>
+          </nav><!-- /nav -->
+
+      </header><!-- /header -->
+
+      {{ block "main" . }}
+      {{ end }}
+
+      {{ block "footer" . }}
+      {{ end }}
+
+      <footer class="footer" role="contentinfo">
+
+        <p class="copyright">
+          &copy; 2017 Copyright Aditus.
+        </p>
+
+      </footer><!-- /footer -->
+
+    </div><!-- /wrapper -->
+
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+
+    <!-- analytics 
+    <script>
+    (function(f,i,r,e,s,h,l){i['GoogleAnalyticsObject']=s;f[s]=f[s]||function(){
+    (f[s].q=f[s].q||[]).push(arguments)},f[s].l=1*new Date();h=i.createElement(r),
+    l=i.getElementsByTagName(r)[0];h.async=1;h.src=e;l.parentNode.insertBefore(h,l)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-XXXXXXXX-XX', 'yourdomain.com');
+    ga('send', 'pageview');
+    </script>-->
+
+  </body>
+</html>

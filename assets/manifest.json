@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "main.js": {
+      "files": [
+        "scripts/lib/modernizr-2.7.1.min.js",
+        "scripts/lib/conditionizr-4.3.0.min.js",
+        "scripts/main.js"
+      ],
+      "main": true
+    },
+    "main.css": {
+      "files": [
+        "styles/main.scss"
+      ],
+      "main": true
+    }
+  },
+  "paths": {
+    "source": "assets/",
+    "dist": "static/dist/"
+  },
+  "config": {
+    "devUrl": "http://localhost:1313"
+  }
+}
