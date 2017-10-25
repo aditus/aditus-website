@@ -16,6 +16,13 @@
 
     <script type='text/javascript' src='dist/scripts/main.js'></script>
 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108637916-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-108637916-1');
+    </script>
   </head>
 
   <body class="{{ $.Param "body_classes"  | default ""}}{{ with getenv "HUGO_ENV" }} {{ . }}{{ end }}">
@@ -89,16 +96,5 @@
     </div><!-- /wrapper -->
 
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-
-    <!-- analytics 
-    <script>
-    (function(f,i,r,e,s,h,l){i['GoogleAnalyticsObject']=s;f[s]=f[s]||function(){
-    (f[s].q=f[s].q||[]).push(arguments)},f[s].l=1*new Date();h=i.createElement(r),
-    l=i.getElementsByTagName(r)[0];h.async=1;h.src=e;l.parentNode.insertBefore(h,l)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-XXXXXXXX-XX', 'yourdomain.com');
-    ga('send', 'pageview');
-    </script>-->
-
   </body>
 </html>
