@@ -4,6 +4,8 @@
       "files": [
         "scripts/lib/modernizr-2.7.1.min.js",
         "scripts/lib/conditionizr-4.3.0.min.js",
+        "scripts/contact.js",
+        "scripts/jqBootstrapValidation.js",
         "scripts/main.js"
       ],
       "main": true

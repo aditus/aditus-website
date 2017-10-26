@@ -4,8 +4,7 @@
   "author": "",
   "homepage": "aditus.net",
   "private": true,
-  "licenses": [
-  ],
+  "licenses": [],
   "scripts": {
     "build": "bower install && gulp",
     "jshint": "gulp jshint",
@@ -43,5 +42,8 @@
     "run-sequence": "^1.1.2",
     "traverse": "^0.6.6",
     "wiredep": "^4.0.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.0.0-beta.2"
   }
 }

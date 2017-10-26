@@ -7,6 +7,8 @@
 */
 
 @import "normalize";
+@import "bootstrap-variables";
+@import "../../node_modules/bootstrap/scss/bootstrap";
 
 
 /*------------------------------------*\
@@ -79,13 +81,10 @@ h2{
   color: #c69c2b;
   text-align: center;
   font-weight:normal;
-  /*font-style: italic;*/
   font-size: 1.5em;
 }
 h4{
   text-align: center;
-  width: 65%;
-  margin: 0 auto;
   color: #eff;
 }
 p{
@@ -95,6 +94,13 @@ p{
 .team-people p
 {
   font-size: 0.7em;
+}
+
+/*------------------------------------*\
+    FORM
+\*------------------------------------*/
+.form-control {
+  font-size: 1.5rem;
 }
 
 /*------------------------------------*\
@@ -118,7 +124,7 @@ p{
 .nav {
   position: absolute;
   right: 5%;
-  top: 5px;
+  top: 15px;
   z-index: 999;
 }
 .nav ul li{
@@ -263,6 +269,7 @@ nav.mobile-nav.open{
 .container{
   padding: 5% 12% 5% 12%;
   width: 100%;
+  max-width: 100% !important;
   min-height: 80vh;
   position: relative;
 }
@@ -615,7 +622,6 @@ h2.sub{
 }
 .benefits h4{
   margin-top: 50px;
-  width:47%;
   margin-bottom: 50px;
   color: #ddd;
 }
@@ -795,7 +801,6 @@ img.phone{
 .techSubtitle {
   color:#eff;
   margin-top:2em;
-  width:50%;
 }
 .technology-wrap, .utility-wrap{
   margin-top: 20px;
@@ -841,9 +846,6 @@ img.phone{
 }
 #aditus-token h2 {
   margin-top: 2em;
-}
-.tokenSubtitle {
-  width:50%;
 }
 #token{
   width: 130px;
