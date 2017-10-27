@@ -10,6 +10,31 @@
 @import "bootstrap-variables";
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
+/*------------------------------------*\
+  TYPOGRAPHY
+\*------------------------------------*/
+
+
+@font-face {
+  font-family:'PlayfairDisplay-Regular';
+  src:url('/dist/fonts/PlayfairDisplay-Regular.eot');
+  src:url('/dist/fonts/PlayfairDisplay-Regular.eot?#iefix') format('embedded-opentype'),
+    url('/dist/fonts/PlayfairDisplay-Regular.woff') format('woff'),
+    url('/dist/fonts/PlayfairDisplay-Regular.ttf') format('truetype'),
+    url('/dist/fonts/PlayfairDisplay-Regular.svg#font-name') format('svg');
+    font-weight:normal;
+    font-style:normal;
+}
+@font-face {
+  font-family:'Font-Name';
+  src:url('/dist/fonts/PlayfairDisplay-Italic.eot');
+  src:url('/dist/fonts/PlayfairDisplay-Italic.eot?#iefix') format('embedded-opentype'),
+    url('/dist/fonts/PlayfairDisplay-Italic.woff') format('woff'),
+    url('/dist/fonts/PlayfairDisplay-Italic.ttf') format('truetype'),
+    url('/dist/fonts/PlayfairDisplay-Italic.svg#font-name') format('svg');
+    font-weight:normal;
+    font-style:normal;
+}
 
 /*------------------------------------*\
     MAIN
@@ -97,13 +122,6 @@ p{
 }
 
 /*------------------------------------*\
-    FORM
-\*------------------------------------*/
-.form-control {
-  font-size: 1.5rem;
-}
-
-/*------------------------------------*\
     STRUCTURE
 \*------------------------------------*/
 
@@ -148,7 +166,6 @@ p{
 /* footer */
 .footer {
   padding: 10px 0 20px 30px;
-  background-color:#1a1c27;
   text-align: center;
   color: #fff;
 }
@@ -266,16 +283,16 @@ nav.mobile-nav.open{
 /*------------------------------------*\
     HOME BANNER
 \*------------------------------------*/
-.container{
+.container {
   padding: 5% 12% 5% 12%;
   width: 100%;
   max-width: 100% !important;
   min-height: 80vh;
   position: relative;
 }
-#team{
+
+#team {
   padding: 5% 10% 0 10%;
-  background-color: #1a1c27;
   padding-top:5em;
   background: linear-gradient(
     rgba(19, 23, 41, 0.85),
@@ -284,10 +301,12 @@ nav.mobile-nav.open{
     background-attachment: fixed;
     background-size: cover;
 }
-#team + section{
+
+#team + section {
   padding: 0 10% 5% 10%;
 }
-.banner{
+
+.banner {
   width: 100%;
   height: 100vh;
   padding-top: 25vh;
@@ -306,7 +325,8 @@ nav.mobile-nav.open{
   width: 100%;
   text-align:center
 }
-.whitepaper-download a{
+
+.whitepaper-download a {
   width: 200px;
   height: 100px;
   line-height: 100px;
@@ -317,14 +337,16 @@ nav.mobile-nav.open{
   padding: 10px 15px;
   letter-spacing:1px;
 }
+
 .whitepaper-download a:hover {
   border-color: #fff;
 }
+
 #tokensale p.whitepaper-download a{
 
 }
 
-#arrow-down{
+#arrow-down {
   background: rgba(11, 31, 67, 0.8);
   width: 100px;
   height: 100px;
@@ -336,6 +358,7 @@ nav.mobile-nav.open{
   border-radius: 100px;
   z-index: 997;
 }
+
 #arrow-down:after{
   content:'';
   position: absolute;
@@ -515,51 +538,56 @@ nav.mobile-nav.open{
 #team p {
   color: #fff;
 }
-.linkedin {
-  background-image:url(/dist/images/soc.svg);
-  background-repeat: no-repeat;
-  display:block;
-  margin: 0.5em auto 0em;
-  height: 15px;
-    width: 15px;
-    background-position: -15px 0px;
-    background-size: 45px;
-}
 .team{
   display: flex;
   flex-wrap: wrap;
     justify-content: space-around;
 }
-.team-people{
+.team-people {
   text-align: center;
   width: 25%;
   margin-top:2.5em;
   padding: 15px;
   float: left;
+
+  .linkedin {
+    background-image:url(/dist/images/soc.svg);
+    background-repeat: no-repeat;
+    display:block;
+    margin: 0.5em auto ($spacer-y / 2);
+    height: 15px;
+    width: 15px;
+    background-position: -15px 0px;
+    background-size: 45px;
+  }
+
+  img{
+    border-radius: 200px;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    display: block;
+    filter: grayscale(100%);
+  }
+
+  h5{
+    margin: 0;
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #c69c2b;
+  }
+
+  h6{
+    margin: 0;
+    margin-top: 0px;
+    font-size: 0.8em;
+  }
 }
 
 .team-people:nth-child(1) .team-people:nth-child(2) .team-people:nth-child(3){
   min-height: 5000px;
 }
-.team-people img{
-  border-radius: 200px;
-  width: 150px;
-  height: 150px;
-  margin: 0 auto;
-  display: block;
-  filter: grayscale(100%);
-}
-.team-people h5{
-  margin: 0;
-  margin-top: 20px;
-  font-size: 1.2em;
-  color: #c69c2b;
-}
-.team-people h6{
-  margin: 0;
-  margin-top: 0px;
-  font-size: 0.8em;
-}
+
 .logo-quan{
   display: block;
   max-width: 800px;
@@ -617,10 +645,7 @@ h2.sub{
    margin-bottom:2em;
    margin-left:0em;
 }
-.benefits {
-  background-color:#1a1c27;
-}
-.benefits h4{
+.benefits h4 {
   margin-top: 50px;
   margin-bottom: 50px;
   color: #ddd;
@@ -855,9 +880,7 @@ img.phone{
   //transform: rotateX(5deg) rotateY(0deg) rotateZ(5deg);
   //animation: 4s token linear infinite;
 }
-#tokensale {
-  background-color: #1a1c27;
-}
+
 #chart{
   width: 300px;
   margin: 0 auto;
@@ -1181,32 +1204,6 @@ table td{
 \*------------------------------------*/
 
 
-
-/*------------------------------------*\
-  TYPOGRAPHY
-\*------------------------------------*/
-
-
-@font-face {
-  font-family:'PlayfairDisplay-Regular';
-  src:url('dist/fonts/PlayfairDisplay-Regular.eot');
-  src:url('dist/fonts/PlayfairDisplay-Regular.eot?#iefix') format('embedded-opentype'),
-    url('dist/fonts/PlayfairDisplay-Regular.woff') format('woff'),
-    url('dist/fonts/PlayfairDisplay-Regular.ttf') format('truetype'),
-    url('dist/fonts/PlayfairDisplay-Regular.svg#font-name') format('svg');
-    font-weight:normal;
-    font-style:normal;
-}
-@font-face {
-  font-family:'Font-Name';
-  src:url('dist/fonts/PlayfairDisplay-Italic.eot');
-  src:url('dist/fonts/PlayfairDisplay-Italic.eot?#iefix') format('embedded-opentype'),
-    url('dist/fonts/PlayfairDisplay-Italic.woff') format('woff'),
-    url('dist/fonts/PlayfairDisplay-Italic.ttf') format('truetype'),
-    url('dist/fonts/PlayfairDisplay-Italic.svg#font-name') format('svg');
-    font-weight:normal;
-    font-style:normal;
-}
 
 /*------------------------------------*\
     RESPONSIVE
