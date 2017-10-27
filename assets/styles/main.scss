@@ -125,19 +125,7 @@ p{
     STRUCTURE
 \*------------------------------------*/
 
-/* wrapper */
-.wrapper {
 
-}
-/* header */
-.header {
-
-}
-/* logo */
-
-.logo-img {
-
-}
 /* nav */
 .nav {
   position: absolute;
@@ -159,16 +147,14 @@ p{
 .deshide{display:none;}
 .aditus-button1{font-size: 1em; font-family: 'PlayfairDisplay-Regular', serif;margin:0 auto;cursor:pointer;border-bottom:1px solid #444; margin-left:5px;}
 .aditus-button2{border-bottom:1px solid #444;cursor:pointer;}
-/* sidebar */
-.sidebar {
 
-}
 /* footer */
 .footer {
   padding: 10px 0 20px 30px;
   text-align: center;
   color: #fff;
 }
+
 .scrolled-header{
   position: fixed;
   opacity: 0.8;
@@ -180,20 +166,22 @@ p{
   padding: 10px;
   box-shadow: 2px 2px 2px rgba(1,1,1, 0.1);
 
+  img{
+    width: 120px;
+    margin-left: 10px;
+  }
 }
-.scrolled-header img{
-  width: 120px;
-  top: 20px;
-  left: 20px;
-}
+
 .scrolled{
   top: -200px;
   position: fixed !important;
 }
+
 .fixed-logo{
   top: 0px;
   transition: 0.3s;
 }
+
 .menu-div {
   position: fixed;
   right: 0px;
@@ -280,20 +268,23 @@ nav.mobile-nav.open{
   width: 200px;
   margin: 0 auto;
 }
+
+section > .container {
+  padding-top: 5em;
+  padding-bottom: 5em;
+}
+
 /*------------------------------------*\
     HOME BANNER
 \*------------------------------------*/
 .container {
-  padding: 5% 12% 5% 12%;
-  width: 100%;
-  max-width: 100% !important;
-  min-height: 80vh;
-  position: relative;
+  // padding: 5% 12% 5% 12%;
+  // width: 100%;
+  // min-height: 80vh;
+  // position: relative;
 }
 
 #team {
-  padding: 5% 10% 0 10%;
-  padding-top:5em;
   background: linear-gradient(
     rgba(19, 23, 41, 0.85),
     rgba(18, 24, 39, 1) ),
@@ -319,6 +310,14 @@ nav.mobile-nav.open{
   background-position: center bottom;
   background-repeat: no-repeat;
   background-size: cover;
+
+  .logo-img {
+    display: block;
+    margin: 0 auto;
+    @include media-breakpoint-down(md) {
+      width: 50%;
+    }
+  }
 }
 
 .whitepaper-download{
@@ -390,19 +389,13 @@ nav.mobile-nav.open{
 }
 
 .logo{
-  float: left;
-  width: 30%;
   margin-top: 60px;
 }
+
 .banner-text{
   width: 50%;
   max-width: 680px;
   margin-top: 50px;
-  margin-bottom: 50px;
-}
-.text-container{
-  width: 60%;
-  //max-width: 680px;
   margin-bottom: 50px;
 }
 .right{
@@ -423,18 +416,20 @@ nav.mobile-nav.open{
   float:left;
   text-align:left;
 }*/
-.opportunity{
-  padding-top:5em;
+
+.opportunity {
   background: linear-gradient(
     rgba(19, 23, 41, 0.85),
     rgba(18, 24, 39, 1) ),
     url(/dist/images/3.jpg);
     background-attachment: fixed;
+
+    p {
+      margin-top:2.5em;
+      color: #eff;
+    }
 }
-.opportunity p {
-  margin-top:2.5em;
-  color: #eff;
-}
+
 .img-asset-y.opp{
   position: relative;
   height: 800px;
@@ -527,7 +522,61 @@ nav.mobile-nav.open{
 }
 
 
+#team {
+  .team {
+    margin-top: ($spacer-y * 2);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 
+    &.advisor {
+      margin-top: 0;
+    }
+  }
+
+  .team-people {
+    text-align: center;
+    padding: 15px;
+    float: left;
+
+    @include media-breakpoint-up(md) {
+      width: 25%;
+    }
+
+    .linkedin {
+      background-image:url(/dist/images/soc.svg);
+      background-repeat: no-repeat;
+      display:block;
+      margin: 0.5em auto ($spacer-y / 2);
+      height: 15px;
+      width: 15px;
+      background-position: -15px 0px;
+      background-size: 45px;
+    }
+
+    img{
+      border-radius: 200px;
+      width: 150px;
+      height: 150px;
+      margin: 0 auto;
+      display: block;
+      filter: grayscale(100%);
+    }
+
+    h5{
+      margin: 0;
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: #c69c2b;
+    }
+
+    h6{
+      margin: 0;
+      margin-top: 0px;
+      font-size: 0.8em;
+    }
+  }
+}
 
 .landing h1 {
   font-size:2em;
@@ -538,52 +587,6 @@ nav.mobile-nav.open{
 #team p {
   color: #fff;
 }
-.team{
-  display: flex;
-  flex-wrap: wrap;
-    justify-content: space-around;
-}
-.team-people {
-  text-align: center;
-  width: 25%;
-  margin-top:2.5em;
-  padding: 15px;
-  float: left;
-
-  .linkedin {
-    background-image:url(/dist/images/soc.svg);
-    background-repeat: no-repeat;
-    display:block;
-    margin: 0.5em auto ($spacer-y / 2);
-    height: 15px;
-    width: 15px;
-    background-position: -15px 0px;
-    background-size: 45px;
-  }
-
-  img{
-    border-radius: 200px;
-    width: 150px;
-    height: 150px;
-    margin: 0 auto;
-    display: block;
-    filter: grayscale(100%);
-  }
-
-  h5{
-    margin: 0;
-    margin-top: 20px;
-    font-size: 1.2em;
-    color: #c69c2b;
-  }
-
-  h6{
-    margin: 0;
-    margin-top: 0px;
-    font-size: 0.8em;
-  }
-}
-
 .team-people:nth-child(1) .team-people:nth-child(2) .team-people:nth-child(3){
   min-height: 5000px;
 }
@@ -609,41 +612,40 @@ h2.sub{
 }
 #membership{
   background: #13151e;
-}
-#membership h3 {
-  font-size:1.2em;
-  text-align:left;
-  margin-top:0px;
-  color: #ddd;
-}
-.benefitsTopText {
-  margin-left:33%;
-  margin-bottom: 0.5em;
-}
-.benefitsTopSmallText {
-  margin-left:33%;
-  width:60%;
-}
-.benefitsBottomText {
-  margin-bottom: 0.5em;
-}
-.benefitsBottomSmallText {
-}
-.benefitsTopLine {
-   width: 20%;
-   height: 1px;
-   background-color: #f6f6f6;
-   margin-top:0.2em;
-   margin-bottom:2em;
-   margin-left:33%;
-}
-.benefitsBottomLine {
-   width: 20%;
-   height: 1px;
-   background-color: #f6f6f6;
-   margin-top:0.2em;
-   margin-bottom:2em;
-   margin-left:0em;
+
+  h2 {
+    margin-bottom: ($spacer-y * 2);
+  }
+
+  h3 {
+    font-size:1.2em;
+    text-align:left;
+    margin-top:0px;
+    color: #ddd;
+  }
+
+  p {
+    color: #ddd;
+  }
+
+  .row {
+    margin-bottom: ($spacer-y * 3);
+  }
+
+  .line {
+    margin: 0 0 $spacer-y 0;
+  }
+
+  .phone {
+    margin: 0 auto ($spacer-y * 2);
+    display: block;
+    max-width: 100%;
+
+    @include media-breakpoint-up(md) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
 }
 .benefits h4 {
   margin-top: 50px;
@@ -652,12 +654,6 @@ h2.sub{
 }
 .benefits-item-wrap{
   padding: 4em 0em 1em 0em;
-}
-#membership p {
-  text-align:left;
-  color: #ddd;
-  font-size:1em;
-  width:60%;
 }
 .iphone {
   width:300px;
@@ -807,11 +803,6 @@ h2.sub{
   background-size:50% 50%;
   background-position: 50% 0%;
 }
-img.phone{
-  width: 250px;
-  display: block;
-  margin: 0 auto;
-}
 #access{
   background: linear-gradient(
     rgba(19, 23, 41, 0.85),
@@ -866,13 +857,12 @@ img.phone{
   color:#eff;
   font-size:0.9em;
 }
-#aditus-token,#privacy {
+#aditus-token,
+#privacy {
   background-color: #13151e;
 }
-#aditus-token h2 {
-  margin-top: 2em;
-}
-#token{
+
+#token {
   width: 130px;
   margin: 0 auto;
   margin-top: 50px;
@@ -1272,11 +1262,6 @@ table td{
   .banner p{
     font-size: 0.8em;
   }
-  .logo{
-    float: none;
-    margin: 0 auto;
-    width: 70%;
-  }
   .text-container, .chart-text-wrapright, .chart-img-wrap, .tokensaleleftcolumn, .tokensalecolumns, .tokensalerightcolumn{
     width: 95%;
     max-width: 1000px;
@@ -1298,9 +1283,6 @@ table td{
   }
   .tokensalecolumns p, .token-text p{
     padding-bottom: 20px;
-  }
-  #membership p{
-    width: 100%;
   }
   .benefitsTopText, .benefitsTopLine, .benefitsTopSmallText, .benefitsBottomText, .benefitsBottomLine, .benefitsBottomSmallText{
     margin: 0;
@@ -1498,9 +1480,6 @@ table td{
   nav.nav,#chart h4,#chart p, .vertical-line, .iphone, .middlecolumn{
     display: none;
   }
-  #membership p{
-    width: 100%;
-  }
   .menu-div {
     display: block;
   }
@@ -1508,11 +1487,6 @@ table td{
     padding-top: 5vh;
     height: 100%;
     background-attachment: scroll;
-  }
-  .logo{
-    float: none;
-    margin: 0 auto;
-    width: 70%;
   }
   .banner-text, .text-container{
     width: 90%;
@@ -1555,9 +1529,6 @@ table td{
   }
   .tokensalecolumns p, .token-text p{
     padding-bottom: 20px;
-  }
-  #membership p{
-    width: 100%;
   }
   .benefitsTopText, .benefitsTopLine, .benefitsTopSmallText, .benefitsBottomText, .benefitsBottomLine, .benefitsBottomSmallText{
     margin: 0;
@@ -1654,11 +1625,6 @@ table td{
     padding-top: 20vh;
     height: 100%;
   }
-  .logo{
-    float: none;
-    margin: 0 auto;
-    width: 20%;
-  }
   .banner-text, .text-container{
     width: 80%;
     max-width: 1000px;
@@ -1705,14 +1671,6 @@ table td{
     width: 100%;
     margin: 0 auto;
     margin-top: 20px;
-  }
-  #membership h3{
-    width: 100%;
-    text-align: center;
-    margin: 0 auto;
-  }
-  #membership p{
-    width: 100%;
   }
   .chart-text-wrap{
     width: 100%;
@@ -1780,65 +1738,9 @@ nav.nav ul li{
 .img-asset-y.opp img.iphone{
   width:75px
 }
-.logo{
-    width: 20%;
+  h2 {
+    font-size:1.4em;
   }
-  /*.right, .left{
-    float: none;
-    margin: 0 auto;
-    margin-top: 0px;
-    padding-bottom: 50px;
-  }
-  .banner{
-    padding-top: 20vh;
-    min-height: 100%;
-    height: 100vh;
-  }
-  .logo{
-    float: none;
-    margin: 0 auto;
-    width: 20%;
-  }
-  .banner-text,.text-container{
-    width: 100%;
-    max-width: 1000px;
-    float: none;
-    margin: 0 auto;
-    text-align: center;
-  }
-  .opportunity .text-container{
-    text-align: left;
-    float: left;
-    width: 60%;
-  }*/
-  h2{font-size:1.4em;}
-  .banner h1{
-    font-size:1.8em;
-  }
-  .banner .text-container{
-  width: 70%;
-  }
-  p
-  {
-font-size:0.8em;
-  }
-#membership p {
-  font-size:0.8em;
-  width:80%;
-}
-.tokensale p {
-  font-size:0.8em;
-}
-.utility p {
-  font-size:0.8em;
-}
-}
-@media only screen and (-webkit-min-device-pixel-ratio:1.5),
-     only screen and (min-resolution:144dpi) {
-
-}
-@media only screen and (min-width:300px) and (max-width:480px) {
-#access{padding-left:0;padding-right:0}
 }
 
 /*------------------------------------*\
