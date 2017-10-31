@@ -195,6 +195,7 @@ p{
 .fixed-logo{
   top: 0px;
   transition: 0.3s;
+  width: 100px;
 }
 
 .menu-div {
@@ -316,7 +317,11 @@ section > .container {
   width: 100%;
   height: 80vh;
   padding-top: 15vh;
-  background: url(/dist/images/bg.jpg) bottom;
+  background: linear-gradient(
+    rgba(11, 31, 89, 0.1),
+    rgba(1, 1, 1, 1)
+    ),
+    url(/dist/images/bg.jpg) bottom;
   background-attachment: fixed;
   background-position: center top;
   background-repeat: no-repeat;
@@ -345,8 +350,6 @@ section > .container {
   padding: 10px 15px;
   letter-spacing:1px;
   background-color:#c69c2b;
-  box-shadow: #000 1px 1px 1px;
-  text-shadow: none;
 }
 
 .whitepaper-download a:hover {
@@ -637,11 +640,9 @@ section > .container {
 .landing h1 {
   font-size:2em;
   color:#c69c2b;
-  text-shadow: #000 1px 1px 1px;
 }
 .landing p {
   width:100%;
-  text-shadow: #000 1px 1px 1px;
 }
 #team h4, h6{
   color: #eff;
