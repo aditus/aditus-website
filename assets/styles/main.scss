@@ -130,7 +130,7 @@ p{
 .nav {
   position: absolute;
   right: 5%;
-  top: 15px;
+  top: 20px;
   z-index: 999;
 }
 .nav ul li{
@@ -138,11 +138,26 @@ p{
   margin-left: 20px;
 }
 .nav ul li a{
-  color: #c69c2b;
-  font-family: 'PlayfairDisplay-Regular', serif;
+  color: #f6f6f6;
+  font-family: 'Raleway',sans-serif;
+  text-transform: uppercase;
+  font-size: 0.8em;
 }
 .nav ul li a:hover{
   color: #f6ca51;
+}
+.nav ul li a.whitepaper-download-nav{
+  display: block;
+  color: #f6f6f6;
+  padding: 6px 15px;
+  letter-spacing:1px;
+  background-color:#c69c2b;
+}
+.nav ul li a.whitepaper-download-nav:hover{
+  color: #c69c2b;
+  background-color:#f6f6f6;
+  transition: 0.3s;
+  text-decoration: none;
 }
 .deshide{display:none;}
 .aditus-button1{font-size: 1em; font-family: 'PlayfairDisplay-Regular', serif;margin:0 auto;cursor:pointer;border-bottom:1px solid #444; margin-left:5px;}
@@ -167,13 +182,13 @@ p{
   box-shadow: 2px 2px 2px rgba(1,1,1, 0.1);
 
   img{
-    width: 120px;
+    width: 150px;
     margin-left: 10px;
   }
 }
 
 .scrolled{
-  top: -200px;
+  top: 0px;
   position: fixed !important;
 }
 
@@ -265,12 +280,12 @@ nav.mobile-nav.open{
 }
 .logo-mobile{
   display: block;
-  width: 200px;
+  width: 50px;
   margin: 0 auto;
 }
 
 section > .container {
-  padding-top: 5em;
+  padding-top:5em;
   padding-bottom: 5em;
 }
 
@@ -299,15 +314,15 @@ section > .container {
 
 .banner {
   width: 100%;
-  height: 100vh;
-  padding-top: 25vh;
+  height: 80vh;
+  padding-top: 15vh;
   background: linear-gradient(
-    rgba(11, 31, 67, 0.5),
-    rgba(1, 1, 1, 0.8)
+    rgba(11, 31, 89, 0.1),
+    rgba(1, 1, 1, 1)
     ),
-    url(/dist/images/banner.jpg) bottom;
+    url(/dist/images/bg.jpg) bottom;
   background-attachment: fixed;
-  background-position: center bottom;
+  background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -322,7 +337,6 @@ section > .container {
 
 .whitepaper-download{
   width: 100%;
-  text-align:center
 }
 
 .whitepaper-download a {
@@ -331,15 +345,17 @@ section > .container {
   line-height: 100px;
   font-size: 1em;
   font-family: 'PlayfairDisplay-Regular', serif;
-  border: 1px #ddd solid;
   color: #ddd;
   padding: 10px 15px;
   letter-spacing:1px;
+  background-color:#c69c2b;
 }
 
 .whitepaper-download a:hover {
   border-color: #fff;
 }
+
+
 
 #tokensale p.whitepaper-download a{
 
@@ -577,9 +593,15 @@ section > .container {
     }
   }
 }
-
+.landing{
+  padding-left: 2em;
+}
 .landing h1 {
   font-size:2em;
+  color:#c69c2b;
+}
+.landing p {
+  width:100%;
 }
 #team h4, h6{
   color: #eff;
