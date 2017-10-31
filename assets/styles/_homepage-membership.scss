@@ -1,0 +1,67 @@
+
+#membership {
+  .container {
+    // border-bottom: 1px solid $headings-color;
+  }
+
+  h2 {
+    margin-bottom: ($spacer-y * 2);
+  }
+
+  h4 {
+    font-family: 'Raleway', $font-family-sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    text-transform: uppercase;
+  }
+
+  .ordinary {
+    margin-bottom: ($spacer-y * 3);
+
+    h4 {
+      color: $white;
+    }
+  }
+
+  p {
+    color: #ddd;
+  }
+
+  .row {
+    margin-bottom: ($spacer-y * 3);
+  }
+
+  .phone {
+    margin: 0 auto ($spacer-y * 2);
+    display: block;
+    max-width: 70%;
+
+    @include media-breakpoint-up(md) {
+      max-width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+      position: relative;
+      top: -($spacer-y);
+    }
+  }
+}
+
+.benefits h4 {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  color: #ddd;
+}
+.benefits-item-wrap{
+  padding: 4em 0em 1em 0em;
+}
+.iphone {
+  width:300px;
+  display: block;
+  margin-top: 3em;
+  margin-left: auto;
+  margin-right: auto;
+}
+.benefitscolumn {
+  width:33%;
+  float:left;
+}
