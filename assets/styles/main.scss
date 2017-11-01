@@ -84,7 +84,6 @@ section {
   color: #f6f6f6;
   font-family: 'Raleway',sans-serif;
   text-transform: uppercase;
-  font-size: 0.8em;
 }
 .nav ul li a:hover{
   color: #f6ca51;
@@ -369,18 +368,7 @@ nav.mobile-nav.open{
 }
 .left{
   float: left;
-}/*
-.opportunity h2 {
-  text-align:left;
-  width:60%;
 }
-.opportunity > .line {
-  float:left;
-}
-.opportunity p {
-  float:left;
-  text-align:left;
-}*/
 
 .opportunity {
   background: linear-gradient(
@@ -390,12 +378,11 @@ nav.mobile-nav.open{
     background-attachment: fixed;
 
     p {
-      margin-top:2.5em;
       color: #eff;
     }
 }
 .opportunity-wrap{
-  margin-top: 50px;
+  margin-top: $spacer-y;
 }
 .market-gap{
   padding-top: 150px;
@@ -404,13 +391,15 @@ nav.mobile-nav.open{
   width: 33%;
   float: left;
   text-align: center;
-}
-.opportunity-market img{
-  width: 30px;
-  height: 30px;
-  margin: 0 auto;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: $spacer-y;
+
+  img{
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 }
 .market-gap img{
   width: 100px;
@@ -572,17 +561,16 @@ nav.mobile-nav.open{
       font-size: 0.9em;
     }
 
-    h5{
+    h5 {
       margin: 0;
       margin-top: 20px;
       font-size: 1.2em;
       color: #c69c2b;
     }
 
-    h6{
+    h6 {
       margin: 0;
       margin-top: 0px;
-      font-size: 0.8em;
     }
   }
 }
@@ -615,10 +603,6 @@ nav.mobile-nav.open{
   display: block;
   max-width: 250px;
   margin: 0 auto;
-}
-
-h2.sub{
-  margin: 0;
 }
 
 .leftcolumn, .rightcolumn{
@@ -765,9 +749,6 @@ h2.sub{
     url(/dist/images/1.jpg) bottom no-repeat;
     background-attachment: fixed;
     background-size: cover;
-}
-#privacy h2 {
-  margin-top:2em;
 }
 
 .technology-wrap, .utility-wrap{
@@ -1685,9 +1666,6 @@ table td{
 @media only screen and (min-width:993px) and (max-width:1280px) {
   .benefits-item-wrap .img-asset.right{padding-left: 20px;}
   .benefits-item-wrap .img-asset.left{padding-right: 20px;}
-  nav.nav ul li{
-    font-size: 0.8em;
-  }
   .logo-quan {
     max-width: 600px;
   }
