@@ -288,7 +288,7 @@
       </div>
     </div>
   </section>
-
+  
   <section id="aditus-token" class="container-fluid clear">
     <div class='container'>
       <h2>Aditus Token Utility</h2>
@@ -311,6 +311,49 @@
         <div class="utility col-md-3">
           <h4>Community Pool</h4>
           <p>Users can use Aditus tokens as a possible transaction currency among Aditus merchants</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="tokensale" class="container-fluid">
+    <div class='container'>
+      <h2>Aditus Token Sale</h2>
+      <h3 class="subtitle">Here's the detail representation of our token sale structure</h3>
+      <div class='tokensale'>
+        <div class='tokensaleChart'>
+          <div class="chart" style="width: 300px; margin: 15px 0px; margin: auto; ">
+  <canvas id="myChart" width="240" height="240"></canvas>
+</div>
+        </div>
+        <div class='tokensaleFigures clear'>
+          <div class='tokensaleFiguresPanel'>
+            <div class='tokensaleFiguresPanelPrimary'>
+              ADT tokens for sale
+            </div>
+            <div class='tokensaleFiguresPanelSecondary'>
+              450,000,000
+            </div>
+          </div>
+          <div class='tokensaleFiguresPanel'>
+            <div class='tokensaleFiguresPanelPrimary'>
+              Purchase Price
+            </div>
+            <div class='tokensaleFiguresPanelSecondary'>
+              $0.05
+            </div>
+            <div class='tokensaleFiguresPanelTertiary'>
+              Price in USD
+            </div>
+          </div>
+          <div class='tokensaleFiguresPanel'>
+            <div class='tokensaleFiguresPanelPrimary'>
+              ETH price
+            </div>
+            <div class='tokensaleFiguresPanelSecondary'>
+              TBC
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -350,4 +393,58 @@
 
 </main>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+  <script>
+
+// For a pie chart
+var ctx = document.getElementById("myChart").getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'pie',
+    data : {
+        datasets: [{
+            data: [450000000, 200000000, 150000000, 200000000],
+            backgroundColor: ['#c69c2b', '#BBB', '#ff6e00', '#555'],
+            borderWidth: 0
+        }],
+        
+        // These labels appear in the legend and in the tooltips when hovering different arcs
+        labels: [
+            'Token Sale + Pre-sale',
+            'Merchant Incentive',
+            'Founders + Team',
+            'Strategic Partners & Token Holders Incentive'
+        ],
+    },
+    options: {
+      //tooltipTemplate: "<%if (label){%><%=label %>: <%}%><%= value + ' %' %>",  
+      legend: {
+        position: 'bottom',
+        boxWidth: '400px',
+        labels: {
+            fontColor: '#DDD'
+        },
+        padding: '500'
+      },
+      tooltips: {
+            callbacks: {
+                // labelColor: function(tooltipItem, chart) {
+                //     return {
+                //         borderColor: 'rgb(255, 0, 0)',
+                //         backgroundColor: 'rgb(255, 0, 0)'
+                //     }
+                // },
+                // labelTextColor:function(tooltipItem, chart){
+                //     return '#543453';
+                // },
+              //beforeLabel: function(tooltipItem, chart){
+              //  return [
+              //    '£'
+              //  ]
+              //}
+            }
+        }
+    }
+});
+
+  </script>
 {{ end }}

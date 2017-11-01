@@ -1,0 +1,50 @@
+.tokensale{
+  .tokensaleChart{
+    text-align: center;
+    margin: 25px 0px;
+    margin-bottom: 40px;
+    overflow: auto;
+  }
+  .tokensaleFigures{
+    margin-top: 25px;
+    
+    .tokensaleFiguresPanel{
+      float: left;
+      width: 33.33%;
+      text-align: center;
+      
+      .tokensaleFiguresPanelPrimary{
+        text-transform: uppercase;
+        font-size: 18px;
+      }
+      .tokensaleFiguresPanelSecondary{
+        font-size: 36px;
+        font-weight: 900;
+        color: #c69c2b;
+      }
+      .tokensaleFiguresPanelTertiary{
+        text-transform: uppercase;
+        font-size: 16px;
+        color: #999;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width:767px) {
+    .tokensaleFiguresPanel{
+      float: none !important;
+      width: 55% !important;
+      text-align: center;
+      margin: auto;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px dotted #333;
+      
+      &:first-child{
+        margin-top: 0px;
+        padding-top: 0px;
+        border-top: none;
+      }
+    }
+}
