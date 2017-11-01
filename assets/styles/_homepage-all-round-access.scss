@@ -1,0 +1,96 @@
+//////////////////////////
+
+.containerRemovePad{
+  max-width: 100% !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+.padReplacement{
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.allRoundAccessOffering{
+  .allRoundAccessOfferingEntry{
+    position: relative;
+    float: left;
+    width: 33.33%;
+    background-color: brown;
+    min-height: 100px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: white;
+    font-size: 12px;
+    opacity: 0.7;
+
+    &:hover{
+      opacity: 1;
+    }
+
+    .allRoundAccessOfferingEntryText{
+      position: relative;
+      height: 20px;
+      padding: 90px 20px;
+    }
+    .allRoundAccessOfferingEntryImg{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+    }
+  }
+
+  #allRoundAccessOfferingEntry1{
+    background-image: url(/dist/images/access_villas.png);
+  }
+  #allRoundAccessOfferingEntry2{
+    background-image: url(/dist/images/access_drive.png);
+  }
+  #allRoundAccessOfferingEntry3{
+    background-image: url(/dist/images/access_vehicles.png);
+  }
+  #allRoundAccessOfferingEntry4{
+    background-image: url(/dist/images/access_helicopters.png);
+  }
+  #allRoundAccessOfferingEntry5{
+    background-image: url(/dist/images/access_yatch.png);
+  }
+  #allRoundAccessOfferingEntry6{
+    background-image: url(/dist/images/access_events.png);
+  }
+  #allRoundAccessOfferingEntry7{
+    background-image: url(/dist/images/access_tours.png);
+  }
+  #allRoundAccessOfferingEntry8{
+    background-image: url(/dist/images/access_concierge.png);
+  }
+  #allRoundAccessOfferingEntry9{
+    background-image: url(/dist/images/access_offerings.png);
+  }
+}
+
+@media only screen and (max-width:515px) {
+  .allRoundAccessOffering{
+    .allRoundAccessOfferingEntry{
+      float: none !important;
+      width: 100% !important;
+      min-height: 40px !important;
+    }
+    .allRoundAccessOfferingEntryText{
+      min-height: 40px !important;
+      padding: 70px 20px !important;
+    }
+  }
+}
+//@media only screen and (max-width:590px) {
+//  .allRoundAccessOffering{
+//    .allRoundAccessOfferingEntry{
+//      float: none !important;
+//      width: 100% !important;
+//      min-height: 40px !important;
+//      padding: 20px 0px !important;
+//    }
+//  }
+//}
+
+//////////////////////

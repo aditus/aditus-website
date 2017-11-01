@@ -40,85 +40,29 @@
     MAIN
 \*------------------------------------*/
 
-/* global box-sizing */
 *,
 *:after,
 *:before {
-  -moz-box-sizing:border-box;
-  box-sizing:border-box;
   -webkit-font-smoothing:antialiased;
   font-smoothing:antialiased;
   text-rendering:optimizeLegibility;
 }
-/* html element 62.5% font-size for REM use */
-html {
-  font-size: 62.5%;
-}
-body {
-  font:300 18px/1.4 'Josefin Sans', sans-serif;
-  color:#444;
-  -webkit-font-smoothing: antialiased;
-}
-/* clear */
-.clear:before,
-.clear:after {
-    content:' ';
-    display:table;
-}
 
-.clear:after {
-    clear:both;
-}
-.clear {
-    *zoom:1;
-}
-img {
-  max-width:100%;
-  vertical-align:bottom;
-}
-a {
-  color:#444;
-  text-decoration:none;
-}
-a:hover {
-  color:#444;
-}
-a:focus {
-  outline:0;
-}
-a:hover,
-a:active {
-  outline:0;
-}
-input:focus {
-  outline:0;
-  border:1px solid #04A4CC;
-}
-h1,h2,h3,h4,h5,h6{
-  font-family: 'PlayfairDisplay-Regular', serif;
-  font-weight: normal
-}
-h1{
-  color: #c69c2b;
-  font-size: 2.2em;
-}
-h2{
-  color: #c69c2b;
-  text-align: center;
-  font-weight:normal;
-  font-size: 1.5em;
-}
-h4{
-  text-align: center;
-  color: #eff;
-}
-p{
-  line-height: 1.5;
-  font-size: 1em;
-}
 .team-people p
 {
   font-size: 0.7em;
+}
+
+section {
+  > .container {
+    padding-top: 5em;
+    padding-bottom: 5em;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
 }
 
 /*------------------------------------*\
@@ -284,11 +228,6 @@ nav.mobile-nav.open{
   margin: 0 auto;
 }
 
-section > .container {
-  padding-top:5em;
-  padding-bottom: 5em;
-}
-
 /*------------------------------------*\
     HOME BANNER
 \*------------------------------------*/
@@ -314,17 +253,30 @@ section > .container {
 
 .banner {
   width: 100%;
-  height: 80vh;
+  height: 95vh;
   padding-top: 15vh;
-  background: linear-gradient(
-    rgba(11, 31, 89, 0.1),
-    rgba(1, 1, 1, 1)
-    ),
-    url(/dist/images/bg.jpg) bottom;
+  background: transparent url(/dist/images/bg.jpg);
   background-attachment: fixed;
-  background-position: center top;
+  background-position: -10px 0;
   background-repeat: no-repeat;
   background-size: cover;
+
+  @include media-breakpoint-down(lg) {
+    background-position: -200px 0;
+  }
+
+  @include media-breakpoint-down(xs) {
+    background-position: -545px 0;
+  }
+
+  .landing.text-container {
+    padding: 1em;
+    background: rgba(7, 44, 79, 0.38);
+  }
+
+  h1, p {
+    color: #fff;
+  }
 
   .logo-img {
     display: block;
@@ -333,32 +285,30 @@ section > .container {
       width: 50%;
     }
   }
-}
 
-.whitepaper-download{
-  width: 100%;
+  // h1 {
+  //   text-shadow: 3px 2px 3px #d3dee4;
+  //   color: #0a3255;
+  // }
+
+  // p.intro {
+  //   color: #0a3255;
+  // }
 }
 
 .whitepaper-download a {
-  width: 200px;
-  height: 100px;
-  line-height: 100px;
   font-size: 1em;
   font-family: 'PlayfairDisplay-Regular', serif;
   color: #ddd;
   padding: 10px 15px;
   letter-spacing:1px;
   background-color:#c69c2b;
+  display: inline-block;
+  margin: 0;
 }
 
 .whitepaper-download a:hover {
   border-color: #fff;
-}
-
-
-
-#tokensale p.whitepaper-download a{
-
 }
 
 #arrow-down {
@@ -633,16 +583,11 @@ section > .container {
     }
   }
 }
-.landing{
-  padding-left: 2em;
+
+#enquiries {
+  clear: both;
 }
-.landing h1 {
-  font-size:2em;
-  color:#c69c2b;
-}
-.landing p {
-  width:100%;
-}
+
 #team h4, h6{
   color: #eff;
 }
@@ -672,160 +617,7 @@ section > .container {
 h2.sub{
   margin: 0;
 }
-#membership{
-  background: #13151e;
 
-  h2 {
-    margin-bottom: ($spacer-y * 2);
-  }
-
-  h3 {
-    font-size:1.2em;
-    text-align:left;
-    margin-top:0px;
-    color: #ddd;
-  }
-
-  p {
-    color: #ddd;
-  }
-
-  .row {
-    margin-bottom: ($spacer-y * 3);
-  }
-
-  .line {
-    margin: 0 0 $spacer-y 0;
-  }
-
-  .phone {
-    margin: 0 auto ($spacer-y * 2);
-    display: block;
-    max-width: 100%;
-
-    @include media-breakpoint-up(md) {
-      margin-left: 0;
-      margin-right: 0;
-    }
-  }
-}
-.benefits h4 {
-  margin-top: 50px;
-  margin-bottom: 50px;
-  color: #ddd;
-}
-.benefits-item-wrap{
-  padding: 4em 0em 1em 0em;
-}
-
-//////////////////////////
-
-.containerRemovePad{
-  max-width: 100% !important;
-  padding-left: 0px !important;
-  padding-right: 0px !important;
-}
-.padReplacement{
-  padding-left: 25px;
-  padding-right: 25px;
-}
-.allRoundAccessOffering{
-  .allRoundAccessOfferingEntry{
-    position: relative;
-    float: left;
-    width: 33.33%;
-    background-color: brown;
-    min-height: 100px;
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: 900;
-    color: white;
-    font-size: 12px;
-    opacity: 0.7;
-    
-    &:hover{
-      opacity: 1;
-    }
-    
-    .allRoundAccessOfferingEntryText{
-      position: relative;
-      height: 20px;
-      padding: 90px 20px;
-    }
-    .allRoundAccessOfferingEntryImg{
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-    }
-  }
-  
-  #allRoundAccessOfferingEntry1{
-    background-image: url(/dist/images/access_villas.png);
-  }
-  #allRoundAccessOfferingEntry2{
-    background-image: url(/dist/images/access_drive.png);
-  }
-  #allRoundAccessOfferingEntry3{
-    background-image: url(/dist/images/access_vehicles.png);
-  }
-  #allRoundAccessOfferingEntry4{
-    background-image: url(/dist/images/access_helicopters.png);
-  }
-  #allRoundAccessOfferingEntry5{
-    background-image: url(/dist/images/access_yatch.png);
-  }
-  #allRoundAccessOfferingEntry6{
-    background-image: url(/dist/images/access_events.png);
-  }
-  #allRoundAccessOfferingEntry7{
-    background-image: url(/dist/images/access_tours.png);
-  }
-  #allRoundAccessOfferingEntry8{
-    background-image: url(/dist/images/access_concierge.png);
-  }
-  #allRoundAccessOfferingEntry9{
-    background-image: url(/dist/images/access_offerings.png);
-  }
-}
-
-@media only screen and (max-width:515px) {
-  .allRoundAccessOffering{
-    .allRoundAccessOfferingEntry{
-      float: none !important;
-      width: 100% !important;
-      min-height: 40px !important;
-    }
-    .allRoundAccessOfferingEntryText{
-      min-height: 40px !important;
-      padding: 70px 20px !important;
-    }
-  }
-}
-//@media only screen and (max-width:590px) {
-//  .allRoundAccessOffering{
-//    .allRoundAccessOfferingEntry{
-//      float: none !important;
-//      width: 100% !important;
-//      min-height: 40px !important;
-//      padding: 20px 0px !important;
-//    }
-//  }
-//}
-
-//////////////////////
-
-.iphone {
-  width:300px;
-  display: block;
-  margin-top: 3em;
-  margin-left: auto;
-  margin-right: auto;
-}
-.benefitscolumn {
-  width:33%;
-  float:left;
-}
 .leftcolumn, .rightcolumn{
   margin-top:-3em;
 }
@@ -1019,7 +811,18 @@ h2.sub{
 }
 #aditus-token,
 #privacy {
+  overflow: hidden;
   background-color: #13151e;
+}
+
+#aditus-token {
+  .tokenSubtitle {
+    text-align: center;
+
+    @include media-breakpoint-up(md) {
+      text-align: left;
+    }
+  }
 }
 
 #token {
@@ -1362,6 +1165,11 @@ table td{
 \*------------------------------------*/
 
 
+/*------------------------------------*\
+    Homepage sections
+\*------------------------------------*/
+@import "homepage-membership";
+@import "homepage-all-round-access";
 
 /*------------------------------------*\
     RESPONSIVE
@@ -1766,9 +1574,6 @@ table td{
   .menu-div {
     display: block;
   }
-.containerRemovePad{
-  max-width: 100% !important;
-}
 .logo-quan {
   max-width: 600px;
 }
@@ -1887,9 +1692,6 @@ table td{
 }
 @media only screen and (min-width:993px) and (max-width:1280px){
 
-.containerRemovePad{
-  max-width: 100% !important;
-}
 .benefits-item-wrap .img-asset.right{padding-left: 20px;}
 .benefits-item-wrap .img-asset.left{padding-right: 20px;}
 nav.nav ul li{
