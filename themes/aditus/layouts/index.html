@@ -27,36 +27,47 @@
   <section id="opportunity" class="container-fluid clear opportunity">
     <div class='container'>
       <h2>Opportunity brewing: crypto-affluents and their desired luxury lifestyle</h2>
-
-      <div class="row justify-content-center">
-        <div class="col-md-6 opportunity-wrap">
-          <p>Skyrocketing crypto-currency values have created a new class of affluent individuals – the crypto
-            affluents. They aspire to the luxury lifestyle but often find themselves excluded. This is because of the
-            insular nature of the crypto-currency community and traditional luxury merchants who do not yet have the
-            means to reach them. Additionally, cryptocurrencies are not widely accepted as payment.</p>
-          <div class="opportunity-market">
-            <h3>Crypto-Affluents</h3>
-            <img src="/dist/images/opp_b.svg" alt="bitcoin">
-            <p>Wish to spend crypto-currencies directly</p>
-            <img src="/dist/images/opp_pri.svg" alt="privacy">
-            <p>More privacy (and security) conscious than the average consumer</p>
-            <h4>Need more invitations / access /education on luxury lifestyle</h4>
+      
+      <div class="opportunityChart">
+        <canvas id="myChartLine" width="1200" height="340"></canvas>
+      </div>
+      <div class="opportunityChartMobile">
+        <canvas id="myChartLineMobile" width="600" height="340"></canvas>
+      </div>
+      <div class="opportunityChartDescription">
+        <div class="row justify-content-center">
+          <div class="col-md-6 opportunity-wrap">
+            <p>Skyrocketing crypto-currency values have created a new class of affluent individuals – the crypto
+              affluents. They aspire to the luxury lifestyle but often find themselves excluded. This is because of the
+              insular nature of the crypto-currency community and traditional luxury merchants who do not yet have the
+              means to reach them. Additionally, cryptocurrencies are not widely accepted as payment.</p>
+            <div style="display: none;">
+              <div class="opportunity-market">
+                <h3>Crypto-Affluents</h3>
+                <img src="/dist/images/opp_b.svg" alt="bitcoin">
+                <p>Wish to spend crypto-currencies directly</p>
+                <img src="/dist/images/opp_pri.svg" alt="privacy">
+                <p>More privacy (and security) conscious than the average consumer</p>
+                <h4>Need more invitations / access /education on luxury lifestyle</h4>
+              </div>
+              <div class="opportunity-market market-gap">
+                <img src="/dist/images/marketgap.svg" alt="anti-bitcoin">
+                <h4>Market Gap</h4>
+              </div>
+              <div class="opportunity-market">
+                <h3>Luxury Merchants</h3>
+                <img src="/dist/images/opp_bn.svg" alt="anti-bitcoin">
+                <p>Very few accept crypto-currencies as payment</p>
+                <img src="/dist/images/opp_t.svg" alt="targetted">
+                <p>Need detailed data to do targeting and communicate offers</p>
+                <h4>Luxury merchants don’t know how to reach the crypto affluents</h4>
+              </div>
+            </div>
+            <p>Aditus bridges this gap by integrating smart contracts, payment gateways and strong privacy protection technologies into a single platform – thus, empowering crypto-users to unlock their desired luxury lifestyle.</p>
           </div>
-          <div class="opportunity-market market-gap">
-            <img src="/dist/images/marketgap.svg" alt="anti-bitcoin">
-            <h4>Market Gap</h4>
-          </div>
-          <div class="opportunity-market">
-            <h3>Luxury Merchants</h3>
-            <img src="/dist/images/opp_bn.svg" alt="anti-bitcoin">
-            <p>Very few accept crypto-currencies as payment</p>
-            <img src="/dist/images/opp_t.svg" alt="targetted">
-            <p>Need detailed data to do targeting and communicate offers</p>
-            <h4>Luxury merchants don’t know how to reach the crypto affluents</h4>
-          </div>
-          <p>Aditus bridges this gap by integrating smart contracts, payment gateways and strong privacy protection technologies into a single platform – thus, empowering crypto-users to unlock their desired luxury lifestyle.</p>
         </div>
       </div>
+      <div class="clear"></div>
     </div>
   </section>
 
@@ -443,6 +454,211 @@ var myChart = new Chart(ctx, {
               //  ]
               //}
             }
+        }
+    }
+});
+
+var ctxLineMobile = document.getElementById("myChartLineMobile");
+var ctxLine = document.getElementById("myChartLine");
+var myChartLine = new Chart(ctxLine, {
+    type: 'line',
+    data: {
+        labels: ["January 2015", "April 2016", "July 2017", "November 2017"],
+    datasets: [
+        {
+            label: "Cryptocurrency Market Capitalisation",
+            fill: false,
+            lineTension: 0.1,
+            backgroundColor: "#c69c2b",
+            borderColor: "#c69c2b",
+            borderCapStyle: 'round',
+            borderWidth: 1,
+            borderDash: [],
+            borderDashOffset: 0.0,
+            borderJoinStyle: 'miter',
+            pointBorderColor: "#c69c2b",
+            pointBackgroundColor: "#fff",
+            pointBorderWidth: 5,
+            pointHoverRadius: 6,
+            pointHoverBackgroundColor: "#c69c2b",
+            pointHoverBorderColor: "#000",
+            pointHoverBorderWidth: 2,
+            pointRadius: 1,
+            pointHitRadius: 10,
+            data: [17426000, 24126000, 66161000, 183493000],
+            spanGaps: true,
+        }/*,
+        {
+              label: "Gresik",
+              fill: false,
+              lineTension: 0.1,
+              backgroundColor: "#FFCA28",
+              borderColor: "#FF6F00",
+              borderCapStyle: 'round',
+              borderWidth: 1,
+              borderDash: [],
+              borderDashOffset: 0.0,
+              borderJoinStyle: 'miter',
+              pointBorderColor: "#FF6F00",
+              pointBackgroundColor: "#fff",
+              pointBorderWidth: 5,
+              pointHoverRadius: 6,
+              pointHoverBackgroundColor: "#FF6F00",
+              pointHoverBorderColor: "rgba(220,220,220,1)",
+              pointHoverBorderWidth:2,
+              pointRadius: 1,
+              pointHitRadius: 10,
+              data: [15, 20, 35, 25, 40, 45, 50],
+              spanGaps: false,
+          },
+        {
+              label: "Bima",
+              fill: false,
+              lineTension: 0.1,
+              backgroundColor: "#E91E63",
+              borderColor: "#E91E63",
+              borderCapStyle: 'round',
+              borderWidth: 1,
+              borderDash: [],
+              borderDashOffset: 0.0,
+              borderJoinStyle: 'miter',
+              pointBorderColor: "#AD1457",
+              pointBackgroundColor: "#fff",
+              pointBorderWidth: 5,
+              pointHoverRadius: 6,
+              pointHoverBackgroundColor: "#AD1457",
+              pointHoverBorderColor: "rgba(220,220,220,1)",
+              pointHoverBorderWidth:2,
+              pointRadius: 1,
+              pointHitRadius: 10,
+              data: [40, 42, 43, 39, 30, 41, 20],
+              spanGaps: false,
+          }*/
+    ]
+    },
+    options: {
+      bezierCurve: true,
+      tooltipTemplate: "<%if (label){%><%= '$ ' + label %>: <%}%><%= '$ ' + value %>",
+      // String - Template string for multiple tooltips
+      multiTooltipTemplate: "<%= value + ' %' %>",
+        legend: {
+            //display: false
+        },
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                },
+                gridLines: {
+                    display:false
+                }
+            }],
+            xAxes: [{
+                gridLines: {
+                    display:false
+                }
+            }]
+        }
+    }
+});
+var myChartLineMobile = new Chart(ctxLineMobile, {
+    type: 'line',
+    data: {
+        labels: ["January 2015", "April 2016", "July 2017", "November 2017"],
+    datasets: [
+        {
+            label: "Cryptocurrency Market Capitalisation",
+            fill: false,
+            lineTension: 0.1,
+            backgroundColor: "#c69c2b",
+            borderColor: "#c69c2b",
+            borderCapStyle: 'round',
+            borderWidth: 1,
+            borderDash: [],
+            borderDashOffset: 0.0,
+            borderJoinStyle: 'miter',
+            pointBorderColor: "#c69c2b",
+            pointBackgroundColor: "#fff",
+            pointBorderWidth: 5,
+            pointHoverRadius: 6,
+            pointHoverBackgroundColor: "#c69c2b",
+            pointHoverBorderColor: "#000",
+            pointHoverBorderWidth: 2,
+            pointRadius: 1,
+            pointHitRadius: 10,
+            data: [17426000, 24126000, 66161000, 183493000],
+            spanGaps: true,
+        }/*,
+        {
+              label: "Gresik",
+              fill: false,
+              lineTension: 0.1,
+              backgroundColor: "#FFCA28",
+              borderColor: "#FF6F00",
+              borderCapStyle: 'round',
+              borderWidth: 1,
+              borderDash: [],
+              borderDashOffset: 0.0,
+              borderJoinStyle: 'miter',
+              pointBorderColor: "#FF6F00",
+              pointBackgroundColor: "#fff",
+              pointBorderWidth: 5,
+              pointHoverRadius: 6,
+              pointHoverBackgroundColor: "#FF6F00",
+              pointHoverBorderColor: "rgba(220,220,220,1)",
+              pointHoverBorderWidth:2,
+              pointRadius: 1,
+              pointHitRadius: 10,
+              data: [15, 20, 35, 25, 40, 45, 50],
+              spanGaps: false,
+          },
+        {
+              label: "Bima",
+              fill: false,
+              lineTension: 0.1,
+              backgroundColor: "#E91E63",
+              borderColor: "#E91E63",
+              borderCapStyle: 'round',
+              borderWidth: 1,
+              borderDash: [],
+              borderDashOffset: 0.0,
+              borderJoinStyle: 'miter',
+              pointBorderColor: "#AD1457",
+              pointBackgroundColor: "#fff",
+              pointBorderWidth: 5,
+              pointHoverRadius: 6,
+              pointHoverBackgroundColor: "#AD1457",
+              pointHoverBorderColor: "rgba(220,220,220,1)",
+              pointHoverBorderWidth:2,
+              pointRadius: 1,
+              pointHitRadius: 10,
+              data: [40, 42, 43, 39, 30, 41, 20],
+              spanGaps: false,
+          }*/
+    ]
+    },
+    options: {
+      bezierCurve: true,
+      tooltipTemplate: "<%if (label){%><%= '$ ' + label %>: <%}%><%= '$ ' + value %>",
+      // String - Template string for multiple tooltips
+      multiTooltipTemplate: "<%= value + ' %' %>",
+        legend: {
+            display: false
+        },
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                },
+                gridLines: {
+                    display:false
+                }
+            }],
+            xAxes: [{
+                gridLines: {
+                    display:false
+                }
+            }]
         }
     }
 });

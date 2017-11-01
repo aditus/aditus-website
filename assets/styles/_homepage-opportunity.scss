@@ -1,0 +1,55 @@
+.opportunityChart{
+  //float: left;
+  //width: 500px;
+  width: 70%;
+  margin: auto;
+  padding: 15px 0px;
+  margin-top: 35px;
+}
+.opportunityChartMobile{
+  display: none;
+}
+.opportunityChartDescription{
+  text-align: center;
+  
+  .col-md-6{
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+.clear{
+  clear: both;
+}
+
+@media only screen and (max-width:991px) {
+  .opportunityChart{
+    //float: left;
+    //width: 500px;
+    width: 100% !important;
+  }
+  .opportunityChartDescription{
+    text-align: center;
+    
+    .col-md-6{
+      width: 100% !important;
+      max-width: 100% !important;
+      flex: 0 0 75%;
+    }
+  }
+}
+
+@media only screen and (max-width:691px) {
+  .opportunityChartMobile{
+    display: block;
+  }
+  .opportunityChart{
+    display: none;
+  }
+  .opportunityChart{
+    #myChartLine{
+      width: 600px;
+      height: 300px;
+    }
+  }
+}
