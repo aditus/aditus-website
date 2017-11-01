@@ -528,6 +528,10 @@ nav.mobile-nav.open{
     }
   }
 
+  .team + .team {
+    margin-top: 0;
+  }
+
   .team-people {
     text-align: center;
     padding: 15px;
