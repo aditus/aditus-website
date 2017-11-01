@@ -13,9 +13,15 @@ $spacer-y: $spacer;
 $body-bg: #1c1c1c;
 $body-color: #eff;
 
+
 $primary: #26424c;
 
 $font-family-sans-serif: 'Open Sans', sans-serif;
+
+$font-size-base: 0.9rem;
+$h1-font-size: $font-size-base * 1.8;
+$h2-font-size: $font-size-base * 1.7;
+$h3-font-size: $font-size-base * 1.5;
 
 $headings-color: #c69c2b;
 $headings-font-family: 'Playfair Display', serif;

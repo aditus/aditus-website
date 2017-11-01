@@ -48,10 +48,6 @@
   text-rendering:optimizeLegibility;
 }
 
-.team-people p
-{
-  font-size: 0.7em;
-}
 
 section {
   > .container {
@@ -62,7 +58,10 @@ section {
   h2 {
     text-align: center;
   }
+}
 
+.subtitle {
+  color:#eff;
 }
 
 /*------------------------------------*\
@@ -569,6 +568,10 @@ nav.mobile-nav.open{
       filter: grayscale(100%);
     }
 
+    p {
+      font-size: 0.9em;
+    }
+
     h5{
       margin: 0;
       margin-top: 20px;
@@ -766,13 +769,11 @@ h2.sub{
 #privacy h2 {
   margin-top:2em;
 }
-.techSubtitle {
-  color:#eff;
-  margin-top:2em;
-}
+
 .technology-wrap, .utility-wrap{
   margin-top: 20px;
 }
+
 .privacy-item{
   width: 33.3%;
   float: left;
@@ -794,20 +795,18 @@ h2.sub{
   margin-top: 10px;
   color: #eff;
 }
+
 .utility{
-  width: 25%;
-  float: left;
-  padding: 1% 0% 30px 0%;
   text-align: center;
-}
-.utility h4{
-  color: #c69c2b;
-  font-size: 1.1em;
-  width:100%;
-}
-.utility p {
-  color:#eff;
-  font-size:0.9em;
+
+  h4 {
+    color: #c69c2b;
+    font-size: 1.1em;
+  }
+
+  p {
+    color:#eff;
+  }
 }
 #aditus-token,
 #privacy {
@@ -815,13 +814,11 @@ h2.sub{
   background-color: #13151e;
 }
 
-#aditus-token {
-  .tokenSubtitle {
-    text-align: center;
+.tokenSubtitle, .techSubtitle {
+  text-align: center;
 
-    @include media-breakpoint-up(md) {
-      text-align: left;
-    }
+  @include media-breakpoint-up(md) {
+    text-align: left;
   }
 }
 
@@ -1231,12 +1228,6 @@ table td{
   }
   #team, #opportunity, #access{
     background-attachment: scroll;
-  }
-  .banner h1{
-    font-size: 1.8em;
-  }
-  .banner p{
-    font-size: 0.8em;
   }
   .text-container, .chart-text-wrapright, .chart-img-wrap, .tokensaleleftcolumn, .tokensalecolumns, .tokensalerightcolumn{
     width: 95%;
@@ -1690,32 +1681,28 @@ table td{
     width: 100%;
   }
 }
-@media only screen and (min-width:993px) and (max-width:1280px){
+@media only screen and (min-width:993px) and (max-width:1280px) {
+  .benefits-item-wrap .img-asset.right{padding-left: 20px;}
+  .benefits-item-wrap .img-asset.left{padding-right: 20px;}
+  nav.nav ul li{
+    font-size: 0.8em;
+  }
+  .logo-quan {
+    max-width: 600px;
+  }
+  .img-asset-y.opp{
+    height: 600px;
+    margin-top: 60px;
+  }
+  .img-asset-y.opp img.opp-icons{
+    width: 45px;
+  }
 
-.benefits-item-wrap .img-asset.right{padding-left: 20px;}
-.benefits-item-wrap .img-asset.left{padding-right: 20px;}
-nav.nav ul li{
-  font-size: 0.8em;
-}
-.logo-quan {
-  max-width: 600px;
-}
-.img-asset-y.opp{
-  height: 600px;
-  margin-top: 60px;
-}
-.img-asset-y.opp img.opp-icons{
-  width: 45px;
-}
-
-.img-asset-y.opp img.star{
-  width:480px
-}
-.img-asset-y.opp img.iphone{
-  width:75px
-}
-  h2 {
-    font-size:1.4em;
+  .img-asset-y.opp img.star{
+    width:480px
+  }
+  .img-asset-y.opp img.iphone{
+    width:75px
   }
 }
 
