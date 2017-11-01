@@ -2,7 +2,9 @@
 #membership {
   .container {
     // border-bottom: 1px solid $headings-color;
-    max-width: 65%;
+    @include media-breakpoint-up(md) {
+      max-width: 65%;
+    }
   }
 
   h2 {

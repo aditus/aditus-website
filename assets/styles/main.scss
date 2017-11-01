@@ -62,6 +62,11 @@ section {
 
 .subtitle {
   color:#eff;
+  text-align: center;
+
+  @include media-breakpoint-up(md) {
+    text-align: left;
+  }
 }
 
 /*------------------------------------*\
@@ -797,14 +802,6 @@ nav.mobile-nav.open{
 #privacy {
   overflow: hidden;
   background-color: #13151e;
-}
-
-.tokenSubtitle, .techSubtitle {
-  text-align: center;
-
-  @include media-breakpoint-up(md) {
-    text-align: left;
-  }
 }
 
 #token {
