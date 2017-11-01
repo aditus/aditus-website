@@ -2,10 +2,11 @@
 #membership {
   .container {
     // border-bottom: 1px solid $headings-color;
+    max-width: 65%;
   }
 
   h2 {
-    margin-bottom: ($spacer-y * 2);
+    margin-bottom: ($spacer-y * 1.5);
   }
 
   h4 {
@@ -16,6 +17,7 @@
   }
 
   .ordinary {
+    margin-top: ($spacer-y * 3);
     margin-bottom: ($spacer-y * 3);
 
     h4 {
@@ -27,10 +29,6 @@
     color: #ddd;
   }
 
-  .row {
-    margin-bottom: ($spacer-y * 3);
-  }
-
   .phone {
     margin: 0 auto ($spacer-y * 2);
     display: block;
@@ -40,8 +38,7 @@
       max-width: 100%;
       margin-left: 0;
       margin-right: 0;
-      position: relative;
-      top: -($spacer-y);
+      height: 450px;
     }
   }
 }
