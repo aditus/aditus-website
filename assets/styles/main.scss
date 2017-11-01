@@ -253,17 +253,30 @@ nav.mobile-nav.open{
 
 .banner {
   width: 100%;
-  height: 80vh;
+  height: 95vh;
   padding-top: 15vh;
-  background: linear-gradient(
-    rgba(11, 31, 89, 0.1),
-    rgba(1, 1, 1, 1)
-    ),
-    url(/dist/images/bg.jpg) bottom;
+  background: transparent url(/dist/images/bg.jpg);
   background-attachment: fixed;
-  background-position: center top;
+  background-position: -10px 0;
   background-repeat: no-repeat;
   background-size: cover;
+
+  @include media-breakpoint-down(lg) {
+    background-position: -200px 0;
+  }
+
+  @include media-breakpoint-down(xs) {
+    background-position: -545px 0;
+  }
+
+  .landing.text-container {
+    padding: 1em;
+    background: rgba(7, 44, 79, 0.38);
+  }
+
+  h1, p {
+    color: #fff;
+  }
 
   .logo-img {
     display: block;
@@ -272,32 +285,30 @@ nav.mobile-nav.open{
       width: 50%;
     }
   }
-}
 
-.whitepaper-download{
-  width: 100%;
+  // h1 {
+  //   text-shadow: 3px 2px 3px #d3dee4;
+  //   color: #0a3255;
+  // }
+
+  // p.intro {
+  //   color: #0a3255;
+  // }
 }
 
 .whitepaper-download a {
-  width: 200px;
-  height: 100px;
-  line-height: 100px;
   font-size: 1em;
   font-family: 'PlayfairDisplay-Regular', serif;
   color: #ddd;
   padding: 10px 15px;
   letter-spacing:1px;
   background-color:#c69c2b;
+  display: inline-block;
+  margin: 0;
 }
 
 .whitepaper-download a:hover {
   border-color: #fff;
-}
-
-
-
-#tokensale p.whitepaper-download a{
-
 }
 
 #arrow-down {
@@ -577,16 +588,6 @@ nav.mobile-nav.open{
   clear: both;
 }
 
-.landing{
-  padding-left: 2em;
-}
-.landing h1 {
-  font-size:2em;
-  color:#c69c2b;
-}
-.landing p {
-  width:100%;
-}
 #team h4, h6{
   color: #eff;
 }

@@ -1,3 +1,11 @@
+$grid-breakpoints: (
+  xs: 0,
+  sm: 475px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
 $spacer:   1.2em;
 $spacer-x: $spacer;
 $spacer-y: $spacer;
@@ -7,7 +15,7 @@ $body-color: #eff;
 
 $primary: #26424c;
 
-$font-family-sans-serif: 'Josefin Sans', sans-serif;
+$font-family-sans-serif: 'Open Sans', sans-serif;
 
 $headings-color: #c69c2b;
 $headings-font-family: 'Playfair Display', serif;
