@@ -2,7 +2,7 @@
   display: none;
 }
 .opportunityChartDescription{
-  text-align: center;
+  margin-top: $spacer-y;
 
   ul {
     margin: 0.75em 0;
@@ -38,8 +38,6 @@
     width: 100% !important;
   }
   .opportunityChartDescription{
-    text-align: center;
-
     .col-md-6{
       width: 100% !important;
       max-width: 100% !important;

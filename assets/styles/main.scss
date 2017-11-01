@@ -61,7 +61,7 @@ section {
 }
 
 .subtitle {
-  color:#eff;
+  color:#e8e8e8;
   text-align: center;
 
   @include media-breakpoint-up(md) {
@@ -93,14 +93,14 @@ section {
 .nav ul li a:hover{
   color: #f6ca51;
 }
-.nav ul li a.whitepaper-download-nav{
+a.whitepaper-download-nav{
   display: block;
   color: #f6f6f6;
   padding: 6px 15px;
   letter-spacing:1px;
   background-color:#c69c2b;
 }
-.nav ul li a.whitepaper-download-nav:hover{
+a.whitepaper-download-nav:hover{
   color: #c69c2b;
   background-color:#f6f6f6;
   transition: 0.3s;
@@ -305,7 +305,6 @@ nav.mobile-nav.open{
   color: #ddd;
   padding: 10px 15px;
   letter-spacing:1px;
-  background-color:#c69c2b;
   display: inline-block;
   margin: 0;
 }
@@ -381,10 +380,6 @@ nav.mobile-nav.open{
     rgba(18, 24, 39, 1) ),
     url(/dist/images/3.jpg);
     background-attachment: fixed;
-
-    p {
-      color: #eff;
-    }
 }
 .opportunity-wrap{
   margin-top: $spacer-y;
