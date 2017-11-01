@@ -1,7 +1,7 @@
 {{ define "main" }}
 
 <main id="main-container">
-  <section class="container-fluid banner clear">
+  <section class="container-fluid banner">
     <div class='container'>
       <div class='row'>
        <!-- <div class='col-lg-4'>
@@ -11,7 +11,7 @@
             </a>
           </div>
         </div>-->
-        <div class='col-lg-7'>
+        <div class='col-lg-7 align-self-center'>
           <div class="landing text-container">
             <h1>Luxury Access Platform for Crypto-Affluents</h1>
               <p class='intro'>Aditus is a revolutionary new platform bringing the world of luxury to crypto-affluents, through a privacy-centric decentralised network utilising smart contracts and blockchain technology.</p>
@@ -97,24 +97,6 @@
         carefully curated by Aditus.</h3>
     </div>
     <div class='container-fluid'>
-      <div class="padReplacement">
-        <div class="img-asset-y opp logo-quan clear" style="display: none;">
-          <img src="/dist/images/star-01.svg" class="star opp-icons-animation">
-          <img src="/dist/images/iphone-01.svg" class="iphone">
-          <img src="/dist/images/Aditus Icon Set/white icons/concierge.png" class="concierge opp-icons opp-icons-animation">
-          <img src="/dist/images/Aditus Icon Set/white icons/yacht.png" class="yacht opp-icons opp-icons-animation">
-          <img src="/dist/images/Aditus Icon Set/white icons/car.png" class="car opp-icons opp-icons-animation">
-          <img src="/dist/images/Aditus Icon Set/white icons/watch.png" class="watch opp-icons opp-icons-animation">
-          <img src="/dist/images/Aditus Icon Set/white icons/real_estate.png" class="real_estate opp-icons opp-icons-animation">
-          <img src="/dist/images/Aditus Icon Set/white icons/restaurant.png" class="restaurant opp-icons opp-icons-animation">
-          <img src="/dist/images/Aditus Icon Set/white icons/club.png" class="club opp-icons opp-icons-animation">
-          <img src="/dist/images/Aditus Icon Set/white icons/medical_care.png" class="medical_care opp-icons opp-icons-animation">
-          <img src="/dist/images/Aditus Icon Set/white icons/art.png" class="art opp-icons opp-icons-animation">
-          <img src="/dist/images/Aditus Icon Set/white icons/fashion_show.png" class="fashion_show opp-icons opp-icons-animation">
-          <img src="/dist/images/Aditus Icon Set/white icons/travel.png" class="travel opp-icons opp-icons-animation">
-          <img src="/dist/images/Aditus Icon Set/white icons/private_jet.png" class="private_jet opp-icons opp-icons-animation">
-        </div>
-      </div>
       <div class="allRoundAccessOffering">
         <div class="allRoundAccessOfferingEntry">
           <div id="allRoundAccessOfferingEntry1" class="allRoundAccessOfferingEntryImg"></div>
@@ -178,18 +160,18 @@
       <h2>Your private data should remain just that. Private.</h2>
       <h3 class="subtitle">Using a uniquely decentralised platform, Aditus enables luxury consumption without your
       data being tracked. </h3>
-      <div class="technology-wrap clear">
-        <div class="privacy-item">
+      <div class="row">
+        <div class="privacy-item col-lg-4">
           <img src="/dist/images/decentralised.png" class="priv-icon">
           <h4>Decentralised Platform</h4>
           <p>Unlike other rewards platforms, Aditus does not track and collect user data.</p>
         </div>
-        <div class="privacy-item">
+        <div class="privacy-item col-lg-4">
           <img src="/dist/images/privacy2.png" class="priv-icon">
           <h4>Data Controlled by Users</h4>
           <p>User data is enrypted and stored on the mobile device. No data leaves the phone unless specifically authorised by the user.</p>
         </div>
-        <div class="privacy-item">
+        <div class="privacy-item col-lg-4">
           <img src="/dist/images/privacy3.png" class="priv-icon">
           <h4>Privacy + Rewards </h4>
           <p>Transactions are not only private, but also earn you rewards via cashbacks.</p>
@@ -402,7 +384,7 @@
       <h2>Aditus Token Utility</h2>
       <h3 class="subtitle">The Aditus Token ultilises Ethereum's decentralised infrastructure to give you access to
       luxury merchants.</h3>
-      <img src="/dist/images/logo-app.png" id="token"/>
+      <img src="/dist/images/logo-app.png" class="token-logo"/>
       <div class="utility-wrap row">
         <div class="utility col-md-3">
           <h4>Membership Proof</h4>
@@ -431,11 +413,11 @@
       <div class='tokensale'>
         <div class='tokensaleChart'>
           <div class="chart" style="width: 300px; margin: 15px 0px; margin: auto; ">
-  <canvas id="myChart" width="240" height="240"></canvas>
-</div>
+            <canvas id="myChart" width="240" height="240"></canvas>
+          </div>
         </div>
-        <div class='tokensaleFigures clear'>
-          <div class='tokensaleFiguresPanel'>
+        <div class='tokensaleFigures row'>
+          <div class='tokensaleFiguresPanel col-md-4'>
             <div class='tokensaleFiguresPanelPrimary'>
               Aditus tokens for sale
             </div>
@@ -443,7 +425,7 @@
               450,000,000
             </div>
           </div>
-          <div class='tokensaleFiguresPanel'>
+          <div class='tokensaleFiguresPanel col-md-4'>
             <div class='tokensaleFiguresPanelPrimary'>
               Purchase Price
             </div>
@@ -454,7 +436,7 @@
               Price in USD
             </div>
           </div>
-          <div class='tokensaleFiguresPanel'>
+          <div class='tokensaleFiguresPanel col-md-4'>
             <div class='tokensaleFiguresPanelPrimary'>
               ETH price
             </div>
@@ -501,8 +483,8 @@
 
 </main>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-  <script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<script>
 
 // For a pie chart
 var ctx = document.getElementById("myChart").getContext('2d');
@@ -514,8 +496,6 @@ var myChart = new Chart(ctx, {
             backgroundColor: ['#c69c2b', '#BBB', '#ff6e00', '#555'],
             borderWidth: 0
         }],
-
-        // These labels appear in the legend and in the tooltips when hovering different arcs
         labels: [
             'Token Sale + Pre-sale',
             'Merchant Incentives',
@@ -524,7 +504,6 @@ var myChart = new Chart(ctx, {
         ],
     },
     options: {
-      //tooltipTemplate: "<%if (label){%><%=label %>: <%}%><%= value + ' %' %>",
       legend: {
         position: 'bottom',
         boxWidth: '400px',
@@ -535,20 +514,6 @@ var myChart = new Chart(ctx, {
       },
       tooltips: {
             callbacks: {
-                // labelColor: function(tooltipItem, chart) {
-                //     return {
-                //         borderColor: 'rgb(255, 0, 0)',
-                //         backgroundColor: 'rgb(255, 0, 0)'
-                //     }
-                // },
-                // labelTextColor:function(tooltipItem, chart){
-                //     return '#543453';
-                // },
-              //beforeLabel: function(tooltipItem, chart){
-              //  return [
-              //    '£'
-              //  ]
-              //}
             }
         }
     }
@@ -583,62 +548,14 @@ var myChartLine = new Chart(ctxLine, {
             pointHitRadius: 10,
             data: [17426000, 24126000, 66161000, 183493000],
             spanGaps: true,
-        }/*,
-        {
-              label: "Gresik",
-              fill: false,
-              lineTension: 0.1,
-              backgroundColor: "#FFCA28",
-              borderColor: "#FF6F00",
-              borderCapStyle: 'round',
-              borderWidth: 1,
-              borderDash: [],
-              borderDashOffset: 0.0,
-              borderJoinStyle: 'miter',
-              pointBorderColor: "#FF6F00",
-              pointBackgroundColor: "#fff",
-              pointBorderWidth: 5,
-              pointHoverRadius: 6,
-              pointHoverBackgroundColor: "#FF6F00",
-              pointHoverBorderColor: "rgba(220,220,220,1)",
-              pointHoverBorderWidth:2,
-              pointRadius: 1,
-              pointHitRadius: 10,
-              data: [15, 20, 35, 25, 40, 45, 50],
-              spanGaps: false,
-          },
-        {
-              label: "Bima",
-              fill: false,
-              lineTension: 0.1,
-              backgroundColor: "#E91E63",
-              borderColor: "#E91E63",
-              borderCapStyle: 'round',
-              borderWidth: 1,
-              borderDash: [],
-              borderDashOffset: 0.0,
-              borderJoinStyle: 'miter',
-              pointBorderColor: "#AD1457",
-              pointBackgroundColor: "#fff",
-              pointBorderWidth: 5,
-              pointHoverRadius: 6,
-              pointHoverBackgroundColor: "#AD1457",
-              pointHoverBorderColor: "rgba(220,220,220,1)",
-              pointHoverBorderWidth:2,
-              pointRadius: 1,
-              pointHitRadius: 10,
-              data: [40, 42, 43, 39, 30, 41, 20],
-              spanGaps: false,
-          }*/
+        },
     ]
     },
     options: {
       bezierCurve: true,
       tooltipTemplate: "<%if (label){%><%= '$ ' + label %>: <%}%><%= '$ ' + value %>",
-      // String - Template string for multiple tooltips
       multiTooltipTemplate: "<%= value + ' %' %>",
         legend: {
-            //display: false
         },
         scales: {
             yAxes: [{
@@ -684,59 +601,12 @@ var myChartLineMobile = new Chart(ctxLineMobile, {
             pointHitRadius: 10,
             data: [17426000, 24126000, 66161000, 183493000],
             spanGaps: true,
-        }/*,
-        {
-              label: "Gresik",
-              fill: false,
-              lineTension: 0.1,
-              backgroundColor: "#FFCA28",
-              borderColor: "#FF6F00",
-              borderCapStyle: 'round',
-              borderWidth: 1,
-              borderDash: [],
-              borderDashOffset: 0.0,
-              borderJoinStyle: 'miter',
-              pointBorderColor: "#FF6F00",
-              pointBackgroundColor: "#fff",
-              pointBorderWidth: 5,
-              pointHoverRadius: 6,
-              pointHoverBackgroundColor: "#FF6F00",
-              pointHoverBorderColor: "rgba(220,220,220,1)",
-              pointHoverBorderWidth:2,
-              pointRadius: 1,
-              pointHitRadius: 10,
-              data: [15, 20, 35, 25, 40, 45, 50],
-              spanGaps: false,
-          },
-        {
-              label: "Bima",
-              fill: false,
-              lineTension: 0.1,
-              backgroundColor: "#E91E63",
-              borderColor: "#E91E63",
-              borderCapStyle: 'round',
-              borderWidth: 1,
-              borderDash: [],
-              borderDashOffset: 0.0,
-              borderJoinStyle: 'miter',
-              pointBorderColor: "#AD1457",
-              pointBackgroundColor: "#fff",
-              pointBorderWidth: 5,
-              pointHoverRadius: 6,
-              pointHoverBackgroundColor: "#AD1457",
-              pointHoverBorderColor: "rgba(220,220,220,1)",
-              pointHoverBorderWidth:2,
-              pointRadius: 1,
-              pointHitRadius: 10,
-              data: [40, 42, 43, 39, 30, 41, 20],
-              spanGaps: false,
-          }*/
+        },
     ]
     },
     options: {
       bezierCurve: true,
       tooltipTemplate: "<%if (label){%><%= '$ ' + label %>: <%}%><%= '$ ' + value %>",
-      // String - Template string for multiple tooltips
       multiTooltipTemplate: "<%= value + ' %' %>",
         legend: {
             display: false

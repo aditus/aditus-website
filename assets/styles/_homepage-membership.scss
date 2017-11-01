@@ -2,7 +2,7 @@
 #membership {
   .container {
     // border-bottom: 1px solid $headings-color;
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(lg) {
       max-width: 65%;
     }
   }
@@ -32,7 +32,7 @@
       max-width: 100%;
       margin-left: 0;
       margin-right: 0;
-      height: 450px;
+      height: 550px;
     }
   }
 }
