@@ -109,6 +109,11 @@ a.whitepaper-download-nav{
     transition: 0.3s;
     text-decoration: none;
   }
+
+  span {
+    display: block;
+    font-size: 0.7em;
+  }
 }
 
 .deshide {
@@ -339,15 +344,18 @@ nav.mobile-nav {
 .whitepaper-download a {
   font-size: 1em;
   font-family: 'PlayfairDisplay-Regular', serif;
-  color: #ddd;
   padding: 10px 15px;
   letter-spacing:1px;
   display: inline-block;
   margin: 0;
-}
+  font-weight: 700;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
 
-.whitepaper-download a:hover {
-  border-color: #fff;
+  &:hover {
+    border-color: #fff;
+  }
 }
 
 #arrow-down {
