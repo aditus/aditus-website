@@ -141,10 +141,27 @@ a.whitepaper-download-nav{
   padding: 10px 0 20px 30px;
   text-align: center;
 
+  .channels {
+    margin: 0 auto ($spacer-y);
+
+    a {
+      opacity: 0.6;
+
+      &:hover {
+        opacity: 1;
+        transition: 0.6s;
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      max-width: 25%;
+    }
+  }
+
   .logo {
     width: 50px;
     display: block;
-    margin: 0 auto ($spacer-y / 2);
+    margin: 0 auto ($spacer-y);
   }
 }
 
@@ -291,10 +308,6 @@ nav.mobile-nav {
     url(/dist/images/city.jpg);
   background-attachment: fixed;
   background-size: cover;
-}
-
-#team + section {
-  padding: 0 10% 5% 10%;
 }
 
 .banner {
@@ -663,6 +676,7 @@ nav.mobile-nav {
 @import "homepage-all-round-access";
 @import "homepage-tokensale";
 @import "homepage-opportunity";
+@import "homepage-blog";
 
 /*------------------------------------*\
     RESPONSIVE
