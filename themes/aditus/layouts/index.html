@@ -425,12 +425,21 @@
     <div class='container'>
       <div class='row'>
         <div class='latest-post col-md-7'>
-          <h2>Latest Blog Post</h2>
-          <h3><a href='https://medium.com/aditusnetwork/aditus-worlds-first-luxury-access-platform-connecting-luxury-merchants-to-crypto-affluents-to-1ff641e85c67'>Aditus™, world’s first luxury access platform connecting luxury merchants to crypto-affluents to launch token sale</a></h3>
-          <p>
-            Cryptocurrencies are currently the fastest growing new asset class, giving rise to a growing new community of high net worth individuals with significant Bitcoin and altcoin holdings known as “crypto-affluents”.
-          </p>
-          <a href='https://medium.com/aditusnetwork/aditus-worlds-first-luxury-access-platform-connecting-luxury-merchants-to-crypto-affluents-to-1ff641e85c67' class='readmore'>Read more</a>
+          <h2><img src='/dist/images/channel-medium.png' /> Latest From Our Blog</h2>
+          {{ range $i, $e := (where .Site.RegularPages "Section" "blog") }}
+          <div class='post row'>
+            <div class='thumb col-md-4'>
+              <a href='{{ .Params.link }}'>
+                <img src='{{ .Params.thumb }}' />
+              </a>
+            </div>
+            <div class='summary col-md-8 order-md-first'>
+              <h3><a href='{{ .Params.link }}'>{{ .Params.title }}</a></h3>
+              <p>{{ .Summary }}</p>
+              <a href='{{ .Params.link }}' class='readmore'>Read more</a>
+            </div>
+          </div>
+          {{ end }}
         </div>
         <div class='channels col-md-5'>
           <div class='row'>
@@ -439,13 +448,13 @@
             </div>
           </div>
           <div class='row'>
-            <div class='col-md-3 channel'>
+            <div class='col col-md-3 channel'>
               <a href='https://www.linkedin.com/in/aditus-concierge-38b545152/' target='_blank'><img src='/dist/images/channel-linkedin.png' alt='LinkedIn'></a>
             </div>
-            <div class='col-md-3 channel'>
+            <div class='col col-md-3 channel'>
               <a href='http://t.me/aditusnetwork' target='_blank'><img src='/dist/images/channel-telegram.png' alt='Telegram'></a>
             </div>
-            <div class='col-md-3 channel'>
+            <div class='col col-md-3 channel'>
               <a href='https://medium.com/aditusnetwork' target='_blank'><img src='/dist/images/channel-medium.png' alt='Medium'></a>
             </div>
           </div>
