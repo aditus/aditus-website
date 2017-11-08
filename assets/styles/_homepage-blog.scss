@@ -36,6 +36,29 @@
     margin-bottom: ($spacer-y * 2);
   }
 
+  .channels{
+    ul{
+      margin-left: 0px;
+      padding-left: 0px;
+      list-style: none;
+      margin-top: 7px;
+
+      li.channel{
+        text-align: left;
+        position: relative;
+        margin-bottom: 20px;
+
+        a{
+          span{
+            top: 15px;
+            position: absolute;
+            left: 80px;
+          }
+        }
+      }
+    }
+  }
+
   .channels .channel {
     text-align: center;
 
@@ -55,6 +78,13 @@
   }
 
   .post {
+
+    @media (max-width: 767px) {
+      .thumb {
+        margin-bottom: 25px;
+      }
+    }
+
     .thumb img {
       display: block;
       max-width: 100%;
@@ -62,6 +92,18 @@
       width: 100%;
       margin-bottom: $spacer-y;
       border: 2px solid #1a1818;
+    }
+
+    h3{
+      a{
+        font-weight: bold;
+      }
+    }
+
+    .summary{
+      p{
+        text-align: justify;
+      }
     }
   }
 }
