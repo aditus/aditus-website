@@ -25,4 +25,14 @@ jQuery(document).ready(function($) {
 	  $(this).parents('.team-people').find('.aditus-button1').show();
 	  $(this).parents('.team-people').find('.deshide').hide();
   });
+
+  // blog vertical carousel
+  $('.posts-wrap').slick({
+    dots: false,
+    vertical: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoPlay: false,
+    infinite: false,
+  });
 });

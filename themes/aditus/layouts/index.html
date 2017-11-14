@@ -425,26 +425,31 @@
     <div class='container'>
       <div class='row'>
         <div class='latest-post col-md-8'>
-          <h2><img src='/dist/images/channel-medium.png' /> Latest From Our Blog</h2>
+          <h2><a name='blog'><img src='/dist/images/channel-medium.png' /> Latest From Our Blog</a></h2>
 
-          {{ range $i, $e := (where .Site.RegularPages "Section" "blog") }}
+          <div class='posts-wrap'>
+            {{ range $i, $e := (where .Site.RegularPages "Section" "blog") }}
 
-          <div class='post row'>
-            <div class='thumb col-md-3'>
-              <a href='{{ .Params.link }}'>
-                <img src='{{ .Params.thumb }}' />
-              </a>
+            <div class='post'>
+              <div class='row'>
+                <div class='thumb col-md-3'>
+                  <a href='{{ .Params.link }}'>
+                    <img src='{{ .Params.thumb }}' />
+                  </a>
+                </div>
+
+                <div class='summary col-md-9'>
+                  <h3><a href='{{ .Params.link }}'>{{ .Params.title }}</a></h3>
+                  <p>
+                    {{ .Summary }}
+                    <a href='{{ .Params.link }}' class='readmore'>Read more</a>
+                  </p>
+                </div>
+              </div>
             </div>
 
-            <div class='summary col-md-9'>
-              <h3><a href='{{ .Params.link }}'>{{ .Params.title }}</a></h3>
-              <p>{{ .Summary }}</p>
-              <a href='{{ .Params.link }}' class='readmore'>Read more</a>
-            </div>
+            {{ end }}
           </div>
-
-          {{ end }}
-
         </div>
 
         <div class='channels col-md-4'>

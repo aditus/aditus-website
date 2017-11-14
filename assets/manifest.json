@@ -2,6 +2,7 @@
   "dependencies": {
     "main.js": {
       "files": [
+        "scripts/lib/slick.min.js",
         "scripts/lib/modernizr-2.7.1.min.js",
         "scripts/lib/conditionizr-4.3.0.min.js",
         "scripts/contact.js",
