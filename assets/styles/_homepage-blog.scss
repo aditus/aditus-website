@@ -78,12 +78,7 @@
   }
 
   .post {
-
-    @media (max-width: 767px) {
-      .thumb {
-        margin-bottom: 25px;
-      }
-    }
+    margin-bottom: ($spacer-y * 1.5);
 
     .thumb img {
       display: block;

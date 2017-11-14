@@ -427,48 +427,32 @@
         <div class='latest-post col-md-8'>
           <h2><img src='/dist/images/channel-medium.png' /> Latest From Our Blog</h2>
 
-          <div class='post row'>
-            {{ range $i, $e := (where .Site.RegularPages "Section" "blog") }}
-
-              <div class='thumb col-md-6'>
-                <a href='{{ .Params.link }}'>
-                  <img src='{{ .Params.thumb }}' />
-                </a>
-
-                <div class='summary order-md-first'>
-                  <h3><a href='{{ .Params.link }}'>{{ .Params.title }}</a></h3>
-                  <p>{{ .Summary }}</p>
-                  <a href='{{ .Params.link }}' class='readmore'>Read more</a>
-                </div>
-              </div>
-            {{ end }}
-          </div>
-
-          <!--
           {{ range $i, $e := (where .Site.RegularPages "Section" "blog") }}
+
           <div class='post row'>
-            <div class='thumb col-md-4'>
+            <div class='thumb col-md-3'>
               <a href='{{ .Params.link }}'>
                 <img src='{{ .Params.thumb }}' />
               </a>
             </div>
-            <div class='summary col-md-8 order-md-first'>
+
+            <div class='summary col-md-9'>
               <h3><a href='{{ .Params.link }}'>{{ .Params.title }}</a></h3>
               <p>{{ .Summary }}</p>
               <a href='{{ .Params.link }}' class='readmore'>Read more</a>
             </div>
           </div>
+
           {{ end }}
-          -->
+
         </div>
+
         <div class='channels col-md-4'>
           <div class='row'>
             <div class='col'>
               <h2>Connect With Us</h2>
             </div>
           </div>
-
-
 
           <div class='row'>
             <div class='col col-md-12'>
