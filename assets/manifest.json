@@ -2,11 +2,10 @@
   "dependencies": {
     "main.js": {
       "files": [
+        "scripts/lib/jquery-3.2.1.min.js",
+        "../node_modules/bootstrap/js/dist/util.js",
+        "../node_modules/bootstrap/js/dist/modal.js",
         "scripts/lib/slick.min.js",
-        "scripts/lib/modernizr-2.7.1.min.js",
-        "scripts/lib/conditionizr-4.3.0.min.js",
-        "scripts/contact.js",
-        "scripts/jqBootstrapValidation.js",
         "scripts/main.js"
       ],
       "main": true

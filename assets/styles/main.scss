@@ -111,11 +111,6 @@ a.whitepaper-download-nav{
     text-decoration: none;
   }
 
-  span {
-    display: block;
-    font-size: 0.7em;
-    font-family: $font-family-sans-serif;
-  }
 }
 
 .deshide {
@@ -356,20 +351,44 @@ nav.mobile-nav {
   }
 }
 
-.whitepaper-download a {
-  font-size: 1em;
-  font-family: 'PlayfairDisplay-Regular', serif;
-  padding: 10px 15px;
-  letter-spacing:1px;
-  display: inline-block;
-  margin: 0;
-  font-weight: 700;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
+.call-to-actions {
+  a {
+    display: block;
+    color: #f6f6f6;
+    padding: 6px 15px;
+    letter-spacing:1px;
+    background-color:#c69c2b;
+    vertical-align: middle;
 
-  &:hover {
-    border-color: #fff;
+    font-size: 1em;
+    font-family: 'PlayfairDisplay-Regular', serif;
+    letter-spacing:1px;
+    display: inline-block;
+    font-weight: 700;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    padding: 10px 15px;
+    margin: 0;
+    min-height: 4.3em;
+
+    @include media-breakpoint-down(md) {
+      margin-bottom: $spacer-y;
+    }
+
+    &:hover {
+      border-color: #fff;
+      color: #c69c2b;
+      background-color:#f6f6f6;
+      transition: 0.3s;
+      text-decoration: none;
+    }
+
+    span {
+      display: block;
+      font-size: 0.7em;
+      font-family: $font-family-sans-serif;
+    }
   }
 }
 
@@ -604,6 +623,14 @@ nav.mobile-nav {
 
 #team, #opportunity, #access{
   background-attachment: scroll;
+}
+
+#mailing-list-modal {
+  color: $primary;
+
+  h2 {
+    margin: 0
+  }
 }
 
 @keyframes arrow {
