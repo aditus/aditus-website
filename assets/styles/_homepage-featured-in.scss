@@ -1,0 +1,18 @@
+#featured-in{
+  margin-bottom: 2.4em;
+
+  .item_logo{
+    text-align: center;
+    margin-bottom: 2.4em;
+
+    img{
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      margin-bottom: 1.4em;
+    }
+  }
+}
