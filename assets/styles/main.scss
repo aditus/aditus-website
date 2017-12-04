@@ -9,6 +9,7 @@
 @import "normalize";
 @import "bootstrap-variables";
 @import "../../node_modules/bootstrap/scss/bootstrap";
+//@import "jplayer-blue-monday";
 @import "slick";
 
 /*------------------------------------*\
@@ -111,6 +112,18 @@ a.whitepaper-download-nav{
     text-decoration: none;
   }
 
+}
+
+.downloadButton{
+  .dropdown-menu{
+    padding: .15rem;
+    margin: .100rem 0 0;
+
+    a.dropdown-item{
+      color: #000 !important;
+      padding: .10rem 1rem;
+    }
+  }
 }
 
 .deshide {
