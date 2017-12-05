@@ -118,10 +118,17 @@ a.whitepaper-download-nav{
   .dropdown-menu{
     padding: .15rem;
     margin: .100rem 0 0;
+    min-width: 7rem;
 
     a.dropdown-item{
       color: #000 !important;
-      padding: .10rem 1rem;
+      padding: 0px 0px 3px;
+      font-size: 11px;
+      text-align: center;
+    }
+
+    a:last-of-type{
+      padding-bottom: 0px;
     }
   }
 }

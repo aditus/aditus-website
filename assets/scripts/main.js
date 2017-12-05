@@ -35,4 +35,6 @@ jQuery(document).ready(function($) {
     autoPlay: false,
     infinite: false,
   });
+
+  $('.dropdown-toggle').dropdown();
 });
