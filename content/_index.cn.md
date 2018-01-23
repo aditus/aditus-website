@@ -1,11 +1,11 @@
 ---
 title : "Home"
-url : "/"
-groups : ["en"]
+url : "/cn"
+groups : ["cn"]
 luxuryAccessPlatform : "Luxury Access Platform for Crypto-Affluents"
 aditusPlatform : "Aditus is a revolutionary new platform bringing the world of luxury to crypto-affluents, through a privacy-centric decentralised network utilising smart contracts and blockchain technology."
 main_menu:
-    menu_1: "Opportunity" 
+    menu_1: "机会" 
     menu_2: "Aditus Membership" 
     menu_3: "All Round Access" 
     menu_4: "Uniquely Private" 
@@ -14,7 +14,7 @@ main_menu:
     menu_7: "Token Sale"
     menu_8: "Token Utility" 
     menu_9: "Partners"
-    menu_10: "Download" 
+    menu_10: "下载" 
     menu_11: "Whitepaper" 
     menu_12: "Deck" 
 hero_content:
@@ -23,10 +23,10 @@ hero_content:
     content_3: "Token Sale Completed <br> <span>Thank you!</span>"
     content_4: "Download Whitepaper <span>Updated 29 Nov 2017</span>"
 blog:
-    text_1: "Latest From Our Blog"
+    text_1: "最新来自我们的博客"
     text_2: "Read more"
 social_media:
-    text_1: "Connect With Us"
+    text_1: "联系我们"
     text_2: "connect with us on linkedin"
     text_3: "chat with us on telegram"
     text_4: "read us on medium"
@@ -34,7 +34,7 @@ social_media:
 featured_section:
     text_1: "Featured in"
     text_2: "Aditus featured on Channel News Asia. <br>Original news link"
-    text_3: "here"
+    text_3: "here"  
 opportunity_brewing:
     text_1: "Opportunity brewing: crypto-affluents and their desired luxury lifestyle"    
     text_2: "Cryptocurrency Market Capitalisation"    
@@ -50,12 +50,12 @@ membership:
     text_2: "Ordinary Membership (Free)"    
     text_3: "Downloading the Aditus app, and entering your preferences makes you an Ordinary member. With your user preferences  set, you will start  receiving Ethereum based Smart Invitations for offers, events & services from merchants. Earn rewards and gain access to exclusive deals."    
     text_4: "VIP Membership"    
-    text_5: "The highest level of access to luxury for crypto-users. There are three tiers of VIP membership: Gold, Platinum and Diamond. All enjoy a suite of exclusive luxury privileges like a 24-7 concierge, special access for sought after establishments and shows among many others. VIP membership slots are limited."
+    text_5: "The highest level of access to luxury for crypto-users. There are three tiers of VIP membership: Gold, Platinum and Diamond. All enjoy a suite of exclusive luxury privileges like a 24-7 concierge, special access for sought after establishments and shows among many others. VIP membership slots are limited."    
 platform_components:
     text_1: "Platform components"        
     text_2: "Allows Aditus users to access global luxury lifestyle offerings from merchants accepting crypto-currencies. Rewards in ADI tokens given for engagement or purchase."        
     text_3: "Allows Aditus merchants to receive payments in ADI tokens and major crypto-currencies, with the option of conversion to fiat currencies."        
-    text_4: "Ultimate access to luxury. The most exclusive offers often whispered about but rarely experienced. Only for our VIP members."
+    text_4: "Ultimate access to luxury. The most exclusive offers often whispered about but rarely experienced. Only for our VIP members." 
 benefits_section:
     text_1: "All Round Access" 
     text_2: "Unlock an entire spectrum of luxury lifestyle products, services and experiences through using crypto-currencies. All carefully curated by Aditus." 
@@ -102,5 +102,5 @@ token_sale:
     text_2_3: "for updates on token distribution and roll-out"     
     text_3: "Amount Raised"     
     text_4: "Based on ETH / USD rates on dates ETH received."     
-    text_5: "Thank you to all our participants"     
+    text_5: "Thank you to all our participants"
 ---

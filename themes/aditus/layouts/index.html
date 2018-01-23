@@ -15,14 +15,13 @@
          </div>-->
         <div class='col-lg-7 align-self-center'>
           <div class="landing text-container">
-            <h1>Luxury Access Platform for Crypto-Affluents</h1>
-            <p class='intro'>Aditus is a revolutionary new platform bringing the world of luxury to crypto-affluents, through a privacy-centric decentralised network utilising smart contracts and blockchain technology.</p>
+            <h1>{{ $.Param "hero_content.content_1" | safeHTML }}</h1>
+            <p class='intro'>{{ $.Param "hero_content.content_2" | safeHTML }}</p>
             <p class="call-to-actions">
-              <a href="#tokensale"
-                 class='join-mailing-list'>Token Sale Completed <br> <span>Thank you!</span>
+              <a href="#tokensale" class='join-mailing-list'>{{ $.Param "hero_content.content_3" | safeHTML }}
               </a>
               <a href="/Aditus-Whitepaper.pdf" class='whitepaper-download-nav'>
-                Download Whitepaper <span>Updated 29 Nov 2017</span>
+                {{ $.Param "hero_content.content_4" | safeHTML }}
               </a>
             </p>
           </div>
@@ -35,7 +34,7 @@
     <div class='container'>
       <div class='row'>
         <div class='latest-post col-md-8'>
-          <h2><a name='blog'><img src='/dist/images/channel-medium.png' /> Latest From Our Blog</a></h2>
+          <h2><a name='blog'><img src='/dist/images/channel-medium.png' /> {{ $.Param "blog.text_1" | safeHTML }}</a></h2>
 
           <div class='posts-wrap'>
             {{ range $i, $e := (where .Site.RegularPages "Section" "blog") }}
@@ -52,7 +51,7 @@
                   <h3><a href='{{ .Params.link }}'>{{ .Params.title }}</a></h3>
                   <p>
                     {{ .Summary }}
-                    <a href='{{ .Params.link }}' class='readmore'>Read more</a>
+                    <a href='{{ .Params.link }}' class='readmore'>{{ $.Param "blog.text_2" | safeHTML }}</a>
                   </p>
                 </div>
               </div>
@@ -65,7 +64,7 @@
         <div class='channels col-md-4'>
           <div class='row'>
             <div class='col'>
-              <h2>Connect With Us</h2>
+              <h2>{{ $.Param "social_media.text_1" | safeHTML }}</h2>
             </div>
           </div>
 
@@ -75,25 +74,25 @@
                 <li class="channel">
                   <a href='https://www.linkedin.com/in/aditus-network-38b545152/' target='_blank'>
                     <img src='/dist/images/channel-linkedin.png' alt='LinkedIn'>
-                    <span>connect with us on linkedin</span>
+                    <span>{{ $.Param "social_media.text_2" | safeHTML }}</span>
                   </a>
                 </li>
                 <li class="channel">
                   <a href='http://t.me/aditusnetwork' target='_blank'>
                     <img src='/dist/images/channel-telegram.png' alt='Telegram'>
-                    <span>chat with us on telegram</span>
+                    <span>{{ $.Param "social_media.text_3" | safeHTML }}</span>
                   </a>
                 </li>
                 <li class="channel">
                   <a href='https://medium.com/aditusnetwork' target='_blank'>
                     <img src='/dist/images/channel-medium.png' alt='Medium'>
-                    <span>read us on medium</span>
+                    <span>{{ $.Param "social_media.text_4" | safeHTML }}</span>
                   </a>
                 </li>
                 <li class="channel">
                   <a href='http://www.instagram.com/aditus.life' target='_blank'>
                     <img src='/dist/images/channel-instagram.png' alt='Instagram'>
-                    <span>see us on instagram</span>
+                    <span>{{ $.Param "social_media.text_5" | safeHTML }}</span>
                   </a>
                 </li>
               </ul>
@@ -106,7 +105,7 @@
 
   <section id='featured-in' class='container-fluid clear'>
     <div class='container'>
-      <h2>Featured in</h2>
+      <h2>{{ $.Param "featured_section.text_1" | safeHTML }}</h2>
 
       <div class="row">
         <div class="col-md-6 featured-video">
@@ -115,7 +114,7 @@
           </div>
 
           <div class="text-center">
-            Aditus featured on Channel News Asia. <br>Original news link <a href="http://www.channelnewsasia.com/news/business/more-singapore-based-companies-find-appeal-in-initial-coin-9437706" target="_blank">here</a>
+            {{ $.Param "featured_section.text_2" | safeHTML }} <a href="http://www.channelnewsasia.com/news/business/more-singapore-based-companies-find-appeal-in-initial-coin-9437706" target="_blank">{{ $.Param "featured_section.text_3" | safeHTML }}</a>
           </div>
         </div>
         <div class="col-md-6">
@@ -173,7 +172,7 @@
 
   <section id="opportunity" class="container-fluid clear opportunity">
     <div class='container'>
-      <h2>Opportunity brewing: crypto-affluents and their desired luxury lifestyle</h2>
+      <h2>{{ $.Param "opportunity_brewing.text_1" | safeHTML }}</h2>
 
       <div class='row'>
         <div class='col-md-5'>
@@ -187,22 +186,23 @@
 
         <div class='col-md-7'>
           <div class="opportunityChartDescription">
-            <p>Rising crypto-currency values have created a new class of affluent individuals – the crypto affluents.
-              Many aspire to the luxury lifestyle but find themselves excluded and lacking access. </p>
-            <p>Reasons for this include:</p>
+            <p>{{ $.Param "opportunity_brewing.text_3" | safeHTML }}</p>
+
+            <p>{{ $.Param "opportunity_brewing.text_4" | safeHTML }}</p>
+
             <ul>
               <li>
-                Crypto-affluents hold much of their wealth in crypto-currencies but few luxury merchants accept crypto-currencies as payment
+                {{ $.Param "opportunity_brewing.text_4_1.text_1" | safeHTML }}
               </li>
               <li>
-                Crypto-affluents value data privacy immensely, while luxury merchants conversely require more data to target market and to create personalised offers
+                {{ $.Param "opportunity_brewing.text_4_1.text_2" | safeHTML }}
               </li>
               <li>
-                Luxury merchants simply do not know how to reach out to people whose wealth lies outside traditional banking channels
+                {{ $.Param "opportunity_brewing.text_4_1.text_3" | safeHTML }}
               </li>
             </ul>
             <p>
-              Aditus bridges this gap by integrating smart contracts, payment gateways and strong privacy protection technologies into a single platform – thus, empowering crypto-users to unlock their desired luxury lifestyle.
+              {{ $.Param "opportunity_brewing.text_5" | safeHTML }}
             </p>
           </div>
         </div>
@@ -212,23 +212,23 @@
 
   <section id="membership" class="container-fluid clear">
     <div class='container'>
-      <h2>Aditus membership unlocks the luxury lifestyle</h2>
+      <h2>{{ $.Param "membership.text_1" | safeHTML }}</h2>
       <div class='row'>
         <div class='col-md-6'>
           <img src="/dist/images/phones.png" alt="phone" class="phone float-md-right">
         </div>
         <div class='col-md-6 order-md-first'>
           <div class='ordinary'>
-            <h4>Ordinary Membership (Free)</h4>
+            <h4>{{ $.Param "membership.text_2" | safeHTML }}</h4>
             <p>
-              Downloading the Aditus app, and entering your preferences makes you an Ordinary member. With your user preferences  set, you will start  receiving Ethereum based Smart Invitations for offers, events & services from merchants. Earn rewards and gain access to exclusive deals.
+              {{ $.Param "membership.text_3" | safeHTML }}
             </p>
           </div>
 
           <div class='vip'>
-            <h4>VIP Membership</h4>
+            <h4>{{ $.Param "membership.text_4" | safeHTML }}</h4>
             <p>
-              The highest level of access to luxury for crypto-users. There are three tiers of VIP membership: Gold, Platinum and Diamond. All enjoy a suite of exclusive luxury privileges like a 24-7 concierge, special access for sought after establishments and shows among many others. VIP membership slots are limited.
+              {{ $.Param "membership.text_5" | safeHTML }}
             </p>
           </div>
         </div>
@@ -238,20 +238,20 @@
 
   <section id="privacy" class="container-fluid">
     <div class='container'>
-      <h2>Platform components </h2>
+      <h2>{{ $.Param "platform_components.text_1" | safeHTML }}</h2>
 
       <div class="row privacy-item-2">
         <div class="privacy-item col-lg-4">
           <img src="/dist/images/privacy/aditus_rewards.png" class="priv-icon">
-          <p>Allows Aditus users to access global luxury lifestyle offerings from merchants accepting crypto-currencies. Rewards in ADI tokens given for engagement or purchase.</p>
+          <p>{{ $.Param "platform_components.text_2" | safeHTML }}</p>
         </div>
         <div class="privacy-item col-lg-4">
           <img src="/dist/images/privacy/aditus_pay.png" class="priv-icon">
-          <p>Allows Aditus merchants to receive payments in ADI tokens and major crypto-currencies, with the option of conversion to fiat currencies.</p>
+          <p>{{ $.Param "platform_components.text_3" | safeHTML }}</p>
         </div>
         <div class="privacy-item col-lg-4">
           <img src="/dist/images/privacy/aditus_vip.png" class="priv-icon">
-          <p>Ultimate access to luxury. The most exclusive offers often whispered about but rarely experienced. Only for our VIP members.</p>
+          <p>{{ $.Param "platform_components.text_4" | safeHTML }}</p>
         </div>
       </div>
     </div>
@@ -259,65 +259,64 @@
 
   <section class="benefits container-fluid clear" id='access'>
     <div class='container'>
-      <h2>All Round Access</h2>
-      <h3 class='subtitle'>
-        Unlock an entire spectrum of luxury lifestyle products, services and experiences through using crypto-currencies. All
-        carefully curated by Aditus.</h3>
+      <h2>{{ $.Param "benefits_section.text_1" | safeHTML }}</h2>
+
+      <h3 class='subtitle'>{{ $.Param "benefits_section.text_2" | safeHTML }}</h3>
     </div>
     <div class='container-fluid'>
       <div class="allRoundAccessOffering">
         <div class="allRoundAccessOfferingEntry">
           <div id="allRoundAccessOfferingEntry1" class="allRoundAccessOfferingEntryImg"></div>
           <div class="allRoundAccessOfferingEntryText">
-            Luxury villas & hotels
+            {{ $.Param "benefits_section.text_3.text_1" | safeHTML }}
           </div>
         </div>
         <div class="allRoundAccessOfferingEntry">
           <div id="allRoundAccessOfferingEntry2" class="allRoundAccessOfferingEntryImg"></div>
           <div class="allRoundAccessOfferingEntryText">
-            Shopping
+            {{ $.Param "benefits_section.text_3.text_2" | safeHTML }}
           </div>
         </div>
         <div class="allRoundAccessOfferingEntry">
           <div id="allRoundAccessOfferingEntry7" class="allRoundAccessOfferingEntryImg"></div>
           <div class="allRoundAccessOfferingEntryText">
-            Personalised travel experiences
+            {{ $.Param "benefits_section.text_3.text_3" | safeHTML }}
           </div>
         </div>
         <div class="allRoundAccessOfferingEntry">
           <div id="allRoundAccessOfferingEntry9" class="allRoundAccessOfferingEntryImg"></div>
           <div class="allRoundAccessOfferingEntryText">
-            Special offerings
+            {{ $.Param "benefits_section.text_3.text_4" | safeHTML }}
           </div>
         </div>
         <div class="allRoundAccessOfferingEntry">
           <div id="allRoundAccessOfferingEntry5" class="allRoundAccessOfferingEntryImg"></div>
           <div class="allRoundAccessOfferingEntryText">
-            Yacht charters
+            {{ $.Param "benefits_section.text_3.text_5" | safeHTML }}
           </div>
         </div>
         <div class="allRoundAccessOfferingEntry">
           <div id="allRoundAccessOfferingEntry6" class="allRoundAccessOfferingEntryImg"></div>
           <div class="allRoundAccessOfferingEntryText">
-            Private functions & events
+            {{ $.Param "benefits_section.text_3.text_6" | safeHTML }}
           </div>
         </div>
         <div class="allRoundAccessOfferingEntry">
           <div id="allRoundAccessOfferingEntry3" class="allRoundAccessOfferingEntryImg"></div>
           <div class="allRoundAccessOfferingEntryText">
-            Luxury vehicle rentals
+            {{ $.Param "benefits_section.text_3.text_7" | safeHTML }}
           </div>
         </div>
         <div class="allRoundAccessOfferingEntry">
           <div id="allRoundAccessOfferingEntry8" class="allRoundAccessOfferingEntryImg"></div>
           <div class="allRoundAccessOfferingEntryText">
-            Concierge services
+            {{ $.Param "benefits_section.text_3.text_8" | safeHTML }}
           </div>
         </div>
         <div class="allRoundAccessOfferingEntry">
           <div id="allRoundAccessOfferingEntry4" class="allRoundAccessOfferingEntryImg"></div>
           <div class="allRoundAccessOfferingEntryText">
-            Emergency evacuation
+            {{ $.Param "benefits_section.text_3.text_9" | safeHTML }}
           </div>
         </div>
       </div>
@@ -325,24 +324,24 @@
 
   <section id="privacy" class="container-fluid">
     <div class='container'>
-      <h2>Your private data should remain just that. Private.</h2>
-      <h3 class="subtitle">Using a uniquely decentralised platform, Aditus enables luxury consumption without your
-        data being tracked. </h3>
+      <h2>{{ $.Param "privacy_section.text_1" | safeHTML }}</h2>
+
+      <h3 class="subtitle">{{ $.Param "privacy_section.text_2" | safeHTML }}</h3>
       <div class="row">
         <div class="privacy-item col-lg-4">
           <img src="/dist/images/decentralised.png" class="priv-icon">
-          <h4>Decentralised Platform</h4>
-          <p>Unlike other rewards platforms, Aditus does not track and collect user data.</p>
+          <h4>{{ $.Param "privacy_section.text_3" | safeHTML }}</h4>
+          <p>{{ $.Param "privacy_section.text_4" | safeHTML }}</p>
         </div>
         <div class="privacy-item col-lg-4">
           <img src="/dist/images/privacy2.png" class="priv-icon">
-          <h4>Data Controlled by Users</h4>
-          <p>User data is enrypted and stored on the mobile device. No data leaves the phone unless specifically authorised by the user.</p>
+          <h4>{{ $.Param "privacy_section.text_5" | safeHTML }}</h4>
+          <p>{{ $.Param "privacy_section.text_6" | safeHTML }}</p>
         </div>
         <div class="privacy-item col-lg-4">
           <img src="/dist/images/privacy3.png" class="priv-icon">
-          <h4>Privacy + Rewards </h4>
-          <p>Transactions are not only private, but also earn you rewards via cashbacks.</p>
+          <h4>{{ $.Param "privacy_section.text_7" | safeHTML }}</h4>
+          <p>{{ $.Param "privacy_section.text_8" | safeHTML }}</p>
         </div>
       </div>
     </div>
@@ -352,10 +351,8 @@
 
   <section id="team" class="container-fluid clear">
     <div class='container'>
-      <h2>Team</h2>
-      <h3 class='subtitle'>The Aditus team is led by serial entrepreneurs with a strong track record in product
-        development, roll-out and company building. We possess decades of experience, domain knowledge and connections
-        in the luxury business.</h3>
+      <h2>{{ $.Param "team_section.text_1" | safeHTML }}</h2>
+      <h3 class='subtitle'>{{ $.Param "team_section.text_2" | safeHTML }}</h3>
 
       <div class="team">
         <div class="team-people">
@@ -495,7 +492,7 @@
         </div>
       </div>
 
-      <h2>Advisors</h2>
+      <h2>{{ $.Param "team_section.text_3" | safeHTML }}</h2>
       <div class="team advisor">
         <div class="team-people">
           <img src="/dist/images/shaun.png">
@@ -590,7 +587,7 @@
 
   <section id='partners' class='container-fluid clear'>
     <div class='container'>
-      <h2>Our Partners</h2>
+      <h2>{{ $.Param "partners_section.text_1" | safeHTML }}</h2>
       <div class='row justify-content-center'>
         <div class='col'>
           <a href='https://medium.com/aditusnetwork/aditus-network-offers-exclusive-rewards-for-kybernetworks-kgt-early-investors-909c41e47df9'>
@@ -633,26 +630,26 @@
 
   <section id="aditus-token" class="container-fluid clear">
     <div class='container'>
-      <h2>Aditus Token Utility</h2>
-      <h3 class="subtitle">The Aditus Token ultilises Ethereum's decentralised infrastructure to give you access to
-        luxury merchants.</h3>
+      <h2>{{ $.Param "token_utility.text_1" | safeHTML }}</h2>
+      <h3 class="subtitle">{{ $.Param "token_utility.text_2" | safeHTML }}</h3>
+
       <img src="/dist/images/logo-app.png" class="token-logo"/>
       <div class="utility-wrap row">
         <div class="utility col-md-3">
-          <h4>Membership Proof</h4>
-          <p>To access and create Smart Invitations</p>
+          <h4>{{ $.Param "token_utility.text_3" | safeHTML }}</h4>
+          <p>{{ $.Param "token_utility.text_4" | safeHTML }}</p>
         </div>
         <div class="utility col-md-3">
-          <h4>Rewards Currency</h4>
-          <p>Be rewarded for engagement with merchant offers and purchases</p>
+          <h4>{{ $.Param "token_utility.text_5" | safeHTML }}</h4>
+          <p>{{ $.Param "token_utility.text_6" | safeHTML }}</p>
         </div>
         <div class="utility col-md-3">
-          <h4>Transactional Currency</h4>
-          <p>Use Aditus tokens alongside other major crypto-currencies for payment at merchants</p>
+          <h4>{{ $.Param "token_utility.text_7" | safeHTML }}</h4>
+          <p>{{ $.Param "token_utility.text_8" | safeHTML }}</p>
         </div>
         <div class="utility col-md-3">
-          <h4>Voting Rights</h4>
-          <p>Voting rights on program line-ups at our events to personalise your desired Aditus experience</p>
+          <h4>{{ $.Param "token_utility.text_9" | safeHTML }}</h4>
+          <p>{{ $.Param "token_utility.text_10" | safeHTML }}</p>
         </div>
       </div>
     </div>
@@ -660,21 +657,21 @@
 
   <section id="tokensale" class="container-fluid">
     <div class='container'>
-      <h2>Aditus Token Sale is complete</h2>
-      <p class='subtitle'>Follow our <a href='https://medium.com/aditusnetwork'>blog</a> for updates on token distribution and roll-out</p>
+      <h2>{{ $.Param "token_sale.text_1" | safeHTML }}</h2>
+      <p class='subtitle'>{{ $.Param "token_sale.text_2_1" | safeHTML }} <a href='https://medium.com/aditusnetwork'>{{ $.Param "token_sale.text_2_2" | safeHTML }}</a> {{ $.Param "token_sale.text_2_3" | safeHTML }}</p>
       <div class='tokensale'>
         <div class='tokensaleFigures row justify-content-center'>
           <div class='tokensaleFiguresPanel col-md-4'>
-            <h3>Amount Raised</h3>
+            <h3>{{ $.Param "token_sale.text_3" | safeHTML }}</h3>
             <div class='tokensaleFiguresPanelSecondary publicSale text-center'>
               <span class="tokenCurrency">USD</span> <span class="count">7,100,193.81</span>
             </div>
-            <span class="priceNote">Based on ETH / USD rates on dates ETH received.</span>
+            <span class="priceNote">{{ $.Param "token_sale.text_4" | safeHTML }}</span>
           </div>
         </div>
         <div class='row'>
           <div class='col'>
-            <h3 class="subtitle">Thank you to all our participants</h3>
+            <h3 class="subtitle">{{ $.Param "token_sale.text_5" | safeHTML }}</h3>
           </div>
         </div>
       </div>
@@ -693,7 +690,7 @@
             labels: ["January 2015", "April 2016", "July 2017", "November 2017"],
             datasets: [
                 {
-                    label: "Cryptocurrency Market Capitalisation",
+                    label: '{{ $.Param "opportunity_brewing.text_2" | safeHTML }}',
                     fill: false,
                     lineTension: 0.1,
                     backgroundColor: "#c69c2b",
@@ -746,7 +743,7 @@
             labels: ["January 2015", "April 2016", "July 2017", "November 2017"],
             datasets: [
                 {
-                    label: "Cryptocurrency Market Capitalisation",
+                    label: '{{ $.Param "opportunity_brewing.text_2" | safeHTML }}',
                     fill: false,
                     lineTension: 0.1,
                     backgroundColor: "#c69c2b",

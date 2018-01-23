@@ -115,6 +115,12 @@ a.whitepaper-download-nav{
 }
 
 .downloadButton{
+  .lang-selection{
+    .dropdown-toggle{
+      text-transform: uppercase;
+    }
+  }
+
   .dropdown-menu{
     padding: .15rem;
     margin: .100rem 0 0;
@@ -129,6 +135,10 @@ a.whitepaper-download-nav{
 
     a:last-of-type{
       padding-bottom: 0px;
+    }
+
+    a.active{
+      color: #fff !important;
     }
   }
 }
