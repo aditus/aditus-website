@@ -30,6 +30,35 @@
     </div>
   </section>
 
+  <!--
+  <section id='blog' class='container-fluid'>
+    <div class='container'>
+      <h2>
+        <img src='/dist/images/channel-medium.png' /> {{ $.Param "blog.text_1" | safeHTML }}
+        <a href="https://medium.com/aditusnetwork" name="blog" class="view-more" target="_blank">view more</a>
+      </h2>
+
+      <div class="row blog-post">
+        {{ range first 4 (where .Site.RegularPages "Section" "blog") }}
+        <div class="col-md-3">
+          <div class="card">
+            <a href="{{ .Params.link }}" class="read-more" title="{{ .Params.title }}">
+              <img class="card-img-top" src="{{ .Params.thumb }}" alt="{{ .Params.title }}">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title text-center">{{ .Params.title }}</h5>
+            </div>
+            <div class="card-footer text-center">
+              <a href="{{ .Params.link }}" class="read-more" title="{{ .Params.title }}">{{ $.Param "blog.text_2" | safeHTML }}</a>
+            </div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  -->
+
   <section id='blog' class='container-fluid'>
     <div class='container'>
       <div class='row'>
@@ -360,25 +389,17 @@
           <h5>Julian Peh</h5>
           <h6>Co-Founder, CEO</h6><a href="https://linkedin.com/in/julianpeh" class="linkedin" target="_blank"></a>
           <p>
-            Julian is regarded as one of the foremost entrepreneurs in luxury tech in Asia, having founded and built Luxury-
-            Insider.com into the leading luxury portal in Asia
-            <span class="aditus-button1">more...</span>
+            {{ $.Param "team_members.member_1" | safeHTML }}
+            <span class="aditus-button1">{{ $.Param "global_text.text_1" | safeHTML }}</span>
             <span class='deshide'>
-            before it was acquired by media giant Singapore Press Holdings. Over the past 15 years he has launched and built numerous luxury marketing platforms including websites, apps and rewards programs focused on luxury.
+            {{ $.Param "team_members.member_1_1" | safeHTML }}
             <br/><br/>
-            He is highly experienced in digital product development and roll-out, and has been at the forefront
-            of rolling out tech solutions for luxury clients from online advertising, mobile marketing to data systems. His track
-            record includes signing up hundreds of luxury brands often for their very first forays into that technology.
+            {{ $.Param "team_members.member_1_2" | safeHTML }}
             <br/><br/>
-            He has been deeply involved in luxury rewards programs, having served as consultant for Citibank’s top end
-            Ultima card, as well as creating luxury rewards programs for Chinese banks and their credit cards. For the past 3
-            years, he has been Co-Founder and CEO of SERA, a rewards program in partnership with Visa China. SERA has
-            acquired rewards from >100 luxury brand stores to date.
+            {{ $.Param "team_members.member_1_3" | safeHTML }}
             <br/><br/>
-            Julian is an active investor in cryptocurrencies, and is concurrently a shareholder of Heart Media, owner of
-            Singapore RendezVous, Phuket RendezVous and Penang RendezVous as well as multiple magazines and
-            websites.
-            <span class="aditus-button2">less</span></span>
+            {{ $.Param "team_members.member_1_4" | safeHTML }}
+            <span class="aditus-button2">{{ $.Param "global_text.text_2" | safeHTML }}</span></span>
           </p>
         </div>
 
@@ -387,16 +408,15 @@
           <h5>Olivier Burlot</h5>
           <h6>Co-Founder, President</h6><a href="https://linkedin.com/in/olivierburlot" class="linkedin" target="_blank"></a>
           <p>
-            Leading luxury entrepreneur with a long track record in luxury events and media.
+            {{ $.Param "team_members.member_2" | safeHTML }}
             </br></br>
-            One of the most successful luxury media and event entrepreneurs in Asia,
-            <span class="aditus-button1">more...</span>
+            {{ $.Param "team_members.member_2_1" | safeHTML }}
+            <span class="aditus-button1">{{ $.Param "global_text.text_1" | safeHTML }}</span>
             <span class="deshide">
-            Olivier was at the forefront of luxury’s growth in Asia the last 20 years. Having helmed luxury media companies and yacht companies, Olivier also co-founded some of the most famous luxury shows in the world including Hainan RendezVous海天盛筵. He brings a wealth of global connections and relationships within the luxury industry.
+            {{ $.Param "team_members.member_2_2" | safeHTML }}
               </br></br>
-              Olivier is CEO of Heart Media, which also owns the Singapore RendezVous, Phuket RendezVous and Penang
-            Rendezvous, all leading luxury shows at the centre of ultra-affluent communities.
-            <span class="aditus-button2">less</span></span>
+            {{ $.Param "team_members.member_2_3" | safeHTML }}
+            <span class="aditus-button2">{{ $.Param "global_text.text_2" | safeHTML }}</span></span>
           </p>
         </div>
 
@@ -405,16 +425,13 @@
           <h5>Prakash Somosundram</h5>
           <h6>Co-Founder</h6><a href="https://linkedin.com/in/prakashsomo" class="linkedin" target="_blank"></a>
           <p>
-            Prakash is a leading digital entrepreneur who founded Yolk, a digital agency that served clients like Lenovo,
-            Microsoft, Singapore’s Ministry of
-            <span class="aditus-button1">more...</span>
+            {{ $.Param "team_members.member_3" | safeHTML }}
+            <span class="aditus-button1">{{ $.Param "global_text.text_1" | safeHTML }}</span>
             <span class="deshide">
-            Communications and the Arts. Yolk was acquired by WPP in 2011. He also
-            listed another company TMG on Nasdaq First North. He is highly ranked as an influencer in the fintech space in
-            Asia. He is actively involved in startup ecosystem development and promotion in Singapore.
+            {{ $.Param "team_members.member_3_1" | safeHTML }}
               </br></br>
-              In 2016 he was recognized at the Singapore Indian Business Leaders ( SIBL) awards
-            <span class="aditus-button2">less</span></span>
+            {{ $.Param "team_members.member_3_2" | safeHTML }}
+            <span class="aditus-button2">{{ $.Param "global_text.text_2" | safeHTML }}</span></span>
           </p>
         </div>
 
@@ -424,13 +441,11 @@
           <h6>VP, Business Development</h6>
           <a href="https://www.linkedin.com/in/jason-kwong-424831152/" class="linkedin" target="_blank"></a>
           <p>
-            Jason spent seven years in the financial sector with experience in credit card marketing and equity trading before
-            entering into luxury media,
-            <span class="aditus-button1">more...</span>
+            {{ $.Param "team_members.member_4" | safeHTML }}
+            <span class="aditus-button1">{{ $.Param "global_text.text_1" | safeHTML }}</span>
             <span class="deshide">
-            serving as managing editor of major luxury magazines.
-            He was an early investor in bitcoin and ethereum. His knowledge of luxury, and a keen interest in cryptocurrencies are summoned to the forefront at Aditus.
-            <span class="aditus-button2">less</span></span>
+            {{ $.Param "team_members.member_4_1" | safeHTML }}
+            <span class="aditus-button2">{{ $.Param "global_text.text_2" | safeHTML }}</span></span>
           </p>
         </div>
       </div>
@@ -441,13 +456,12 @@
           <h5>Tony Chew</h5>
           <h6>Lead Blockchain Developer</h6><a href="https://linkedin.com/in/tonychew1986" class="linkedin" target="_blank"></a>
           <p>
-            Tony has over 10 years of industry experience in the technology domain, having helmed multiple projects in different roles. He is the core developer of SafeAsset.io, a next-generation <span class="aditus-button1">more...</span>
-            <span class="deshide"> decentralised cryptocurrency banking platform </br></br>
-              He has been involved with blockchain technology since 2011, having worked on multiple projects with
-          decentralisation as a goal while leveraging underlying cryptographic techniques; eg multisignature escrow,
-          shamir secret for key distribution, hashing as cryptographic notary etc. His prior knowledge on game theory
-          and economic theory give him an advantage when it comes to designing DAO projects.
-          <span class="aditus-button2">less</span></span>
+            {{ $.Param "team_members.member_5" | safeHTML }}
+            <span class="aditus-button1">{{ $.Param "global_text.text_1" | safeHTML }}</span>
+            <span class="deshide">
+              {{ $.Param "team_members.member_5_1" | safeHTML }}
+              <span class="aditus-button2">{{ $.Param "global_text.text_2" | safeHTML }}</span>
+            </span>
           </p>
         </div>
 
@@ -457,18 +471,15 @@
           <h6>Director, Operations</h6>
           <a href="https://www.linkedin.com/in/zulkamal" class="linkedin" target="_blank"></a>
           <p>
-            Zulkamal is a multi-disciplined product manager with more than 10 years of full-stack application development
-            and management experience
-            <span class="aditus-button1">more...</span>
+            {{ $.Param "team_members.member_6" | safeHTML }}
+            <span class="aditus-button1">{{ $.Param "global_text.text_1" | safeHTML }}</span>
             <span class="deshide">
-            ranging from architectural design, UI/UX, data analysis to marketing in the digital
-            media space.
+            {{ $.Param "team_members.member_6_1" | safeHTML }}
             <br />
             <br />
-            Prior to being in the blockchain space, he was involved in applying machine learning and data science at a
-            fashion-related startup and the hospitality industry. He was also one of the founding members of WebSG, a web
-            standards advocacy group in Singapore.
-            <span class="aditus-button2">less</span></span>
+            {{ $.Param "team_members.member_6_2" | safeHTML }}
+            <span class="aditus-button2">{{ $.Param "global_text.text_2" | safeHTML }}</span>
+            </span>
           </p>
         </div>
 
@@ -477,17 +488,13 @@
           <h5>Prabhu Sengal</h5>
           <h6>Lead Developer</h6><a href="https://www.linkedin.com/in/prabhusengal/" class="linkedin" target="_blank"></a>
           <p>
-            Prabhu is the founder and CTO of The Software Practice (https://tsp.sg), a technology development firm based
-            in Singapore.
-            <span class="aditus-button1">more...</span>
+            {{ $.Param "team_members.member_7" | safeHTML }}
+            <span class="aditus-button1">{{ $.Param "global_text.text_1" | safeHTML }}</span>
             <span class="deshide">
-            He has architected solutions and led teams to deliver complex software solutions for large
-            enterprises and Government agencies including Hewlett Packard, DBS (Southeast Asia's largest bank) and
-            DSTA (the Defence Science and Technology Agency of Singapore).
+            {{ $.Param "team_members.member_7_1" | safeHTML }}
             <br /><br />
-            He's an avid blockchain enthusiast who brings in substantial technical expertise in designing and developing
-            world-class software.
-            <span class="aditus-button2">less</span></span>
+            {{ $.Param "team_members.member_7_2" | safeHTML }}
+            <span class="aditus-button2">{{ $.Param "global_text.text_2" | safeHTML }}</span></span>
           </p>
         </div>
       </div>
@@ -498,19 +505,14 @@
           <img src="/dist/images/shaun.png">
           <h5>Shaun Djie</h5>
           <h6>Advisor</h6><a href="https://www.linkedin.com/in/shaundjie/" class="linkedin" target="_blank"></a>
-          <p>• Co-Founder Digix Global</br>
-            • Lead Coordinator, Ethereum
-            Singapore, Meetup</p>
+          <p>{{ $.Param "team_members.advisor_1" | safeHTML }}</p>
         </div>
 
         <div class="team-people">
           <img src="/dist/images/advisors-jeremy-kerbel.png">
           <h5>Jeremy Kerbel</h5>
           <h6>Advisor</h6><a href="https://www.linkedin.com/in/jeremy-k-a0711b9/" class="linkedin" target="_blank"></a>
-          <p>
-            • CEO, Global DCX cryptocurrency-exchange<br>
-            • Formerly: Director, Corporate Markets (APAC) GLG <br />
-            </p>
+          <p>{{ $.Param "team_members.advisor_2" | safeHTML }}</p>
         </div>
 
         <div class="team-people">
@@ -518,20 +520,14 @@
           <h5>Samuel Reid</h5>
           <h6>Advisor</h6>
           <a href="https://www.linkedin.com/in/samuel-mark-reid/" class="linkedin" target="_blank"></a>
-          <p>• Research & Adoption, IOTA Foundation</br>
-            • Director, SpaceBit Foundation<br />
-            • Chief Blockchain Engineer, Gibraltar Blockchain Exchange<br />
-            • CEO, Geometric Energy Corporation</p>
+          <p>{{ $.Param "team_members.advisor_3" | safeHTML }}</p>
         </div>
 
         <div class="team-people">
           <img src="/dist/images/kenneth.png">
           <h5>Kenneth Oh</h5>
           <h6>Advisor</h6><a href="https://www.linkedin.com/in/kenneth-oh-3187a111a/" class="linkedin" target="_blank"></a>
-          <p>
-            • Senior Partner, Dentons Rodyk</br>
-            • Leading corporate finance lawyer in
-            Singapore with expertise in token sale</p>
+          <p>{{ $.Param "team_members.advisor_4" | safeHTML }}</p>
         </div>
       </div>
 
@@ -540,35 +536,28 @@
           <img src="/dist/images/advisors-lee-tsun-ngai.png">
           <h5>Lee Tsun Ngai</h5>
           <h6>Advisor</h6><a href="https://www.linkedin.com/in/leetsunngai/" class="linkedin" target="_blank"></a>
-          <p>
-            • Head of Business Development at Kyber Networks</p>
+          <p>{{ $.Param "team_members.advisor_5" | safeHTML }}</p>
         </div>
 
         <div class="team-people">
           <img src="/dist/images/advisors-akash-aggarwal.png">
           <h5>Akash Aggarwal</h5>
           <h6>Advisor</h6><a href="https://www.linkedin.com/in/akashaggarwal009/" class="linkedin" target="_blank"></a>
-          <p>• Founder & President of cryptocurrency exchange Global DCX</br>
-            • Digital Currency Council, ACCESS Singapore and the Bitcoin Foundation member</p>
+          <p>{{ $.Param "team_members.advisor_6" | safeHTML }}</p>
         </div>
 
         <div class="team-people">
           <img src="/dist/images/advisors-francis-gouten.png">
           <h5>Francis Gouten </h5>
           <h6>Advisor</h6><a href="https://www.linkedin.com/in/francis-gouten-a973444/" class="linkedin" target="_blank"></a>
-          <p>
-            • Former CEO of Richemont Asia-Pacific</br>
-            • Board member, Louis XIII Holdings in Macau<br />
-            • 35 years experience in luxury</p>
+          <p>{{ $.Param "team_members.advisor_7" | safeHTML }}</p>
         </div>
 
         <div class="team-people">
           <img src="/dist/images/regina.png">
           <h5>Regina Lam</h5>
           <h6>Advisor</h6><a href="https://www.linkedin.com/in/regina-lam-2013/" class="linkedin" target="_blank"></a>
-          <p>
-            • Former CEO Tom Ford Asia, Staff International Asia, LVMH Asia (Emilio Pucci)</br>
-            • 20 years experience in luxury</p>
+          <p>{{ $.Param "team_members.advisor_8" | safeHTML }}</p>
         </div>
       </div>
 
@@ -577,9 +566,7 @@
           <img src="/dist/images/francis.png">
           <h5>Francis Srun</h5>
           <h6>Advisor</h6><a href="https://www.linkedin.com/in/fsrun/" class="linkedin" target="_blank"></a>
-          <p>
-            • Former MD Ralph Lauren Asia, Boucheron Asia</br>
-            • 20 years experience in luxury</p>
+          <p>{{ $.Param "team_members.advisor_9" | safeHTML }}</p>
         </div>
       </div>
     </div>
