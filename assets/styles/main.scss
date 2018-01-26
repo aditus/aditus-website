@@ -144,13 +144,9 @@ a.whitepaper-download-nav{
 
     a.dropdown-item{
       color: #000 !important;
-      padding: 6px 0 5px;
+      padding: 10px 0 10px;
       font-size: 11px;
       text-align: center;
-    }
-
-    a:last-of-type{
-      padding-bottom: 0px;
     }
 
     a.active{
@@ -324,6 +320,10 @@ nav.mobile-nav {
       a {
         color: #f6f6f6;
       }
+    }
+
+    li:last-of-type{
+      margin-bottom: 15px;
     }
   }
 
