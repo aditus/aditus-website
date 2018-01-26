@@ -53,19 +53,6 @@
               <li><a href="#aditus-token">{{ $.Param "main_menu.menu_7" }}</a></li>
               <li><a href="#partners">{{ $.Param "main_menu.menu_8" }}</a></li>
               <li><a href="#tokensale">{{ $.Param "main_menu.menu_9" }}</a></li>
-            </ul>
-          </nav>
-          <div class="scrolled-header scrolled">
-            <a class="fixed-logo" href="#"><img src="/dist/images/logo.png" alt="Logo" /></a>
-            <nav class="nav" role="navigation">
-              <ul>
-              <li><a href="#opportunity">{{ $.Param "main_menu.menu_1" }}</a></li>
-              <li><a href="#membership">{{ $.Param "main_menu.menu_2" }}</a></li>
-              <li><a href="#access">{{ $.Param "main_menu.menu_3" }}</a></li>
-              <li><a href="#privacy">{{ $.Param "main_menu.menu_4" }}</a></li>
-              <li><a href="#team">{{ $.Param "main_menu.menu_5" }}</a></li>
-              <li><a href="#aditus-token">{{ $.Param "main_menu.menu_6" }}</a></li>
-              <li><a href="#tokensale">{{ $.Param "main_menu.menu_7" }}</a></li>
               <li class="downloadButton">
                 <div class="btn-group">
                   <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -76,7 +63,6 @@
                     <a class="dropdown-item" href="/Aditus-Presentation-Deck.pdf">{{ $.Param "main_menu.menu_12" }}</a>
                   </div>
                 </div>
-                <!--<a href="/Aditus-Whitepaper.pdf" class="whitepaper-download-nav">Whitepaper</a>-->
               </li>
               <li class="downloadButton">
                 <div class="btn-group lang-selection">
@@ -88,28 +74,46 @@
                     <a class='dropdown-item {{ if eq .Site.Language.Lang "cn" }}active{{ end }}' href="/cn">CN (Chinese)</a>
                   </div>
                 </div>
-                <!--<a href="/Aditus-Whitepaper.pdf" class="whitepaper-download-nav">Whitepaper</a>-->
+              </li>
+            </ul>
+          </nav>
+          <div class="scrolled-header scrolled">
+            <a class="fixed-logo" href="#"><img src="/dist/images/logo.png" alt="Logo" /></a>
+            <nav class="nav" role="navigation">
+              <ul>
+              <li><a href="#opportunity">{{ $.Param "main_menu.menu_1" }}</a></li>
+              <li><a href="#membership">{{ $.Param "main_menu.menu_2" }}</a></li>
+              <li><a href="#access">{{ $.Param "main_menu.menu_3" }}</a></li>
+              <li><a href="#privacy">{{ $.Param "main_menu.menu_4" }}</a></li>
+              <li><a href="#team">{{ $.Param "main_menu.menu_5" }}</a></li>
+              <li><a href="#blog">{{ $.Param "main_menu.menu_6" }}</a></li>
+              <li><a href="#tokensale">{{ $.Param "main_menu.menu_7" }}</a></li>
+              <li class="downloadButton">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{ $.Param "main_menu.menu_10" }}
+                  </button>
+                  <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="/Aditus-Whitepaper.pdf">{{ $.Param "main_menu.menu_11" }}</a>
+                    <a class="dropdown-item" href="/Aditus-Presentation-Deck.pdf">{{ $.Param "main_menu.menu_12" }}</a>
+                  </div>
+                </div>
+              </li>
+              <li class="downloadButton">
+                <div class="btn-group lang-selection">
+                  <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{ .Site.Language.Lang }}
+                  </button>
+                  <div class="dropdown-menu dropdown-menu-right">
+                    <a class='dropdown-item {{ if eq .Site.Language.Lang "en" }}active{{ end }}' href="/">EN (English)</a>
+                    <a class='dropdown-item {{ if eq .Site.Language.Lang "cn" }}active{{ end }}' href="/cn">CN (Chinese)</a>
+                  </div>
+                </div>
               </li>
 
               </ul>
             </nav>
           </div>
-          <!--
-          <nav class="nav absolute" role="navigation">
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#opportunity">Opportunity</a></li>
-              <li><a href="#membership">Aditus Membership</a></li>
-              <li><a href="#access">All Round Access</a></li>
-              <li><a href="#privacy">Uniquely Private</a></li>
-              <li><a href="#team">Team</a></li>
-              <li><a href="#aditus-token">Token Utility</a></li>
-              <li><a href="#enquiries">Enquiries</a></li>
-              <li><a href="https://tokensale.aditus.net/" class="whitepaper-download-nav">
-                <a href="#">Download Whitepaper</a>
-              </li>
-            </ul>
-          </nav>--><!-- /nav -->
 
       </header><!-- /header -->
 
