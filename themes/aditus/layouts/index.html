@@ -651,16 +651,23 @@
     <section id='tokensale' class='container-fluid clear exchange-listing'>
         <div class='container'>
             <h2>{{ $.Param "exchange_listing.text_1" | safeHTML }}</h2>
+            <h3>{{ $.Param "exchange_listing.text_1_2" | safeHTML }}</h2>
 
             <div class='row justify-content-center'>
                 <div class='col'>
-                    <a href="https://coinbene.com">
-                        <img src='/dist/images/exchange/coinbene.jpg' alt='Coinbene' class="rounded ">
-                    </a>
+                  <a href="https://coinbene.com">
+                    <img src='/dist/images/exchange/coinbene.jpg' alt='Coinbene' class="rounded ">
+                  </a>
+                </div>
+                <div class='col'>
+                  <img src='/dist/images/exchange/comingsoon.jpg' alt='Coinbene' class="rounded ">
+                </div>
+                <div class='col'>
+                  <img src='/dist/images/exchange/comingsoon.jpg' alt='Coinbene' class="rounded ">
                 </div>
             </div>
 
-            <p class='subtitle'>{{ $.Param "exchange_listing.text_2_1" | safeHTML }} <a href='https://medium.com/aditusnetwork'>{{ $.Param "exchange_listing.text_2_2" | safeHTML }}</a> {{ $.Param "exchange_listing.text_2_3" | safeHTML }}</p>
+            <p class='subtitle'>{{ $.Param "exchange_listing.text_2" | safeHTML }}</p>
         </div>
     </section>
 
