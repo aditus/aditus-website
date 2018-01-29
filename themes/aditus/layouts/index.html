@@ -66,6 +66,7 @@
                     <h2><a name='blog'><img src='/dist/images/channel-medium.png' /> {{ $.Param "blog.text_1" | safeHTML }}</a></h2>
 
                     <div class='posts-wrap'>
+
                         {{ range $i, $e := (where .Site.RegularPages "Section" "blog") }}
 
                         <div class='post'>
@@ -78,6 +79,13 @@
 
                                 <div class='summary col-md-9'>
                                     <h3><a href='{{ .Params.link }}'>{{ .Params.title }}</a></h3>
+
+                                    {{ if .Params.youtube }}
+                                        <div>
+                                            {{ .Params.youtube | safeHTML }}
+                                        </div>
+                                    {{ end }}
+
                                     <p>
                                         {{ .Summary }}
                                         <a href='{{ .Params.link }}' class='readmore'>{{ $.Param "blog.text_2" | safeHTML }}</a>
