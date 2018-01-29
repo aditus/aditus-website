@@ -136,7 +136,7 @@ team_members:
 exchange_listing:
     text_1: "How to buy Aditus tokens (ADI)"
     text_1_2: "Aditus tokens can be purchased at the following exchanges:"
-    text_2: "For merchants interested in buying Aditus for operational purposes, <a href='mailto:merchantsales@aditus.net'>pls email us.</a>"
+    text_2: "For merchants interested in buying Aditus for operational purposes, please <a href='mailto:merchantsales@aditus.net'> email us.</a>"
 global_text:
     text_1: "more..."
     text_2: "less"    
