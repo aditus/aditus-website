@@ -1,0 +1,22 @@
+.exchange-listing {
+  background: linear-gradient(
+                  rgba(19, 23, 41, 0.85),
+                  rgba(18, 24, 39, 1) ),
+  url(/dist/images/1.jpg) bottom no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+
+  .row {
+    margin-bottom: ($spacer-y * 2);
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  h2{
+    margin-bottom: 30px;
+  }
+}

@@ -640,26 +640,19 @@
         </div>
     </section>
 
-    <section id="tokensale" class="container-fluid">
+    <section id='tokensale' class='container-fluid clear exchange-listing'>
         <div class='container'>
-            <h2>{{ $.Param "token_sale.text_1" | safeHTML }}</h2>
-            <p class='subtitle'>{{ $.Param "token_sale.text_2_1" | safeHTML }} <a href='https://medium.com/aditusnetwork'>{{ $.Param "token_sale.text_2_2" | safeHTML }}</a> {{ $.Param "token_sale.text_2_3" | safeHTML }}</p>
-            <div class='tokensale'>
-                <div class='tokensaleFigures row justify-content-center'>
-                    <div class='tokensaleFiguresPanel col-md-4'>
-                        <h3>{{ $.Param "token_sale.text_3" | safeHTML }}</h3>
-                        <div class='tokensaleFiguresPanelSecondary publicSale text-center'>
-                            <span class="tokenCurrency">USD</span> <span class="count">7,100,193.81</span>
-                        </div>
-                        <span class="priceNote">{{ $.Param "token_sale.text_4" | safeHTML }}</span>
-                    </div>
-                </div>
-                <div class='row'>
-                    <div class='col'>
-                        <h3 class="subtitle">{{ $.Param "token_sale.text_5" | safeHTML }}</h3>
-                    </div>
+            <h2>{{ $.Param "exchange_listing.text_1" | safeHTML }}</h2>
+
+            <div class='row justify-content-center'>
+                <div class='col'>
+                    <a href="https://coinbene.com">
+                        <img src='/dist/images/exchange/coinbene.jpg' alt='Coinbene' class="rounded ">
+                    </a>
                 </div>
             </div>
+
+            <p class='subtitle'>{{ $.Param "exchange_listing.text_2_1" | safeHTML }} <a href='https://medium.com/aditusnetwork'>{{ $.Param "exchange_listing.text_2_2" | safeHTML }}</a> {{ $.Param "exchange_listing.text_2_3" | safeHTML }}</p>
         </div>
     </section>
 
