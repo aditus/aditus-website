@@ -115,20 +115,42 @@ a.whitepaper-download-nav{
 }
 
 .downloadButton{
+  @include media-breakpoint-down(md) {
+    .btn-group{
+      width: 117px;
+
+      .dropdown-toggle{
+        width: 117px;
+      }
+    }
+  }
+
+  .lang-selection{
+    .dropdown-toggle{
+      text-transform: uppercase;
+    }
+  }
+
   .dropdown-menu{
     padding: .15rem;
     margin: .100rem 0 0;
-    min-width: 7rem;
+    @include media-breakpoint-up(md) {
+      min-width: 7rem;
+    }
+
+    @include media-breakpoint-down(md) {
+      left: 18%!important;
+    }
 
     a.dropdown-item{
       color: #000 !important;
-      padding: 0px 0px 3px;
+      padding: 10px 0 10px;
       font-size: 11px;
       text-align: center;
     }
 
-    a:last-of-type{
-      padding-bottom: 0px;
+    a.active{
+      color: #fff !important;
     }
   }
 }
@@ -154,7 +176,7 @@ a.whitepaper-download-nav{
 /* footer */
 
 .footer {
-  padding: 10px 0 20px 30px;
+  padding: 20px 0 20px 0px;
   text-align: center;
 
   .channels {
@@ -283,6 +305,7 @@ nav.mobile-nav {
   z-index: 998;
   visibility: hidden;
   opacity: 0;
+  overflow: scroll;
 
   ul{
     margin: 0;
@@ -291,12 +314,16 @@ nav.mobile-nav {
     li {
       list-style: none;
       text-align: center;
-      margin-top: 35px;
+      margin-top: 15px;
       font-size: 1.2em;
 
       a {
         color: #f6f6f6;
       }
+    }
+
+    li:last-of-type{
+      margin-bottom: 15px;
     }
   }
 

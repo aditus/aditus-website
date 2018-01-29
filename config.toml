@@ -1,5 +1,15 @@
 baseURL = "http://example.org/"
-languageCode = "en-us"
+defaultContentLanguage = ""
+defaultContentLanguageInSubdir= false
 title = "Aditus"
 theme = "aditus"
 disableHugoGeneratorInject = true
+
+[languages]
+[languages.en]
+weight = 1
+languageName = "English"
+
+[languages.cn]
+weight = 2
+languageName = "Chinese"

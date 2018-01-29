@@ -3,683 +3,673 @@
 {{ define "main" }}
 
 <main id="main-container">
-  <section class="container-fluid banner">
-    <div class='container'>
-      <div class='row'>
-        <!-- <div class='col-lg-4'>
-           <div class="logo float-lg-right">
-             <a href="/">
-               <img src="/dist/images/adituslogo.png" alt="Logo" class="logo-img">
-             </a>
-           </div>
-         </div>-->
-        <div class='col-lg-7 align-self-center'>
-          <div class="landing text-container">
-            <h1>Luxury Access Platform for Crypto-Affluents</h1>
-            <p class='intro'>Aditus is a revolutionary new platform bringing the world of luxury to crypto-affluents, through a privacy-centric decentralised network utilising smart contracts and blockchain technology.</p>
-            <p class="call-to-actions">
-              <a href="#tokensale"
-                 class='join-mailing-list'>Token Sale Completed <br> <span>Thank you!</span>
-              </a>
-              <a href="/Aditus-Whitepaper.pdf" class='whitepaper-download-nav'>
-                Download Whitepaper <span>Updated 29 Nov 2017</span>
-              </a>
-            </p>
-          </div>
+    <section class="container-fluid banner">
+        <div class='container'>
+            <div class='row'>
+                <!-- <div class='col-lg-4'>
+                   <div class="logo float-lg-right">
+                     <a href="/">
+                       <img src="/dist/images/adituslogo.png" alt="Logo" class="logo-img">
+                     </a>
+                   </div>
+                 </div>-->
+                <div class='col-lg-7 align-self-center'>
+                    <div class="landing text-container">
+                        <h1>{{ $.Param "hero_content.content_1" | safeHTML }}</h1>
+                        <p class='intro'>{{ $.Param "hero_content.content_2" | safeHTML }}</p>
+                        <p class="call-to-actions">
+                            <a href="#tokensale" class='join-mailing-list'>{{ $.Param "hero_content.content_3" | safeHTML }}
+                            </a>
+                            <a href='{{ $.Param "global_url.dl_whitepaper" }}' class='whitepaper-download-nav'>
+                                {{ $.Param "hero_content.content_4" | safeHTML }}
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id='blog' class='container-fluid'>
-    <div class='container'>
-      <div class='row'>
-        <div class='latest-post col-md-8'>
-          <h2><a name='blog'><img src='/dist/images/channel-medium.png' /> Latest From Our Blog</a></h2>
+    <!--
+    <section id='blog' class='container-fluid'>
+      <div class='container'>
+        <h2>
+          <img src='/dist/images/channel-medium.png' /> {{ $.Param "blog.text_1" | safeHTML }}
+          <a href="https://medium.com/aditusnetwork" name="blog" class="view-more" target="_blank">view more</a>
+        </h2>
 
-          <div class='posts-wrap'>
-            {{ range $i, $e := (where .Site.RegularPages "Section" "blog") }}
-
-            <div class='post'>
-              <div class='row'>
-                <div class='thumb col-md-3'>
-                  <a href='{{ .Params.link }}'>
-                    <img src='{{ .Params.thumb }}' />
-                  </a>
-                </div>
-
-                <div class='summary col-md-9'>
-                  <h3><a href='{{ .Params.link }}'>{{ .Params.title }}</a></h3>
-                  <p>
-                    {{ .Summary }}
-                    <a href='{{ .Params.link }}' class='readmore'>Read more</a>
-                  </p>
-                </div>
+        <div class="row blog-post">
+          {{ range first 4 (where .Site.RegularPages "Section" "blog") }}
+          <div class="col-md-3">
+            <div class="card">
+              <a href="{{ .Params.link }}" class="read-more" title="{{ .Params.title }}">
+                <img class="card-img-top" src="{{ .Params.thumb }}" alt="{{ .Params.title }}">
+              </a>
+              <div class="card-body">
+                <h5 class="card-title text-center">{{ .Params.title }}</h5>
+              </div>
+              <div class="card-footer text-center">
+                <a href="{{ .Params.link }}" class="read-more" title="{{ .Params.title }}">{{ $.Param "blog.text_2" | safeHTML }}</a>
               </div>
             </div>
-
-            {{ end }}
           </div>
-        </div>
-
-        <div class='channels col-md-4'>
-          <div class='row'>
-            <div class='col'>
-              <h2>Connect With Us</h2>
-            </div>
-          </div>
-
-          <div class='row'>
-            <div class='col col-md-12'>
-              <ul>
-                <li class="channel">
-                  <a href='https://www.linkedin.com/in/aditus-network-38b545152/' target='_blank'>
-                    <img src='/dist/images/channel-linkedin.png' alt='LinkedIn'>
-                    <span>connect with us on linkedin</span>
-                  </a>
-                </li>
-                <li class="channel">
-                  <a href='http://t.me/aditusnetwork' target='_blank'>
-                    <img src='/dist/images/channel-telegram.png' alt='Telegram'>
-                    <span>chat with us on telegram</span>
-                  </a>
-                </li>
-                <li class="channel">
-                  <a href='https://medium.com/aditusnetwork' target='_blank'>
-                    <img src='/dist/images/channel-medium.png' alt='Medium'>
-                    <span>read us on medium</span>
-                  </a>
-                </li>
-                <li class="channel">
-                  <a href='http://www.instagram.com/aditus.life' target='_blank'>
-                    <img src='/dist/images/channel-instagram.png' alt='Instagram'>
-                    <span>see us on instagram</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
+          {{ end }}
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+    -->
 
-  <section id='featured-in' class='container-fluid clear'>
-    <div class='container'>
-      <h2>Featured in</h2>
+    <section id='blog' class='container-fluid'>
+        <div class='container'>
+            <div class='row'>
+                <div class='latest-post col-md-8'>
+                    <h2><a name='blog'><img src='/dist/images/channel-medium.png' /> {{ $.Param "blog.text_1" | safeHTML }}</a></h2>
 
-      <div class="row">
-        <div class="col-md-6 featured-video">
-          <div class="embed-responsive embed-responsive-21by9">
-            <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/245853383?title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-          </div>
+                    <div class='posts-wrap'>
 
-          <div class="text-center">
-            Aditus featured on Channel News Asia. <br>Original news link <a href="http://www.channelnewsasia.com/news/business/more-singapore-based-companies-find-appeal-in-initial-coin-9437706" target="_blank">here</a>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class='row justify-content-center'>
-            <div class='col-md-4 col-4 item_logo'>
-              <a href='https://www.forbes.com/sites/outofasia/2017/11/28/ico-hype-bitcoin-gold-rush-bullish-markets-should-we-trust-the-brave-new-world-of-finance/#6b2ffd2a7008'>
-                <img src='/dist/images/featured_in_forbes.png' alt='Forbes'>
-              </a>
+                        {{ range $i, $e := (where .Site.RegularPages "Section" "blog") }}
+
+                        <div class='post'>
+                            <div class='row'>
+                                <div class='thumb col-md-3'>
+                                    <a href='{{ .Params.link }}'>
+                                        <img src='{{ .Params.thumb }}' />
+                                    </a>
+                                </div>
+
+                                <div class='summary col-md-9'>
+                                    <h3><a href='{{ .Params.link }}'>{{ .Params.title }}</a></h3>
+
+                                    {{ if .Params.youtube }}
+                                        <div>
+                                            {{ .Params.youtube | safeHTML }}
+                                        </div>
+                                    {{ end }}
+
+                                    <p>
+                                        {{ .Summary }}
+                                        <a href='{{ .Params.link }}' class='readmore'>{{ $.Param "blog.text_2" | safeHTML }}</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {{ end }}
+                    </div>
+                </div>
+
+                <div class='channels col-md-4'>
+                    <div class='row'>
+                        <div class='col'>
+                            <h2>{{ $.Param "social_media.text_1" | safeHTML }}</h2>
+                        </div>
+                    </div>
+
+                    <div class='row'>
+                        <div class='col col-md-12'>
+                            <ul>
+                                <li class="channel">
+                                    <a href='https://www.linkedin.com/in/aditus-network-38b545152/' target='_blank'>
+                                        <img src='/dist/images/channel-linkedin.png' alt='LinkedIn'>
+                                        <span>{{ $.Param "social_media.text_2" | safeHTML }}</span>
+                                    </a>
+                                </li>
+                                <li class="channel">
+                                    <a href='http://t.me/aditusnetwork' target='_blank'>
+                                        <img src='/dist/images/channel-telegram.png' alt='Telegram'>
+                                        <span>{{ $.Param "social_media.text_3" | safeHTML }}</span>
+                                    </a>
+                                </li>
+                                <li class="channel">
+                                    <a href='https://medium.com/aditusnetwork' target='_blank'>
+                                        <img src='/dist/images/channel-medium.png' alt='Medium'>
+                                        <span>{{ $.Param "social_media.text_4" | safeHTML }}</span>
+                                    </a>
+                                </li>
+                                <li class="channel">
+                                    <a href='http://www.instagram.com/aditus.life' target='_blank'>
+                                        <img src='/dist/images/channel-instagram.png' alt='Instagram'>
+                                        <span>{{ $.Param "social_media.text_5" | safeHTML }}</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class='col-md-4 col-4 item_logo'>
-              <a href='http://www.channelnewsasia.com/news/business/more-singapore-based-companies-find-appeal-in-initial-coin-9437706'>
-                <img src='/dist/images/featured_in_cna.png' alt='Channel News Asia'>
-              </a>
+        </div>
+    </section>
+
+    <section id='featured-in' class='container-fluid clear'>
+        <div class='container'>
+            <h2>{{ $.Param "featured_section.text_1" | safeHTML }}</h2>
+
+            <div class="row">
+                <div class="col-md-6 featured-video">
+                    <div class="embed-responsive embed-responsive-21by9">
+                        <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/245853383?title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    </div>
+
+                    <div class="text-center">
+                        {{ $.Param "featured_section.text_2" | safeHTML }} <a href="http://www.channelnewsasia.com/news/business/more-singapore-based-companies-find-appeal-in-initial-coin-9437706" target="_blank">{{ $.Param "featured_section.text_3" | safeHTML }}</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class='row justify-content-center'>
+                        <div class='col-md-4 col-4 item_logo'>
+                            <a href='https://www.forbes.com/sites/outofasia/2017/11/28/ico-hype-bitcoin-gold-rush-bullish-markets-should-we-trust-the-brave-new-world-of-finance/#6b2ffd2a7008'>
+                                <img src='/dist/images/featured_in_forbes.png' alt='Forbes'>
+                            </a>
+                        </div>
+                        <div class='col-md-4 col-4 item_logo'>
+                            <a href='http://www.channelnewsasia.com/news/business/more-singapore-based-companies-find-appeal-in-initial-coin-9437706'>
+                                <img src='/dist/images/featured_in_cna.png' alt='Channel News Asia'>
+                            </a>
+                        </div>
+                        <div class='col-md-4 col-4 item_logo'>
+                            <a href='https://finance.yahoo.com/news/aditus-network-worlds-first-luxury-145600925.html'>
+                                <img src='/dist/images/featured_in_yn.png' alt='Yahoo Finance'>
+                            </a>
+                        </div>
+                        <div class='col-md-4 col-4 item_logo'>
+                            <a href='https://seekingalpha.com/pr/17010805-aditus-network-worlds-first-luxury-access-service-crypto-affluents'>
+                                <img src='/dist/images/featured_in_sa.png' alt='Seeking Alpha'>
+                            </a>
+                        </div>
+                        <div class='col-md-4 col-4 item_logo'>
+                            <a href='http://www.luxuo.com/the-lux-list/aditus-and-pundi-x-enable-luxury-merchants-to-accept-aditus-tokens-through-pundi-x-pos-devices.html'>
+                                <img src='/dist/images/featured_in_luxuo.png' alt='Luxuo'>
+                            </a>
+                        </div>
+                        <div class='col-md-4 col-4 item_logo'>
+                            <a href='https://bitcoinexchangeguide.com/aditus/'>
+                                <img src='/dist/images/featured_in_bexg.png' alt='Bitcoin Exchange Guide'>
+                            </a>
+                        </div>
+                        <div class='col-md-4 col-4 item_logo'>
+                            <a href='https://www.cryptoninjas.net/2017/11/16/luxury-crypto-network-aditus-partners-digix-global/'>
+                                <img src='/dist/images/featured_in_cn.png' alt='CryptoNinjas'>
+                            </a>
+                        </div>
+                        <div class='col-md-4 col-4 item_logo'>
+                            <a href='http://www.luxuo.id/aditus-menjembatani-gaya-hidup-mewah-crypto-affluents-2218'>
+                                <img src='/dist/images/featured_in_luxuo_id.png' alt='Luxuo Indonesia'>
+                            </a>
+                        </div>
+                        <div class='col-md-4 col-4 item_logo'>
+                            <a href='http://sbr.com.sg/media-marketing/exclusive/everything-you-need-know-about-luxury-access-platform-crypto-affluents'>
+                                <img src='/dist/images/featured_in_sbr.png' alt='Singapore Business Review'>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class='col-md-4 col-4 item_logo'>
-              <a href='https://finance.yahoo.com/news/aditus-network-worlds-first-luxury-145600925.html'>
-                <img src='/dist/images/featured_in_yn.png' alt='Yahoo Finance'>
-              </a>
+        </div>
+    </section>
+
+    <section id="opportunity" class="container-fluid clear opportunity">
+        <div class='container'>
+            <h2>{{ $.Param "opportunity_brewing.text_1" | safeHTML }}</h2>
+
+            <div class='row'>
+                <div class='col-md-5'>
+                    <div class="opportunityChart">
+                        <canvas id="myChartLine" width="500px" height="600"></canvas>
+                    </div>
+                    <div class="opportunityChartMobile">
+                        <canvas id="myChartLineMobile" width="400px" height="500"></canvas>
+                    </div>
+                </div>
+
+                <div class='col-md-7'>
+                    <div class="opportunityChartDescription">
+                        <p>{{ $.Param "opportunity_brewing.text_3" | safeHTML }}</p>
+
+                        <p>{{ $.Param "opportunity_brewing.text_4" | safeHTML }}</p>
+
+                        <ul>
+                            <li>
+                                {{ $.Param "opportunity_brewing.text_4_1.text_1" | safeHTML }}
+                            </li>
+                            <li>
+                                {{ $.Param "opportunity_brewing.text_4_1.text_2" | safeHTML }}
+                            </li>
+                            <li>
+                                {{ $.Param "opportunity_brewing.text_4_1.text_3" | safeHTML }}
+                            </li>
+                        </ul>
+                        <p>
+                            {{ $.Param "opportunity_brewing.text_5" | safeHTML }}
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div class='col-md-4 col-4 item_logo'>
-              <a href='https://seekingalpha.com/pr/17010805-aditus-network-worlds-first-luxury-access-service-crypto-affluents'>
-                <img src='/dist/images/featured_in_sa.png' alt='Seeking Alpha'>
-              </a>
+        </div>
+    </section>
+
+    <section id="membership" class="container-fluid clear">
+        <div class='container'>
+            <h2>{{ $.Param "membership.text_1" | safeHTML }}</h2>
+            <div class='row'>
+                <div class='col-md-6'>
+                    <img src="/dist/images/phones.png" alt="phone" class="phone float-md-right">
+                </div>
+                <div class='col-md-6 order-md-first'>
+                    <div class='ordinary'>
+                        <h4>{{ $.Param "membership.text_2" | safeHTML }}</h4>
+                        <p>
+                            {{ $.Param "membership.text_3" | safeHTML }}
+                        </p>
+                    </div>
+
+                    <div class='vip'>
+                        <h4>{{ $.Param "membership.text_4" | safeHTML }}</h4>
+                        <p>
+                            {{ $.Param "membership.text_5" | safeHTML }}
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div class='col-md-4 col-4 item_logo'>
-              <a href='http://www.luxuo.com/the-lux-list/aditus-and-pundi-x-enable-luxury-merchants-to-accept-aditus-tokens-through-pundi-x-pos-devices.html'>
-                <img src='/dist/images/featured_in_luxuo.png' alt='Luxuo'>
-              </a>
+        </div>
+    </section>
+
+    <section id="privacy" class="container-fluid">
+        <div class='container'>
+            <h2>{{ $.Param "platform_components.text_1" | safeHTML }}</h2>
+
+            <div class="row privacy-item-2">
+                <div class="privacy-item col-lg-4">
+                    <img src="/dist/images/privacy/aditus_rewards.png" class="priv-icon">
+                    <p>{{ $.Param "platform_components.text_2" | safeHTML }}</p>
+                </div>
+                <div class="privacy-item col-lg-4">
+                    <img src="/dist/images/privacy/aditus_pay.png" class="priv-icon">
+                    <p>{{ $.Param "platform_components.text_3" | safeHTML }}</p>
+                </div>
+                <div class="privacy-item col-lg-4">
+                    <img src="/dist/images/privacy/aditus_vip.png" class="priv-icon">
+                    <p>{{ $.Param "platform_components.text_4" | safeHTML }}</p>
+                </div>
             </div>
-            <div class='col-md-4 col-4 item_logo'>
-              <a href='https://bitcoinexchangeguide.com/aditus/'>
-                <img src='/dist/images/featured_in_bexg.png' alt='Bitcoin Exchange Guide'>
-              </a>
+        </div>
+    </section>
+
+    <section class="benefits container-fluid clear" id='access'>
+        <div class='container'>
+            <h2>{{ $.Param "benefits_section.text_1" | safeHTML }}</h2>
+
+            <h3 class='subtitle'>{{ $.Param "benefits_section.text_2" | safeHTML }}</h3>
+        </div>
+        <div class='container-fluid'>
+            <div class="allRoundAccessOffering">
+                <div class="allRoundAccessOfferingEntry">
+                    <div id="allRoundAccessOfferingEntry1" class="allRoundAccessOfferingEntryImg"></div>
+                    <div class="allRoundAccessOfferingEntryText">
+                        {{ $.Param "benefits_section.text_3.text_1" | safeHTML }}
+                    </div>
+                </div>
+                <div class="allRoundAccessOfferingEntry">
+                    <div id="allRoundAccessOfferingEntry2" class="allRoundAccessOfferingEntryImg"></div>
+                    <div class="allRoundAccessOfferingEntryText">
+                        {{ $.Param "benefits_section.text_3.text_2" | safeHTML }}
+                    </div>
+                </div>
+                <div class="allRoundAccessOfferingEntry">
+                    <div id="allRoundAccessOfferingEntry7" class="allRoundAccessOfferingEntryImg"></div>
+                    <div class="allRoundAccessOfferingEntryText">
+                        {{ $.Param "benefits_section.text_3.text_3" | safeHTML }}
+                    </div>
+                </div>
+                <div class="allRoundAccessOfferingEntry">
+                    <div id="allRoundAccessOfferingEntry9" class="allRoundAccessOfferingEntryImg"></div>
+                    <div class="allRoundAccessOfferingEntryText">
+                        {{ $.Param "benefits_section.text_3.text_4" | safeHTML }}
+                    </div>
+                </div>
+                <div class="allRoundAccessOfferingEntry">
+                    <div id="allRoundAccessOfferingEntry5" class="allRoundAccessOfferingEntryImg"></div>
+                    <div class="allRoundAccessOfferingEntryText">
+                        {{ $.Param "benefits_section.text_3.text_5" | safeHTML }}
+                    </div>
+                </div>
+                <div class="allRoundAccessOfferingEntry">
+                    <div id="allRoundAccessOfferingEntry6" class="allRoundAccessOfferingEntryImg"></div>
+                    <div class="allRoundAccessOfferingEntryText">
+                        {{ $.Param "benefits_section.text_3.text_6" | safeHTML }}
+                    </div>
+                </div>
+                <div class="allRoundAccessOfferingEntry">
+                    <div id="allRoundAccessOfferingEntry3" class="allRoundAccessOfferingEntryImg"></div>
+                    <div class="allRoundAccessOfferingEntryText">
+                        {{ $.Param "benefits_section.text_3.text_7" | safeHTML }}
+                    </div>
+                </div>
+                <div class="allRoundAccessOfferingEntry">
+                    <div id="allRoundAccessOfferingEntry8" class="allRoundAccessOfferingEntryImg"></div>
+                    <div class="allRoundAccessOfferingEntryText">
+                        {{ $.Param "benefits_section.text_3.text_8" | safeHTML }}
+                    </div>
+                </div>
+                <div class="allRoundAccessOfferingEntry">
+                    <div id="allRoundAccessOfferingEntry4" class="allRoundAccessOfferingEntryImg"></div>
+                    <div class="allRoundAccessOfferingEntryText">
+                        {{ $.Param "benefits_section.text_3.text_9" | safeHTML }}
+                    </div>
+                </div>
             </div>
-            <div class='col-md-4 col-4 item_logo'>
-              <a href='https://www.cryptoninjas.net/2017/11/16/luxury-crypto-network-aditus-partners-digix-global/'>
-                <img src='/dist/images/featured_in_cn.png' alt='CryptoNinjas'>
-              </a>
+    </section>
+
+    <section id="privacy" class="container-fluid">
+        <div class='container'>
+            <h2>{{ $.Param "privacy_section.text_1" | safeHTML }}</h2>
+
+            <h3 class="subtitle">{{ $.Param "privacy_section.text_2" | safeHTML }}</h3>
+            <div class="row">
+                <div class="privacy-item col-lg-4">
+                    <img src="/dist/images/decentralised.png" class="priv-icon">
+                    <h4>{{ $.Param "privacy_section.text_3" | safeHTML }}</h4>
+                    <p>{{ $.Param "privacy_section.text_4" | safeHTML }}</p>
+                </div>
+                <div class="privacy-item col-lg-4">
+                    <img src="/dist/images/privacy2.png" class="priv-icon">
+                    <h4>{{ $.Param "privacy_section.text_5" | safeHTML }}</h4>
+                    <p>{{ $.Param "privacy_section.text_6" | safeHTML }}</p>
+                </div>
+                <div class="privacy-item col-lg-4">
+                    <img src="/dist/images/privacy3.png" class="priv-icon">
+                    <h4>{{ $.Param "privacy_section.text_7" | safeHTML }}</h4>
+                    <p>{{ $.Param "privacy_section.text_8" | safeHTML }}</p>
+                </div>
             </div>
-            <div class='col-md-4 col-4 item_logo'>
-              <a href='http://www.luxuo.id/aditus-menjembatani-gaya-hidup-mewah-crypto-affluents-2218'>
-                <img src='/dist/images/featured_in_luxuo_id.png' alt='Luxuo Indonesia'>
-              </a>
-            </div>
-            <div class='col-md-4 col-4 item_logo'>
-              <a href='http://sbr.com.sg/media-marketing/exclusive/everything-you-need-know-about-luxury-access-platform-crypto-affluents'>
-                <img src='/dist/images/featured_in_sbr.png' alt='Singapore Business Review'>
-              </a>
-            </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="opportunity" class="container-fluid clear opportunity">
-    <div class='container'>
-      <h2>Opportunity brewing: crypto-affluents and their desired luxury lifestyle</h2>
+    <section id="team" class="container-fluid clear">
+        <div class='container'>
+            <h2>{{ $.Param "team_section.text_1" | safeHTML }}</h2>
+            <h3 class='subtitle'>{{ $.Param "team_section.text_2" | safeHTML }}</h3>
 
-      <div class='row'>
-        <div class='col-md-5'>
-          <div class="opportunityChart">
-            <canvas id="myChartLine" width="500px" height="600"></canvas>
-          </div>
-          <div class="opportunityChartMobile">
-            <canvas id="myChartLineMobile" width="400px" height="500"></canvas>
-          </div>
-        </div>
-
-        <div class='col-md-7'>
-          <div class="opportunityChartDescription">
-            <p>Rising crypto-currency values have created a new class of affluent individuals – the crypto affluents.
-              Many aspire to the luxury lifestyle but find themselves excluded and lacking access. </p>
-            <p>Reasons for this include:</p>
-            <ul>
-              <li>
-                Crypto-affluents hold much of their wealth in crypto-currencies but few luxury merchants accept crypto-currencies as payment
-              </li>
-              <li>
-                Crypto-affluents value data privacy immensely, while luxury merchants conversely require more data to target market and to create personalised offers
-              </li>
-              <li>
-                Luxury merchants simply do not know how to reach out to people whose wealth lies outside traditional banking channels
-              </li>
-            </ul>
-            <p>
-              Aditus bridges this gap by integrating smart contracts, payment gateways and strong privacy protection technologies into a single platform – thus, empowering crypto-users to unlock their desired luxury lifestyle.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="membership" class="container-fluid clear">
-    <div class='container'>
-      <h2>Aditus membership unlocks the luxury lifestyle</h2>
-      <div class='row'>
-        <div class='col-md-6'>
-          <img src="/dist/images/phones.png" alt="phone" class="phone float-md-right">
-        </div>
-        <div class='col-md-6 order-md-first'>
-          <div class='ordinary'>
-            <h4>Ordinary Membership (Free)</h4>
-            <p>
-              Downloading the Aditus app, and entering your preferences makes you an Ordinary member. With your user preferences  set, you will start  receiving Ethereum based Smart Invitations for offers, events & services from merchants. Earn rewards and gain access to exclusive deals.
-            </p>
-          </div>
-
-          <div class='vip'>
-            <h4>VIP Membership</h4>
-            <p>
-              The highest level of access to luxury for crypto-users. There are three tiers of VIP membership: Gold, Platinum and Diamond. All enjoy a suite of exclusive luxury privileges like a 24-7 concierge, special access for sought after establishments and shows among many others. VIP membership slots are limited.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="privacy" class="container-fluid">
-    <div class='container'>
-      <h2>Platform components </h2>
-
-      <div class="row privacy-item-2">
-        <div class="privacy-item col-lg-4">
-          <img src="/dist/images/privacy/aditus_rewards.png" class="priv-icon">
-          <p>Allows Aditus users to access global luxury lifestyle offerings from merchants accepting crypto-currencies. Rewards in ADI tokens given for engagement or purchase.</p>
-        </div>
-        <div class="privacy-item col-lg-4">
-          <img src="/dist/images/privacy/aditus_pay.png" class="priv-icon">
-          <p>Allows Aditus merchants to receive payments in ADI tokens and major crypto-currencies, with the option of conversion to fiat currencies.</p>
-        </div>
-        <div class="privacy-item col-lg-4">
-          <img src="/dist/images/privacy/aditus_vip.png" class="priv-icon">
-          <p>Ultimate access to luxury. The most exclusive offers often whispered about but rarely experienced. Only for our VIP members.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="benefits container-fluid clear" id='access'>
-    <div class='container'>
-      <h2>All Round Access</h2>
-      <h3 class='subtitle'>
-        Unlock an entire spectrum of luxury lifestyle products, services and experiences through using crypto-currencies. All
-        carefully curated by Aditus.</h3>
-    </div>
-    <div class='container-fluid'>
-      <div class="allRoundAccessOffering">
-        <div class="allRoundAccessOfferingEntry">
-          <div id="allRoundAccessOfferingEntry1" class="allRoundAccessOfferingEntryImg"></div>
-          <div class="allRoundAccessOfferingEntryText">
-            Luxury villas & hotels
-          </div>
-        </div>
-        <div class="allRoundAccessOfferingEntry">
-          <div id="allRoundAccessOfferingEntry2" class="allRoundAccessOfferingEntryImg"></div>
-          <div class="allRoundAccessOfferingEntryText">
-            Shopping
-          </div>
-        </div>
-        <div class="allRoundAccessOfferingEntry">
-          <div id="allRoundAccessOfferingEntry7" class="allRoundAccessOfferingEntryImg"></div>
-          <div class="allRoundAccessOfferingEntryText">
-            Personalised travel experiences
-          </div>
-        </div>
-        <div class="allRoundAccessOfferingEntry">
-          <div id="allRoundAccessOfferingEntry9" class="allRoundAccessOfferingEntryImg"></div>
-          <div class="allRoundAccessOfferingEntryText">
-            Special offerings
-          </div>
-        </div>
-        <div class="allRoundAccessOfferingEntry">
-          <div id="allRoundAccessOfferingEntry5" class="allRoundAccessOfferingEntryImg"></div>
-          <div class="allRoundAccessOfferingEntryText">
-            Yacht charters
-          </div>
-        </div>
-        <div class="allRoundAccessOfferingEntry">
-          <div id="allRoundAccessOfferingEntry6" class="allRoundAccessOfferingEntryImg"></div>
-          <div class="allRoundAccessOfferingEntryText">
-            Private functions & events
-          </div>
-        </div>
-        <div class="allRoundAccessOfferingEntry">
-          <div id="allRoundAccessOfferingEntry3" class="allRoundAccessOfferingEntryImg"></div>
-          <div class="allRoundAccessOfferingEntryText">
-            Luxury vehicle rentals
-          </div>
-        </div>
-        <div class="allRoundAccessOfferingEntry">
-          <div id="allRoundAccessOfferingEntry8" class="allRoundAccessOfferingEntryImg"></div>
-          <div class="allRoundAccessOfferingEntryText">
-            Concierge services
-          </div>
-        </div>
-        <div class="allRoundAccessOfferingEntry">
-          <div id="allRoundAccessOfferingEntry4" class="allRoundAccessOfferingEntryImg"></div>
-          <div class="allRoundAccessOfferingEntryText">
-            Emergency evacuation
-          </div>
-        </div>
-      </div>
-  </section>
-
-  <section id="privacy" class="container-fluid">
-    <div class='container'>
-      <h2>Your private data should remain just that. Private.</h2>
-      <h3 class="subtitle">Using a uniquely decentralised platform, Aditus enables luxury consumption without your
-        data being tracked. </h3>
-      <div class="row">
-        <div class="privacy-item col-lg-4">
-          <img src="/dist/images/decentralised.png" class="priv-icon">
-          <h4>Decentralised Platform</h4>
-          <p>Unlike other rewards platforms, Aditus does not track and collect user data.</p>
-        </div>
-        <div class="privacy-item col-lg-4">
-          <img src="/dist/images/privacy2.png" class="priv-icon">
-          <h4>Data Controlled by Users</h4>
-          <p>User data is enrypted and stored on the mobile device. No data leaves the phone unless specifically authorised by the user.</p>
-        </div>
-        <div class="privacy-item col-lg-4">
-          <img src="/dist/images/privacy3.png" class="priv-icon">
-          <h4>Privacy + Rewards </h4>
-          <p>Transactions are not only private, but also earn you rewards via cashbacks.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-
-  <section id="team" class="container-fluid clear">
-    <div class='container'>
-      <h2>Team</h2>
-      <h3 class='subtitle'>The Aditus team is led by serial entrepreneurs with a strong track record in product
-        development, roll-out and company building. We possess decades of experience, domain knowledge and connections
-        in the luxury business.</h3>
-
-      <div class="team">
-        <div class="team-people">
-          <img src="/dist/images/team2.png" alt="Julian Peh">
-          <h5>Julian Peh</h5>
-          <h6>Co-Founder, CEO</h6><a href="https://linkedin.com/in/julianpeh" class="linkedin" target="_blank"></a>
-          <p>
-            Julian is regarded as one of the foremost entrepreneurs in luxury tech in Asia, having founded and built Luxury-
-            Insider.com into the leading luxury portal in Asia
-            <span class="aditus-button1">more...</span>
-            <span class='deshide'>
-            before it was acquired by media giant Singapore Press Holdings. Over the past 15 years he has launched and built numerous luxury marketing platforms including websites, apps and rewards programs focused on luxury.
+            <div class="team">
+                <div class="team-people">
+                    <img src="/dist/images/team2.png" alt="Julian Peh">
+                    <h5>Julian Peh</h5>
+                    <h6>Co-Founder, CEO</h6><a href="https://linkedin.com/in/julianpeh" class="linkedin" target="_blank"></a>
+                    <p>
+                        {{ $.Param "team_members.member_1" | safeHTML }}
+                        <span class="aditus-button1">{{ $.Param "global_text.text_1" | safeHTML }}</span>
+                        <span class='deshide'>
+            {{ $.Param "team_members.member_1_1" | safeHTML }}
             <br/><br/>
-            He is highly experienced in digital product development and roll-out, and has been at the forefront
-            of rolling out tech solutions for luxury clients from online advertising, mobile marketing to data systems. His track
-            record includes signing up hundreds of luxury brands often for their very first forays into that technology.
+            {{ $.Param "team_members.member_1_2" | safeHTML }}
             <br/><br/>
-            He has been deeply involved in luxury rewards programs, having served as consultant for Citibank’s top end
-            Ultima card, as well as creating luxury rewards programs for Chinese banks and their credit cards. For the past 3
-            years, he has been Co-Founder and CEO of SERA, a rewards program in partnership with Visa China. SERA has
-            acquired rewards from >100 luxury brand stores to date.
+            {{ $.Param "team_members.member_1_3" | safeHTML }}
             <br/><br/>
-            Julian is an active investor in cryptocurrencies, and is concurrently a shareholder of Heart Media, owner of
-            Singapore RendezVous, Phuket RendezVous and Penang RendezVous as well as multiple magazines and
-            websites.
-            <span class="aditus-button2">less</span></span>
-          </p>
-        </div>
+            {{ $.Param "team_members.member_1_4" | safeHTML }}
+            <span class="aditus-button2">{{ $.Param "global_text.text_2" | safeHTML }}</span></span>
+                    </p>
+                </div>
 
-        <div class="team-people">
-          <img src="/dist/images/team1.png" alt="Olivier Burlot">
-          <h5>Olivier Burlot</h5>
-          <h6>Co-Founder, President</h6><a href="https://linkedin.com/in/olivierburlot" class="linkedin" target="_blank"></a>
-          <p>
-            Leading luxury entrepreneur with a long track record in luxury events and media.
-            </br></br>
-            One of the most successful luxury media and event entrepreneurs in Asia,
-            <span class="aditus-button1">more...</span>
-            <span class="deshide">
-            Olivier was at the forefront of luxury’s growth in Asia the last 20 years. Having helmed luxury media companies and yacht companies, Olivier also co-founded some of the most famous luxury shows in the world including Hainan RendezVous海天盛筵. He brings a wealth of global connections and relationships within the luxury industry.
-              </br></br>
-              Olivier is CEO of Heart Media, which also owns the Singapore RendezVous, Phuket RendezVous and Penang
-            Rendezvous, all leading luxury shows at the centre of ultra-affluent communities.
-            <span class="aditus-button2">less</span></span>
-          </p>
-        </div>
+                <div class="team-people">
+                    <img src="/dist/images/team1.png" alt="Olivier Burlot">
+                    <h5>Olivier Burlot</h5>
+                    <h6>Co-Founder, President</h6><a href="https://linkedin.com/in/olivierburlot" class="linkedin" target="_blank"></a>
+                    <p>
+                        {{ $.Param "team_members.member_2" | safeHTML }}
+                        </br></br>
+                        {{ $.Param "team_members.member_2_1" | safeHTML }}
+                        <span class="aditus-button1">{{ $.Param "global_text.text_1" | safeHTML }}</span>
+                        <span class="deshide">
+            {{ $.Param "team_members.member_2_2" | safeHTML }}
+                            </br></br>
+                            {{ $.Param "team_members.member_2_3" | safeHTML }}
+            <span class="aditus-button2">{{ $.Param "global_text.text_2" | safeHTML }}</span></span>
+                    </p>
+                </div>
 
-        <div class="team-people">
-          <img src="/dist/images/team3.png" alt="Prakash Somosundram">
-          <h5>Prakash Somosundram</h5>
-          <h6>Co-Founder</h6><a href="https://linkedin.com/in/prakashsomo" class="linkedin" target="_blank"></a>
-          <p>
-            Prakash is a leading digital entrepreneur who founded Yolk, a digital agency that served clients like Lenovo,
-            Microsoft, Singapore’s Ministry of
-            <span class="aditus-button1">more...</span>
-            <span class="deshide">
-            Communications and the Arts. Yolk was acquired by WPP in 2011. He also
-            listed another company TMG on Nasdaq First North. He is highly ranked as an influencer in the fintech space in
-            Asia. He is actively involved in startup ecosystem development and promotion in Singapore.
-              </br></br>
-              In 2016 he was recognized at the Singapore Indian Business Leaders ( SIBL) awards
-            <span class="aditus-button2">less</span></span>
-          </p>
-        </div>
+                <div class="team-people">
+                    <img src="/dist/images/team3.png" alt="Prakash Somosundram">
+                    <h5>Prakash Somosundram</h5>
+                    <h6>Co-Founder</h6><a href="https://linkedin.com/in/prakashsomo" class="linkedin" target="_blank"></a>
+                    <p>
+                        {{ $.Param "team_members.member_3" | safeHTML }}
+                        <span class="aditus-button1">{{ $.Param "global_text.text_1" | safeHTML }}</span>
+                        <span class="deshide">
+            {{ $.Param "team_members.member_3_1" | safeHTML }}
+                            </br></br>
+                            {{ $.Param "team_members.member_3_2" | safeHTML }}
+            <span class="aditus-button2">{{ $.Param "global_text.text_2" | safeHTML }}</span></span>
+                    </p>
+                </div>
 
-        <div class="team-people">
-          <img src="/dist/images/team-jason-kwong.png" alt="Jason Kwong">
-          <h5>Jason Kwong</h5>
-          <h6>VP, Business Development</h6>
-          <a href="https://www.linkedin.com/in/jason-kwong-424831152/" class="linkedin" target="_blank"></a>
-          <p>
-            Jason spent seven years in the financial sector with experience in credit card marketing and equity trading before
-            entering into luxury media,
-            <span class="aditus-button1">more...</span>
-            <span class="deshide">
-            serving as managing editor of major luxury magazines.
-            He was an early investor in bitcoin and ethereum. His knowledge of luxury, and a keen interest in cryptocurrencies are summoned to the forefront at Aditus.
-            <span class="aditus-button2">less</span></span>
-          </p>
-        </div>
-      </div>
+                <div class="team-people">
+                    <img src="/dist/images/team-jason-kwong.png" alt="Jason Kwong">
+                    <h5>Jason Kwong</h5>
+                    <h6>VP, Business Development</h6>
+                    <a href="https://www.linkedin.com/in/jason-kwong-424831152/" class="linkedin" target="_blank"></a>
+                    <p>
+                        {{ $.Param "team_members.member_4" | safeHTML }}
+                        <span class="aditus-button1">{{ $.Param "global_text.text_1" | safeHTML }}</span>
+                        <span class="deshide">
+            {{ $.Param "team_members.member_4_1" | safeHTML }}
+            <span class="aditus-button2">{{ $.Param "global_text.text_2" | safeHTML }}</span></span>
+                    </p>
+                </div>
+            </div>
 
-      <div class="team">
-        <div class="team-people">
-          <img src="/dist/images/team4.png" alt="Tony Chew">
-          <h5>Tony Chew</h5>
-          <h6>Lead Blockchain Developer</h6><a href="https://linkedin.com/in/tonychew1986" class="linkedin" target="_blank"></a>
-          <p>
-            Tony has over 10 years of industry experience in the technology domain, having helmed multiple projects in different roles. He is the core developer of SafeAsset.io, a next-generation <span class="aditus-button1">more...</span>
-            <span class="deshide"> decentralised cryptocurrency banking platform </br></br>
-              He has been involved with blockchain technology since 2011, having worked on multiple projects with
-          decentralisation as a goal while leveraging underlying cryptographic techniques; eg multisignature escrow,
-          shamir secret for key distribution, hashing as cryptographic notary etc. His prior knowledge on game theory
-          and economic theory give him an advantage when it comes to designing DAO projects.
-          <span class="aditus-button2">less</span></span>
-          </p>
-        </div>
+            <div class="team">
+                <div class="team-people">
+                    <img src="/dist/images/team4.png" alt="Tony Chew">
+                    <h5>Tony Chew</h5>
+                    <h6>Lead Blockchain Developer</h6><a href="https://linkedin.com/in/tonychew1986" class="linkedin" target="_blank"></a>
+                    <p>
+                        {{ $.Param "team_members.member_5" | safeHTML }}
+                        <span class="aditus-button1">{{ $.Param "global_text.text_1" | safeHTML }}</span>
+                        <span class="deshide">
+              {{ $.Param "team_members.member_5_1" | safeHTML }}
+              <span class="aditus-button2">{{ $.Param "global_text.text_2" | safeHTML }}</span>
+            </span>
+                    </p>
+                </div>
 
-        <div class="team-people">
-          <img src="/dist/images/team-ahmed-zulkamal.png" alt='Ahmed Zulkamal'>
-          <h5>Zulkamal Ahmed</h5>
-          <h6>Director, Operations</h6>
-          <a href="https://www.linkedin.com/in/zulkamal" class="linkedin" target="_blank"></a>
-          <p>
-            Zulkamal is a multi-disciplined product manager with more than 10 years of full-stack application development
-            and management experience
-            <span class="aditus-button1">more...</span>
-            <span class="deshide">
-            ranging from architectural design, UI/UX, data analysis to marketing in the digital
-            media space.
+                <div class="team-people">
+                    <img src="/dist/images/team-ahmed-zulkamal.png" alt='Ahmed Zulkamal'>
+                    <h5>Zulkamal Ahmed</h5>
+                    <h6>Director, Operations</h6>
+                    <a href="https://www.linkedin.com/in/zulkamal" class="linkedin" target="_blank"></a>
+                    <p>
+                        {{ $.Param "team_members.member_6" | safeHTML }}
+                        <span class="aditus-button1">{{ $.Param "global_text.text_1" | safeHTML }}</span>
+                        <span class="deshide">
+            {{ $.Param "team_members.member_6_1" | safeHTML }}
             <br />
             <br />
-            Prior to being in the blockchain space, he was involved in applying machine learning and data science at a
-            fashion-related startup and the hospitality industry. He was also one of the founding members of WebSG, a web
-            standards advocacy group in Singapore.
-            <span class="aditus-button2">less</span></span>
-          </p>
-        </div>
+            {{ $.Param "team_members.member_6_2" | safeHTML }}
+            <span class="aditus-button2">{{ $.Param "global_text.text_2" | safeHTML }}</span>
+            </span>
+                    </p>
+                </div>
 
-        <div class="team-people">
-          <img src="/dist/images/team-prabhu-sengal.png" alt="Prabhu Sengal">
-          <h5>Prabhu Sengal</h5>
-          <h6>Lead Developer</h6><a href="https://www.linkedin.com/in/prabhusengal/" class="linkedin" target="_blank"></a>
-          <p>
-            Prabhu is the founder and CTO of The Software Practice (https://tsp.sg), a technology development firm based
-            in Singapore.
-            <span class="aditus-button1">more...</span>
-            <span class="deshide">
-            He has architected solutions and led teams to deliver complex software solutions for large
-            enterprises and Government agencies including Hewlett Packard, DBS (Southeast Asia's largest bank) and
-            DSTA (the Defence Science and Technology Agency of Singapore).
+                <div class="team-people">
+                    <img src="/dist/images/team-prabhu-sengal.png" alt="Prabhu Sengal">
+                    <h5>Prabhu Sengal</h5>
+                    <h6>Lead Developer</h6><a href="https://www.linkedin.com/in/prabhusengal/" class="linkedin" target="_blank"></a>
+                    <p>
+                        {{ $.Param "team_members.member_7" | safeHTML }}
+                        <span class="aditus-button1">{{ $.Param "global_text.text_1" | safeHTML }}</span>
+                        <span class="deshide">
+            {{ $.Param "team_members.member_7_1" | safeHTML }}
             <br /><br />
-            He's an avid blockchain enthusiast who brings in substantial technical expertise in designing and developing
-            world-class software.
-            <span class="aditus-button2">less</span></span>
-          </p>
-        </div>
-      </div>
-
-      <h2>Advisors</h2>
-      <div class="team advisor">
-        <div class="team-people">
-          <img src="/dist/images/shaun.png">
-          <h5>Shaun Djie</h5>
-          <h6>Advisor</h6><a href="https://www.linkedin.com/in/shaundjie/" class="linkedin" target="_blank"></a>
-          <p>• Co-Founder Digix Global</br>
-            • Lead Coordinator, Ethereum
-            Singapore, Meetup</p>
-        </div>
-
-        <div class="team-people">
-          <img src="/dist/images/advisors-jeremy-kerbel.png">
-          <h5>Jeremy Kerbel</h5>
-          <h6>Advisor</h6><a href="https://www.linkedin.com/in/jeremy-k-a0711b9/" class="linkedin" target="_blank"></a>
-          <p>
-            • CEO, Global DCX cryptocurrency-exchange<br>
-            • Formerly: Director, Corporate Markets (APAC) GLG <br />
-            </p>
-        </div>
-
-        <div class="team-people">
-          <img src="/dist/images/advisors-samuel-reid.png">
-          <h5>Samuel Reid</h5>
-          <h6>Advisor</h6>
-          <a href="https://www.linkedin.com/in/samuel-mark-reid/" class="linkedin" target="_blank"></a>
-          <p>• Research & Adoption, IOTA Foundation</br>
-            • Director, SpaceBit Foundation<br />
-            • Chief Blockchain Engineer, Gibraltar Blockchain Exchange<br />
-            • CEO, Geometric Energy Corporation</p>
-        </div>
-
-        <div class="team-people">
-          <img src="/dist/images/kenneth.png">
-          <h5>Kenneth Oh</h5>
-          <h6>Advisor</h6><a href="https://www.linkedin.com/in/kenneth-oh-3187a111a/" class="linkedin" target="_blank"></a>
-          <p>
-            • Senior Partner, Dentons Rodyk</br>
-            • Leading corporate finance lawyer in
-            Singapore with expertise in token sale</p>
-        </div>
-      </div>
-
-      <div class="team advisor">
-        <div class="team-people">
-          <img src="/dist/images/advisors-lee-tsun-ngai.png">
-          <h5>Lee Tsun Ngai</h5>
-          <h6>Advisor</h6><a href="https://www.linkedin.com/in/leetsunngai/" class="linkedin" target="_blank"></a>
-          <p>
-            • Head of Business Development at Kyber Networks</p>
-        </div>
-
-        <div class="team-people">
-          <img src="/dist/images/advisors-akash-aggarwal.png">
-          <h5>Akash Aggarwal</h5>
-          <h6>Advisor</h6><a href="https://www.linkedin.com/in/akashaggarwal009/" class="linkedin" target="_blank"></a>
-          <p>• Founder & President of cryptocurrency exchange Global DCX</br>
-            • Digital Currency Council, ACCESS Singapore and the Bitcoin Foundation member</p>
-        </div>
-
-        <div class="team-people">
-          <img src="/dist/images/advisors-francis-gouten.png">
-          <h5>Francis Gouten </h5>
-          <h6>Advisor</h6><a href="https://www.linkedin.com/in/francis-gouten-a973444/" class="linkedin" target="_blank"></a>
-          <p>
-            • Former CEO of Richemont Asia-Pacific</br>
-            • Board member, Louis XIII Holdings in Macau<br />
-            • 35 years experience in luxury</p>
-        </div>
-
-        <div class="team-people">
-          <img src="/dist/images/regina.png">
-          <h5>Regina Lam</h5>
-          <h6>Advisor</h6><a href="https://www.linkedin.com/in/regina-lam-2013/" class="linkedin" target="_blank"></a>
-          <p>
-            • Former CEO Tom Ford Asia, Staff International Asia, LVMH Asia (Emilio Pucci)</br>
-            • 20 years experience in luxury</p>
-        </div>
-      </div>
-
-      <div class="team advisor">
-        <div class="team-people">
-          <img src="/dist/images/francis.png">
-          <h5>Francis Srun</h5>
-          <h6>Advisor</h6><a href="https://www.linkedin.com/in/fsrun/" class="linkedin" target="_blank"></a>
-          <p>
-            • Former MD Ralph Lauren Asia, Boucheron Asia</br>
-            • 20 years experience in luxury</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id='partners' class='container-fluid clear'>
-    <div class='container'>
-      <h2>Our Partners</h2>
-      <div class='row justify-content-center'>
-        <div class='col'>
-          <a href='https://medium.com/aditusnetwork/aditus-network-offers-exclusive-rewards-for-kybernetworks-kgt-early-investors-909c41e47df9'>
-            <img src='/dist/images/partners-kyber-netword.png' alt='Kyber Network'>
-          </a>
-        </div>
-        <div class='col'>
-          <a href='http://d13.vc/'>
-            <img src='/dist/images/partners-d13.png' alt='District 13'>
-          </a>
-        </div>
-        <div class='col'>
-          <a href='https://medium.com/aditusnetwork/digix-x-aditus-live-luxuriously-shop-and-receive-tokenised-gold-aka-dgx-tokens-for-engagement-15556946cd61'>
-            <img src='/dist/images/partners-digix.png' alt='Digix Global'>
-          </a>
-        </div>
-        <div class='col'>
-          <a href='https://medium.com/aditusnetwork/aditus-and-pundi-x-enable-luxury-merchants-to-accept-aditus-tokens-through-pundi-x-pos-devices-b03ed668cb91'>
-            <img src='/dist/images/partners-pundix.png' alt='Pundi X'>
-          </a>
-        </div>
-      </div>
-      <div class='row justify-content-center'>
-        <div class='col'>
-          <a href='http://www.singaporerendezvous.com'>
-            <img src='/dist/images/partners-singapore-rv.png' alt='Singapore Rendezvous'>
-          </a>
-        </div>
-        <div class='col'>
-          <a href='http://www.thephuketrendezvous.com'>
-            <img src='/dist/images/partners-phuket-rv.png' alt='Phuket Rendezvous'>
-          </a>
-        </div>
-        <div class='col'>
-          <img src='/dist/images/partners-penangrv.png' alt='Penang Rendezvous'>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="aditus-token" class="container-fluid clear">
-    <div class='container'>
-      <h2>Aditus Token Utility</h2>
-      <h3 class="subtitle">The Aditus Token ultilises Ethereum's decentralised infrastructure to give you access to
-        luxury merchants.</h3>
-      <img src="/dist/images/logo-app.png" class="token-logo"/>
-      <div class="utility-wrap row">
-        <div class="utility col-md-3">
-          <h4>Membership Proof</h4>
-          <p>To access and create Smart Invitations</p>
-        </div>
-        <div class="utility col-md-3">
-          <h4>Rewards Currency</h4>
-          <p>Be rewarded for engagement with merchant offers and purchases</p>
-        </div>
-        <div class="utility col-md-3">
-          <h4>Transactional Currency</h4>
-          <p>Use Aditus tokens alongside other major crypto-currencies for payment at merchants</p>
-        </div>
-        <div class="utility col-md-3">
-          <h4>Voting Rights</h4>
-          <p>Voting rights on program line-ups at our events to personalise your desired Aditus experience</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="tokensale" class="container-fluid">
-    <div class='container'>
-      <h2>Aditus Token Sale is complete</h2>
-      <p class='subtitle'>Follow our <a href='https://medium.com/aditusnetwork'>blog</a> for updates on token distribution and roll-out</p>
-      <div class='tokensale'>
-        <div class='tokensaleFigures row justify-content-center'>
-          <div class='tokensaleFiguresPanel col-md-4'>
-            <h3>Amount Raised</h3>
-            <div class='tokensaleFiguresPanelSecondary publicSale text-center'>
-              <span class="tokenCurrency">USD</span> <span class="count">7,100,193.81</span>
+            {{ $.Param "team_members.member_7_2" | safeHTML }}
+            <span class="aditus-button2">{{ $.Param "global_text.text_2" | safeHTML }}</span></span>
+                    </p>
+                </div>
             </div>
-            <span class="priceNote">Based on ETH / USD rates on dates ETH received.</span>
-          </div>
+
+            <h2>{{ $.Param "team_section.text_3" | safeHTML }}</h2>
+            <div class="team advisor">
+                <div class="team-people">
+                    <img src="/dist/images/shaun.png">
+                    <h5>Shaun Djie</h5>
+                    <h6>Advisor</h6><a href="https://www.linkedin.com/in/shaundjie/" class="linkedin" target="_blank"></a>
+                    <p>{{ $.Param "team_members.advisor_1" | safeHTML }}</p>
+                </div>
+
+                <div class="team-people">
+                    <img src="/dist/images/advisors-jeremy-kerbel.png">
+                    <h5>Jeremy Kerbel</h5>
+                    <h6>Advisor</h6><a href="https://www.linkedin.com/in/jeremy-k-a0711b9/" class="linkedin" target="_blank"></a>
+                    <p>{{ $.Param "team_members.advisor_2" | safeHTML }}</p>
+                </div>
+
+                <div class="team-people">
+                    <img src="/dist/images/advisors-samuel-reid.png">
+                    <h5>Samuel Reid</h5>
+                    <h6>Advisor</h6>
+                    <a href="https://www.linkedin.com/in/samuel-mark-reid/" class="linkedin" target="_blank"></a>
+                    <p>{{ $.Param "team_members.advisor_3" | safeHTML }}</p>
+                </div>
+
+                <div class="team-people">
+                    <img src="/dist/images/kenneth.png">
+                    <h5>Kenneth Oh</h5>
+                    <h6>Advisor</h6><a href="https://www.linkedin.com/in/kenneth-oh-3187a111a/" class="linkedin" target="_blank"></a>
+                    <p>{{ $.Param "team_members.advisor_4" | safeHTML }}</p>
+                </div>
+            </div>
+
+            <div class="team advisor">
+                <div class="team-people">
+                    <img src="/dist/images/advisors-lee-tsun-ngai.png">
+                    <h5>Lee Tsun Ngai</h5>
+                    <h6>Advisor</h6><a href="https://www.linkedin.com/in/leetsunngai/" class="linkedin" target="_blank"></a>
+                    <p>{{ $.Param "team_members.advisor_5" | safeHTML }}</p>
+                </div>
+
+                <div class="team-people">
+                    <img src="/dist/images/advisors-akash-aggarwal.png">
+                    <h5>Akash Aggarwal</h5>
+                    <h6>Advisor</h6><a href="https://www.linkedin.com/in/akashaggarwal009/" class="linkedin" target="_blank"></a>
+                    <p>{{ $.Param "team_members.advisor_6" | safeHTML }}</p>
+                </div>
+
+                <div class="team-people">
+                    <img src="/dist/images/advisors-francis-gouten.png">
+                    <h5>Francis Gouten </h5>
+                    <h6>Advisor</h6><a href="https://www.linkedin.com/in/francis-gouten-a973444/" class="linkedin" target="_blank"></a>
+                    <p>{{ $.Param "team_members.advisor_7" | safeHTML }}</p>
+                </div>
+
+                <div class="team-people">
+                    <img src="/dist/images/regina.png">
+                    <h5>Regina Lam</h5>
+                    <h6>Advisor</h6><a href="https://www.linkedin.com/in/regina-lam-2013/" class="linkedin" target="_blank"></a>
+                    <p>{{ $.Param "team_members.advisor_8" | safeHTML }}</p>
+                </div>
+            </div>
+
+            <div class="team advisor">
+                <div class="team-people">
+                    <img src="/dist/images/francis.png">
+                    <h5>Francis Srun</h5>
+                    <h6>Advisor</h6><a href="https://www.linkedin.com/in/fsrun/" class="linkedin" target="_blank"></a>
+                    <p>{{ $.Param "team_members.advisor_9" | safeHTML }}</p>
+                </div>
+            </div>
         </div>
-        <div class='row'>
-          <div class='col'>
-            <h3 class="subtitle">Thank you to all our participants</h3>
-          </div>
+    </section>
+
+    <section id='partners' class='container-fluid clear'>
+        <div class='container'>
+            <h2>{{ $.Param "partners_section.text_1" | safeHTML }}</h2>
+            <div class='row justify-content-center'>
+                <div class='col'>
+                    <a href='https://medium.com/aditusnetwork/aditus-network-offers-exclusive-rewards-for-kybernetworks-kgt-early-investors-909c41e47df9'>
+                        <img src='/dist/images/partners-kyber-netword.png' alt='Kyber Network' class="rounded">
+                    </a>
+                </div>
+                <div class='col'>
+                    <a href='http://d13.vc/'>
+                        <img src='/dist/images/partners-d13.png' alt='District 13' class="rounded">
+                    </a>
+                </div>
+                <div class='col'>
+                    <a href='https://medium.com/aditusnetwork/digix-x-aditus-live-luxuriously-shop-and-receive-tokenised-gold-aka-dgx-tokens-for-engagement-15556946cd61'>
+                        <img src='/dist/images/partners-digix.png' alt='Digix Global' class="rounded">
+                    </a>
+                </div>
+                <div class='col'>
+                    <a href='https://medium.com/aditusnetwork/aditus-and-pundi-x-enable-luxury-merchants-to-accept-aditus-tokens-through-pundi-x-pos-devices-b03ed668cb91'>
+                        <img src='/dist/images/partners-pundix.png' alt='Pundi X' class="rounded">
+                    </a>
+                </div>
+            </div>
+            <div class='row justify-content-center'>
+                <div class='col'>
+                    <a href='http://www.singaporerendezvous.com'>
+                        <img src='/dist/images/partners-singapore-rv.png' alt='Singapore Rendezvous'>
+                    </a>
+                </div>
+                <div class='col'>
+                    <a href='http://www.thephuketrendezvous.com'>
+                        <img src='/dist/images/partners-phuket-rv.png' alt='Phuket Rendezvous'>
+                    </a>
+                </div>
+                <div class='col'>
+                    <img src='/dist/images/partners-penangrv.png' alt='Penang Rendezvous'>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
+
+    <section id="aditus-token" class="container-fluid clear">
+        <div class='container'>
+            <h2>{{ $.Param "token_utility.text_1" | safeHTML }}</h2>
+            <h3 class="subtitle">{{ $.Param "token_utility.text_2" | safeHTML }}</h3>
+
+            <img src="/dist/images/logo-app.png" class="token-logo"/>
+            <div class="utility-wrap row">
+                <div class="utility col-md-3">
+                    <h4>{{ $.Param "token_utility.text_3" | safeHTML }}</h4>
+                    <p>{{ $.Param "token_utility.text_4" | safeHTML }}</p>
+                </div>
+                <div class="utility col-md-3">
+                    <h4>{{ $.Param "token_utility.text_5" | safeHTML }}</h4>
+                    <p>{{ $.Param "token_utility.text_6" | safeHTML }}</p>
+                </div>
+                <div class="utility col-md-3">
+                    <h4>{{ $.Param "token_utility.text_7" | safeHTML }}</h4>
+                    <p>{{ $.Param "token_utility.text_8" | safeHTML }}</p>
+                </div>
+                <div class="utility col-md-3">
+                    <h4>{{ $.Param "token_utility.text_9" | safeHTML }}</h4>
+                    <p>{{ $.Param "token_utility.text_10" | safeHTML }}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tokensale" class="container-fluid">
+        <div class='container'>
+            <h2>{{ $.Param "token_sale.text_1" | safeHTML }}</h2>
+            <p class='subtitle'>{{ $.Param "token_sale.text_2_1" | safeHTML }} <a href='https://medium.com/aditusnetwork'>{{ $.Param "token_sale.text_2_2" | safeHTML }}</a> {{ $.Param "token_sale.text_2_3" | safeHTML }}</p>
+            <div class='tokensale'>
+                <div class='tokensaleFigures row justify-content-center'>
+                    <div class='tokensaleFiguresPanel col-md-4'>
+                        <h3>{{ $.Param "token_sale.text_3" | safeHTML }}</h3>
+                        <div class='tokensaleFiguresPanelSecondary publicSale text-center'>
+                            <span class="tokenCurrency">USD</span> <span class="count">7,100,193.81</span>
+                        </div>
+                        <span class="priceNote">{{ $.Param "token_sale.text_4" | safeHTML }}</span>
+                    </div>
+                </div>
+                <div class='row'>
+                    <div class='col'>
+                        <h3 class="subtitle">{{ $.Param "token_sale.text_5" | safeHTML }}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 </main>
 
@@ -693,7 +683,7 @@
             labels: ["January 2015", "April 2016", "July 2017", "November 2017"],
             datasets: [
                 {
-                    label: "Cryptocurrency Market Capitalisation",
+                    label: '{{ $.Param "opportunity_brewing.text_2" | safeHTML }}',
                     fill: false,
                     lineTension: 0.1,
                     backgroundColor: "#c69c2b",
@@ -746,7 +736,7 @@
             labels: ["January 2015", "April 2016", "July 2017", "November 2017"],
             datasets: [
                 {
-                    label: "Cryptocurrency Market Capitalisation",
+                    label: '{{ $.Param "opportunity_brewing.text_2" | safeHTML }}',
                     fill: false,
                     lineTension: 0.1,
                     backgroundColor: "#c69c2b",
