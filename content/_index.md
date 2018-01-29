@@ -2,33 +2,9 @@
 title : "Home"
 url : "/"
 groups : ["en"]
-main_menu:
-    menu_1: "Opportunity" 
-    menu_2: "Aditus Membership" 
-    menu_3: "All Round Access" 
-    menu_4: "Uniquely Private" 
-    menu_5: "Team" 
-    menu_6: "Blog"
-    menu_7: "Token Sale"
-    menu_8: "Token Utility" 
-    menu_9: "Partners"
-    menu_10: "Download" 
-    menu_11: "Whitepaper" 
-    menu_12: "Deck" 
-hero_content:
-    content_1: "Luxury Access Platform for Crypto-Affluents"
-    content_2: "Aditus is a revolutionary new platform bringing the world of luxury to crypto-affluents, through a privacy-centric decentralised network utilising smart contracts and blockchain technology."
-    content_3: "Token Sale Completed <br> <span>Thank you!</span>"
-    content_4: "Download Whitepaper <span>Updated 29 Nov 2017</span>"
 blog:
     text_1: "Latest From Our Blog"
     text_2: "Read more"
-social_media:
-    text_1: "Connect With Us"
-    text_2: "connect with us on linkedin"
-    text_3: "chat with us on telegram"
-    text_4: "read us on medium"
-    text_5: "see us on instagram"
 featured_section:
     text_1: "Featured in"
     text_2: "Aditus featured on Channel News Asia. <br>Original news link"
@@ -133,7 +109,9 @@ team_members:
     advisor_7: "• Former CEO of Richemont Asia-Pacific</br>• Board member, Louis XIII Holdings in Macau<br />• 35 years experience in luxury"
     advisor_8: "• Former CEO Tom Ford Asia, Staff International Asia, LVMH Asia (Emilio Pucci)</br>• 20 years experience in luxury"
     advisor_9: "• Former MD Ralph Lauren Asia, Boucheron Asia</br>• 20 years experience in luxury"
-global_text:
-    text_1: "more..."
-    text_2: "less"
+exchange_listing:
+    text_1: "Exchange listings"
+    text_2_1: "Follow our"     
+    text_2_2: "blog"     
+    text_2_3: "for more token listing updates"
 ---

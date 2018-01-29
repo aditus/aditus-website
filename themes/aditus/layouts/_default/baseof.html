@@ -1,7 +1,10 @@
+{{ define "description" }}A platform bringing the world of luxury to crypto-affluents through a privacy-centric decentralised network, smart contracts and blockchain technology{{ end }}
+
+
 <!doctype html>
 
 <html class="no-js">
-  <head>
+<head>
     <meta charset="utf-8">
     <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
 
@@ -23,133 +26,134 @@
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108637916-1"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-108637916-1');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-108637916-1');
     </script>
-  </head>
+</head>
 
-  <body class="{{ $.Param "body_classes"  | default ""}}{{ with getenv "HUGO_ENV" }} {{ . }}{{ end }}">
-    <div class="wrapper">
+{{ $t := $.Site.GetPage "section" "globe" }}
 
-      <header class="header clear" role="banner">
+<body class="{{ $.Param "body_classes"  | default ""}}{{ with getenv "HUGO_ENV" }} {{ . }}{{ end }}">
+<div class="wrapper">
 
-          <div class="menu-div">
+    <header class="header clear" role="banner">
+
+        <div class="menu-div">
             <span></span>
             <span></span>
             <span></span>
-          </div>
+        </div>
 
-          <nav class="mobile-nav" role="navigation">
+        <nav class="mobile-nav" role="navigation">
             <img src="/dist/images/adituslogo.png" alt="Logo" class="logo-mobile">
             <ul>
-              <li><a href="#opportunity">{{ $.Param "main_menu.menu_1" }}</a></li>
-              <li><a href="#membership">{{ $.Param "main_menu.menu_2" }}</a></li>
-              <li><a href="#access">{{ $.Param "main_menu.menu_3" }}</a></li>
-              <li><a href="#privacy">{{ $.Param "main_menu.menu_4" }}</a></li>
-              <li><a href="#team">{{ $.Param "main_menu.menu_5" }}</a></li>
-              <li><a href="#blog">{{ $.Param "main_menu.menu_6" }}</a></li>
-              <li><a href="#aditus-token">{{ $.Param "main_menu.menu_7" }}</a></li>
-              <li><a href="#partners">{{ $.Param "main_menu.menu_8" }}</a></li>
-              <li><a href="#tokensale">{{ $.Param "main_menu.menu_9" }}</a></li>
-              <li class="downloadButton">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    {{ $.Param "main_menu.menu_10" }}
-                  </button>
-                  <div class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" href="/Aditus-Whitepaper.pdf">{{ $.Param "main_menu.menu_11" }}</a>
-                    <a class="dropdown-item" href="/Aditus-Presentation-Deck.pdf">{{ $.Param "main_menu.menu_12" }}</a>
-                  </div>
-                </div>
-              </li>
-              <li class="downloadButton">
-                <div class="btn-group lang-selection">
-                  <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    {{ .Site.Language.Lang }}
-                  </button>
-                  <div class="dropdown-menu dropdown-menu-right">
-                    <a class='dropdown-item {{ if eq .Site.Language.Lang "en" }}active{{ end }}' href="/">EN (English)</a>
-                    <a class='dropdown-item {{ if eq .Site.Language.Lang "cn" }}active{{ end }}' href="/cn">CN (Chinese)</a>
-                  </div>
-                </div>
-              </li>
+                <li><a href="#opportunity">{{ $t.Param "main_menu.menu_1" }}</a></li>
+                <li><a href="#membership">{{ $t.Param "main_menu.menu_2" }}</a></li>
+                <li><a href="#access">{{ $t.Param "main_menu.menu_3" }}</a></li>
+                <li><a href="#privacy">{{ $t.Param "main_menu.menu_4" }}</a></li>
+                <li><a href="#team">{{ $t.Param "main_menu.menu_5" }}</a></li>
+                <li><a href="#blog">{{ $t.Param "main_menu.menu_6" }}</a></li>
+                <li><a href="#aditus-token">{{ $t.Param "main_menu.menu_7" }}</a></li>
+                <li><a href="#partners">{{ $t.Param "main_menu.menu_8" }}</a></li>
+                <li><a href="#tokensale">{{ $t.Param "main_menu.menu_9" }}</a></li>
+                <li class="downloadButton">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{ $t.Param "main_menu.menu_10" }}
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="/Aditus-Whitepaper.pdf">{{ $t.Param "main_menu.menu_11" }}</a>
+                            <a class="dropdown-item" href="/Aditus-Presentation-Deck.pdf">{{ $t.Param "main_menu.menu_12" }}</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="downloadButton">
+                    <div class="btn-group lang-selection">
+                        <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{ .Site.Language.Lang }}
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class='dropdown-item {{ if eq .Site.Language.Lang "en" }}active{{ end }}' href="/">EN (English)</a>
+                            <a class='dropdown-item {{ if eq .Site.Language.Lang "cn" }}active{{ end }}' href="/cn">CN (Chinese)</a>
+                        </div>
+                    </div>
+                </li>
             </ul>
-          </nav>
-          <div class="scrolled-header scrolled">
+        </nav>
+        <div class="scrolled-header scrolled">
             <a class="fixed-logo" href="#"><img src="/dist/images/logo.png" alt="Logo" /></a>
             <nav class="nav" role="navigation">
-              <ul>
-              <li><a href="#opportunity">{{ $.Param "main_menu.menu_1" }}</a></li>
-              <li><a href="#membership">{{ $.Param "main_menu.menu_2" }}</a></li>
-              <li><a href="#access">{{ $.Param "main_menu.menu_3" }}</a></li>
-              <li><a href="#privacy">{{ $.Param "main_menu.menu_4" }}</a></li>
-              <li><a href="#team">{{ $.Param "main_menu.menu_5" }}</a></li>
-              <li><a href="#blog">{{ $.Param "main_menu.menu_6" }}</a></li>
-              <li><a href="#tokensale">{{ $.Param "main_menu.menu_7" }}</a></li>
-              <li class="downloadButton">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    {{ $.Param "main_menu.menu_10" }}
-                  </button>
-                  <div class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" href="/Aditus-Whitepaper.pdf">{{ $.Param "main_menu.menu_11" }}</a>
-                    <a class="dropdown-item" href="/Aditus-Presentation-Deck.pdf">{{ $.Param "main_menu.menu_12" }}</a>
-                  </div>
-                </div>
-              </li>
-              <li class="downloadButton">
-                <div class="btn-group lang-selection">
-                  <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    {{ .Site.Language.Lang }}
-                  </button>
-                  <div class="dropdown-menu dropdown-menu-right">
-                    <a class='dropdown-item {{ if eq .Site.Language.Lang "en" }}active{{ end }}' href="/">EN (English)</a>
-                    <a class='dropdown-item {{ if eq .Site.Language.Lang "cn" }}active{{ end }}' href="/cn">CN (Chinese)</a>
-                  </div>
-                </div>
-              </li>
-
-              </ul>
+                <ul>
+                    <li><a href="#opportunity">{{ $t.Param "main_menu.menu_1" }}</a></li>
+                    <li><a href="#membership">{{ $t.Param "main_menu.menu_2" }}</a></li>
+                    <li><a href="#access">{{ $t.Param "main_menu.menu_3" }}</a></li>
+                    <li><a href="#privacy">{{ $t.Param "main_menu.menu_4" }}</a></li>
+                    <li><a href="#team">{{ $t.Param "main_menu.menu_5" }}</a></li>
+                    <li><a href="#blog">{{ $t.Param "main_menu.menu_6" }}</a></li>
+                    <li><a href="#tokensale">{{ $t.Param "main_menu.menu_7" }}</a></li>
+                    <li class="downloadButton">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {{ $t.Param "main_menu.menu_10" }}
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item" href="/Aditus-Whitepaper.pdf">{{ $t.Param "main_menu.menu_11" }}</a>
+                                <a class="dropdown-item" href="/Aditus-Presentation-Deck.pdf">{{ $t.Param "main_menu.menu_12" }}</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="downloadButton">
+                        <div class="btn-group lang-selection">
+                            <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {{ .Site.Language.Lang }}
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class='dropdown-item {{ if eq .Site.Language.Lang "en" }}active{{ end }}' href="/">EN (English)</a>
+                                <a class='dropdown-item {{ if eq .Site.Language.Lang "cn" }}active{{ end }}' href="/cn">CN (Chinese)</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </nav>
-          </div>
+        </div>
 
-      </header><!-- /header -->
+    </header><!-- /header -->
 
-      {{ block "main" . }}
-      {{ end }}
+    {{ block "main" . }}
+    {{ end }}
 
-      {{ block "footer" . }}
-      {{ end }}
+    {{ block "footer" . }}
+    {{ end }}
 
-      <footer class="footer" role="contentinfo">
+    <footer class="footer" role="contentinfo">
         <img src="/dist/images/adituslogo.png" alt="Logo" class="logo">
 
         <div class='channels container'>
-          <div class='row'>
-            <div class='col channel'>
-              <a href='https://www.linkedin.com/in/aditus-concierge-38b545152/' target='_blank'><img src='/dist/images/channel-linkedin.png' alt='LinkedIn'></a>
+            <div class='row'>
+                <div class='col channel'>
+                    <a href='https://www.linkedin.com/in/aditus-concierge-38b545152/' target='_blank'><img src='/dist/images/channel-linkedin.png' alt='LinkedIn'></a>
+                </div>
+                <div class='col channel'>
+                    <a href='http://t.me/aditusnetwork' target='_blank'><img src='/dist/images/channel-telegram.png' alt='Telegram'></a>
+                </div>
+                <div class='col channel'>
+                    <a href='https://medium.com/aditusnetwork' target='_blank'><img src='/dist/images/channel-medium.png' alt='Medium'></a>
+                </div>
+                <div class='col channel'>
+                    <a href='http://www.instagram.com/aditus.life' target='_blank'><img src='/dist/images/channel-instagram.png' alt='Instagram'></a>
+                </div>
             </div>
-            <div class='col channel'>
-              <a href='http://t.me/aditusnetwork' target='_blank'><img src='/dist/images/channel-telegram.png' alt='Telegram'></a>
-            </div>
-            <div class='col channel'>
-              <a href='https://medium.com/aditusnetwork' target='_blank'><img src='/dist/images/channel-medium.png' alt='Medium'></a>
-            </div>
-            <div class='col channel'>
-              <a href='http://www.instagram.com/aditus.life' target='_blank'><img src='/dist/images/channel-instagram.png' alt='Instagram'></a>
-            </div>
-          </div>
         </div>
 
         <p class="copyright">
-          &copy; 2017 Copyright Aditus.
+            &copy; 2017 Copyright Aditus.
         </p>
-      </footer><!-- /footer -->
+    </footer><!-- /footer -->
 
-    </div><!-- /wrapper -->
+</div><!-- /wrapper -->
 
-    <script type='text/javascript' src='/dist/scripts/main.js'></script>
-  </body>
+<script type='text/javascript' src='/dist/scripts/main.js'></script>
+</body>
 </html>

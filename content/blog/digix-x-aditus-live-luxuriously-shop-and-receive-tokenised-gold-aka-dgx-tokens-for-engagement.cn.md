@@ -1,0 +1,10 @@
++++
+title = "Digix X Aditus: Live luxuriously, Shop and Receive ‘Tokenised Gold’ aka DGX Tokens for Engagement"
+description = "Digix X Aditus: Live luxuriously, Shop and Receive ‘Tokenised Gold’ aka DGX Tokens for Engagement"
+link = "https://medium.com/aditusnetwork/digix-x-aditus-live-luxuriously-shop-and-receive-tokenised-gold-aka-dgx-tokens-for-engagement-15556946cd61"
+thumb = "/dist/images/blog-thumbs/15556946cd61.jpg"
+date = "2017-11-13"
+url = "/cn/blog/digix-x-aditus-live-luxuriously-shop-and-receive-tokenised-gold-aka-dgx-tokens-for-engagement"
++++
+
+The partnership between Aditus Network and Digix Global will see users of the Aditus platform will get the opportunity to receive the soon-to-be relaunched DGX 2.0 gold backed cryptocurrency as part of the planned luxury merchant rewards for consumer engagement.

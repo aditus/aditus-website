@@ -1,0 +1,24 @@
+{{ define "main" }}
+
+{{ $globe := $.Site.GetPage "section" "globe" }}
+
+<main id="main-container">
+    <section id='blog' class='container-fluid blog-details'>
+        <div class='container'>
+            <div class='row justify-content-md-center'>
+                <div class='latest-post col-md-8'>
+                    <h2>
+                        <a name='blog'>{{ .Params.title | safeHTML }}</a>
+                    </h2>
+
+                    <div class='posts-wrap'>
+                        <p>
+                            {{ .Summary }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{{ end }}

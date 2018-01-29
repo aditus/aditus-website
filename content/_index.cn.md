@@ -2,33 +2,9 @@
 title : "Home"
 url : "/cn"
 groups : ["cn"]
-main_menu:
-    menu_1: "机遇" 
-    menu_2: "会员机制" 
-    menu_3: "尊享入口" 
-    menu_4: "私密性" 
-    menu_5: "团队" 
-    menu_6: "博客"
-    menu_7: "代币销售"
-    menu_8: "代币用途" 
-    menu_9: "合作伙伴"
-    menu_10: "下载" 
-    menu_11: "白皮书" 
-    menu_12: "Deck" 
-hero_content:
-    content_1: "加密货币富人奢侈品接入平台"
-    content_2: "Aditus，是一个革命性的全新平台，通过采用智能合约和区块链技术并以保护隐私为目的打造去中心化网络，让加密货币富人对奢侈品世界触手可及。"
-    content_3: "代币销售已完成 <br> <span>谢谢!</span>"
-    content_4: "下载白皮书 <span>于2017年11月29日更新</span>"
 blog:
     text_1: "最新媒体报道"
     text_2: "查看更多"
-social_media:
-    text_1: "联系我们"
-    text_2: "通过LinkedIn联系我们"
-    text_3: "通过Telegram与我们对话"
-    text_4: "通过Medium了解我们"
-    text_5: "关注我们的Instagram"
 featured_section:
     text_1: "专题报道"
     text_2: "亚洲新闻台（Channel News Asia）报道Aditus<br>原始连接"
@@ -133,7 +109,9 @@ team_members:
     advisor_7: "• 历任 Richemont Asia-Pacific，CEO</br>• Louis XIII Holdings（Macau），董事 <br />• 35年奢侈品行业经验"
     advisor_8: "• 历任 Tom Ford Asia，CEO, 曾就职 LVMH Asia (Emilio Pucci)</br>• 20年奢侈品行业经验"
     advisor_9: "• 历任 Ralph Lauren Asia，MD, 曾就职 Boucheron Asia</br>• 20年奢侈品行业经验"
-global_text:
-    text_1: "更多..."
-    text_2: "收起"
+exchange_listing:
+    text_1: "Exchange listings"
+    text_2_1: "Follow our"     
+    text_2_2: "blog"     
+    text_2_3: "for more token listing updates"
 ---

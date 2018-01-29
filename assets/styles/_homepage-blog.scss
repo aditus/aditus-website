@@ -138,4 +138,12 @@
   }
 }
 
+.blog-details{
+  background: #13151e;
+
+  > .container{
+    padding-top: 7em;
+  }
+}
+
 @import "slick-blog";

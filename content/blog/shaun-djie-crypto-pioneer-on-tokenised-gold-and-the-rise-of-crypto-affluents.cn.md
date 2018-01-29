@@ -1,0 +1,10 @@
++++
+title = "Shaun Djie: Crypto-pioneer on tokenised gold and the rise of crypto-affluents"
+description = "https://medium.com/aditusnetwork/shaun-djie-crypto-pioneer-on-tokenised-gold-and-the-rise-of-crypto-affluents-4e4821a4f77"
+link = "https://medium.com/aditusnetwork/shaun-djie-crypto-pioneer-on-tokenised-gold-and-the-rise-of-crypto-affluents-4e4821a4f77"
+thumb = "/dist/images/blog-thumbs/4e4821a4f77.jpg"
+date = "2017-11-07"
+url = "/cn/blog/shaun-djie-crypto-pioneer-on-tokenised-gold-and-the-rise-of-crypto-affluents"
++++
+
+Shaun Djie, Co-Founder of Digix Global speaks about using the blockchain tech for tokenising gold, and the partnership with Aditus to serve the growing community of crypto-affluents.
