@@ -30,7 +30,7 @@ jQuery(document).ready(function($) {
   $('.posts-wrap').slick({
     dots: false,
     vertical: true,
-    slidesToShow: 3,
+    slidesToShow: 2,
     slidesToScroll: 1,
     autoPlay: false,
     infinite: false,
