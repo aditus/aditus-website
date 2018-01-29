@@ -133,7 +133,14 @@ team_members:
     advisor_7: "• Former CEO of Richemont Asia-Pacific</br>• Board member, Louis XIII Holdings in Macau<br />• 35 years experience in luxury"
     advisor_8: "• Former CEO Tom Ford Asia, Staff International Asia, LVMH Asia (Emilio Pucci)</br>• 20 years experience in luxury"
     advisor_9: "• Former MD Ralph Lauren Asia, Boucheron Asia</br>• 20 years experience in luxury"
+exchange_listing:
+    text_1: "Exchange listings"
+    text_2_1: "Follow our"     
+    text_2_2: "blog"     
+    text_2_3: "for more token listing updates"
 global_text:
     text_1: "more..."
-    text_2: "less"
+    text_2: "less"    
+global_url:
+    dl_whitepaper: "/Aditus-Whitepaper.pdf"    
 ---

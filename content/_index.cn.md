@@ -133,7 +133,14 @@ team_members:
     advisor_7: "• 历任 Richemont Asia-Pacific，CEO</br>• Louis XIII Holdings（Macau），董事 <br />• 35年奢侈品行业经验"
     advisor_8: "• 历任 Tom Ford Asia，CEO, 曾就职 LVMH Asia (Emilio Pucci)</br>• 20年奢侈品行业经验"
     advisor_9: "• 历任 Ralph Lauren Asia，MD, 曾就职 Boucheron Asia</br>• 20年奢侈品行业经验"
+exchange_listing:
+    text_1: "Exchange listings"
+    text_2_1: "Follow our"     
+    text_2_2: "blog"     
+    text_2_3: "for more token listing updates"
 global_text:
     text_1: "更多..."
-    text_2: "收起"
+    text_2: "收起"    
+global_url:
+    dl_whitepaper: "/AditusWhitePaperCN.pdf"       
 ---
