@@ -49,6 +49,7 @@
         <nav class="mobile-nav" role="navigation">
             <img src="/dist/images/adituslogo.png" alt="Logo" class="logo-mobile">
             <ul>
+<<<<<<< HEAD
                 <li><a href="#opportunity">{{ $t.Param "main_menu.menu_1" }}</a></li>
                 <li><a href="#membership">{{ $t.Param "main_menu.menu_2" }}</a></li>
                 <li><a href="#access">{{ $t.Param "main_menu.menu_3" }}</a></li>
@@ -64,7 +65,7 @@
                             {{ $t.Param "main_menu.menu_10" }}
                         </button>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item" href="/Aditus-Whitepaper.pdf">{{ $t.Param "main_menu.menu_11" }}</a>
+                            <a class="dropdown-item" href='{{ $.Param "global_url.dl_whitepaper" }}'>{{ $.Param "main_menu.menu_11" }}</a>
                             <a class="dropdown-item" href="/Aditus-Presentation-Deck.pdf">{{ $t.Param "main_menu.menu_12" }}</a>
                         </div>
                     </div>
@@ -80,11 +81,45 @@
                         </div>
                     </div>
                 </li>
+=======
+              <li><a href="#opportunity">{{ $.Param "main_menu.menu_1" }}</a></li>
+              <li><a href="#membership">{{ $.Param "main_menu.menu_2" }}</a></li>
+              <li><a href="#access">{{ $.Param "main_menu.menu_3" }}</a></li>
+              <li><a href="#privacy">{{ $.Param "main_menu.menu_4" }}</a></li>
+              <li><a href="#team">{{ $.Param "main_menu.menu_5" }}</a></li>
+              <li><a href="#blog">{{ $.Param "main_menu.menu_6" }}</a></li>
+              <li><a href="#aditus-token">{{ $.Param "main_menu.menu_7" }}</a></li>
+              <li><a href="#partners">{{ $.Param "main_menu.menu_8" }}</a></li>
+              <li><a href="#tokensale">{{ $.Param "main_menu.menu_9" }}</a></li>
+              <li class="downloadButton">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{ $.Param "main_menu.menu_10" }}
+                  </button>
+                  <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href='{{ $.Param "global_url.dl_whitepaper" }}'>{{ $.Param "main_menu.menu_11" }}</a>
+                    <a class="dropdown-item" href="/Aditus-Presentation-Deck.pdf">{{ $.Param "main_menu.menu_12" }}</a>
+                  </div>
+                </div>
+              </li>
+              <li class="downloadButton">
+                <div class="btn-group lang-selection">
+                  <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{ .Site.Language.Lang }}
+                  </button>
+                  <div class="dropdown-menu dropdown-menu-right">
+                    <a class='dropdown-item {{ if eq .Site.Language.Lang "en" }}active{{ end }}' href="/">EN (English)</a>
+                    <a class='dropdown-item {{ if eq .Site.Language.Lang "cn" }}active{{ end }}' href="/cn">CN (Chinese)</a>
+                  </div>
+                </div>
+              </li>
+>>>>>>> exchange_listing
             </ul>
         </nav>
         <div class="scrolled-header scrolled">
             <a class="fixed-logo" href="#"><img src="/dist/images/logo.png" alt="Logo" /></a>
             <nav class="nav" role="navigation">
+<<<<<<< HEAD
                 <ul>
                     <li><a href="#opportunity">{{ $t.Param "main_menu.menu_1" }}</a></li>
                     <li><a href="#membership">{{ $t.Param "main_menu.menu_2" }}</a></li>
@@ -99,7 +134,7 @@
                                 {{ $t.Param "main_menu.menu_10" }}
                             </button>
                             <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="/Aditus-Whitepaper.pdf">{{ $t.Param "main_menu.menu_11" }}</a>
+                                <a class="dropdown-item" href='{{ $.Param "global_url.dl_whitepaper" }}'>{{ $.Param "main_menu.menu_11" }}</a>
                                 <a class="dropdown-item" href="/Aditus-Presentation-Deck.pdf">{{ $t.Param "main_menu.menu_12" }}</a>
                             </div>
                         </div>
@@ -116,6 +151,40 @@
                         </div>
                     </li>
                 </ul>
+=======
+              <ul>
+              <li><a href="#opportunity">{{ $.Param "main_menu.menu_1" }}</a></li>
+              <li><a href="#membership">{{ $.Param "main_menu.menu_2" }}</a></li>
+              <li><a href="#access">{{ $.Param "main_menu.menu_3" }}</a></li>
+              <li><a href="#privacy">{{ $.Param "main_menu.menu_4" }}</a></li>
+              <li><a href="#team">{{ $.Param "main_menu.menu_5" }}</a></li>
+              <li><a href="#blog">{{ $.Param "main_menu.menu_6" }}</a></li>
+              <li><a href="#tokensale">{{ $.Param "main_menu.menu_7" }}</a></li>
+              <li class="downloadButton">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{ $.Param "main_menu.menu_10" }}
+                  </button>
+                  <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href='{{ $.Param "global_url.dl_whitepaper" }}'>{{ $.Param "main_menu.menu_11" }}</a>
+                    <a class="dropdown-item" href="/Aditus-Presentation-Deck.pdf">{{ $.Param "main_menu.menu_12" }}</a>
+                  </div>
+                </div>
+              </li>
+              <li class="downloadButton">
+                <div class="btn-group lang-selection">
+                  <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{ .Site.Language.Lang }}
+                  </button>
+                  <div class="dropdown-menu dropdown-menu-right">
+                    <a class='dropdown-item {{ if eq .Site.Language.Lang "en" }}active{{ end }}' href="/">EN (English)</a>
+                    <a class='dropdown-item {{ if eq .Site.Language.Lang "cn" }}active{{ end }}' href="/cn">CN (Chinese)</a>
+                  </div>
+                </div>
+              </li>
+
+              </ul>
+>>>>>>> exchange_listing
             </nav>
         </div>
 

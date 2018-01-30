@@ -110,8 +110,12 @@ team_members:
     advisor_8: "• Former CEO Tom Ford Asia, Staff International Asia, LVMH Asia (Emilio Pucci)</br>• 20 years experience in luxury"
     advisor_9: "• Former MD Ralph Lauren Asia, Boucheron Asia</br>• 20 years experience in luxury"
 exchange_listing:
-    text_1: "Exchange listings"
-    text_2_1: "Follow our"     
-    text_2_2: "blog"     
-    text_2_3: "for more token listing updates"
+    text_1: "How to buy Aditus tokens (ADI)"
+    text_1_2: "Aditus tokens can be purchased at the following exchanges:"
+    text_2: "For merchants interested in buying Aditus for operational purposes, please <a href='mailto:merchantsales@aditus.net'> email us.</a>"
+global_text:
+    text_1: "more..."
+    text_2: "less"    
+global_url:
+    dl_whitepaper: "/Aditus-Whitepaper.pdf"    
 ---

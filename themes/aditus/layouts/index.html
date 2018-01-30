@@ -3,653 +3,723 @@
 {{ $globe := $.Site.GetPage "section" "globe" }}
 
 <main id="main-container">
-  <section class="container-fluid banner">
-    <div class='container'>
-      <div class='row'>
-        <!-- <div class='col-lg-4'>
-           <div class="logo float-lg-right">
-             <a href="/">
-               <img src="/dist/images/adituslogo.png" alt="Logo" class="logo-img">
-             </a>
-           </div>
-         </div>-->
-        <div class='col-lg-7 align-self-center'>
-          <div class="landing text-container">
-            <h1>{{ $globe.Param "hero_content.content_1" | safeHTML }}</h1>
-            <p class='intro'>{{ $globe.Param "hero_content.content_2" | safeHTML }}</p>
-            <p class="call-to-actions">
-              <a href="#tokensale" class='join-mailing-list'>{{ $globe.Param "hero_content.content_3" | safeHTML }}
-              </a>
-              <a href="/Aditus-Whitepaper.pdf" class='whitepaper-download-nav'>
-                {{ $globe.Param "hero_content.content_4" | safeHTML }}
-              </a>
-            </p>
-          </div>
+
+    <section class="container-fluid banner">
+        <div class='container'>
+            <div class='row'>
+                <!-- <div class='col-lg-4'>
+                   <div class="logo float-lg-right">
+                     <a href="/">
+                       <img src="/dist/images/adituslogo.png" alt="Logo" class="logo-img">
+                     </a>
+                   </div>
+                 </div>-->
+                <div class='col-lg-7 align-self-center'>
+                    <div class="landing text-container">
+                        <h1>{{ $globe.Param "hero_content.content_1" | safeHTML }}</h1>
+                        <p class='intro'>{{ $globe.Param "hero_content.content_2" | safeHTML }}</p>
+                        <p class="call-to-actions">
+                            <a href="#tokensale" class='join-mailing-list'>{{ $globe.Param "hero_content.content_3" | safeHTML }}
+                            </a>
+                            <a href="/Aditus-Whitepaper.pdf" class='whitepaper-download-nav'>
+                                {{ $globe.Param "hero_content.content_4" | safeHTML }}
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
+
+    <section id='blog' class='container-fluid'>
+        <div class='container'>
+            <div class='row'>
+                <div class='latest-post col-md-8'>
+                    <h2><a name='blog'><img src='/dist/images/channel-medium.png' /> {{ $.Param "blog.text_1" | safeHTML }}</a></h2>
+
+                    <div class='posts-wrap'>
+                        {{ if eq .Site.Language.Lang "en" }}
+                            {{ range $i, $e := (where .Site.RegularPages "Section" "news") }}
+
+                            <div class='post'>
+                                <div class='row'>
+                                    <div class='thumb col-md-3'>
+                                        <a href='{{ .Params.link }}'>
+                                            <img src='{{ .Params.thumb }}' />
+                                        </a>
+                                    </div>
+
+                                    <div class='summary col-md-9'>
+                                        <h3><a href='{{ .Params.link }}'>{{ .Params.title }}</a></h3>
+
+                                        {{ if .Params.youtube }}
+                                        <div>
+                                            {{ .Params.youtube | safeHTML }}
+                                        </div>
+                                        {{ end }}
+
+                                        <p>
+                                            {{ .Summary }}
+                                            <a href='{{ .Params.link }}' class='readmore'>{{ $.Param "blog.text_2" | safeHTML }}</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {{ end }}
+                        {{ end }}
+
+                        {{ if eq .Site.Language.Lang "cn" }}
+                            {{ range $i, $e := (where .Site.RegularPages "Section" "blog") }}
+
+                            <div class='post'>
+                                <div class='row'>
+                                    <div class='thumb col-md-3'>
+                                        <a href='{{ .Params.url }}' target="_blank">
+                                            <img src='{{ .Params.thumb }}' />
+                                        </a>
+                                    </div>
+
+                                    <div class='summary col-md-9'>
+                                        <h3><a href='{{ .Params.url }}' target="_blank">{{ .Params.title }}</a></h3>
+
+                                        {{ if .Params.youtube }}
+                                        <div>
+                                            {{ .Params.youtube | safeHTML }}
+                                        </div>
+                                        {{ end }}
+
+                                        <p>
+                                            {{ .Summary }}
+                                            <a href='{{ .Params.url }}' target="_blank" class='readmore'>{{ $.Param "blog.text_2" | safeHTML }}</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {{ end }}
+                        {{ end }}
+                    </div>
+                </div>
+
+                <div class='channels col-md-4'>
+                    <div class='row'>
+                        <div class='col'>
+                            <h2>{{ $globe.Param "social_media.text_1" | safeHTML }}</h2>
+                        </div>
+                    </div>
+
+                    <div class='row'>
+                        <div class='col col-md-12'>
+                            <ul>
+                                <li class="channel">
+                                    <a href='https://www.linkedin.com/in/aditus-network-38b545152/' target='_blank'>
+                                        <img src='/dist/images/channel-linkedin.png' alt='LinkedIn'>
+                                        <span>{{ $globe.Param "social_media.text_2" | safeHTML }}</span>
+                                    </a>
+                                </li>
+                                <li class="channel">
+                                    <a href='http://t.me/aditusnetwork' target='_blank'>
+                                        <img src='/dist/images/channel-telegram.png' alt='Telegram'>
+                                        <span>{{ $globe.Param "social_media.text_3" | safeHTML }}</span>
+                                    </a>
+                                </li>
+                                <li class="channel">
+                                    <a href='https://medium.com/aditusnetwork' target='_blank'>
+                                        <img src='/dist/images/channel-medium.png' alt='Medium'>
+                                        <span>{{ $globe.Param "social_media.text_4" | safeHTML }}</span>
+                                    </a>
+                                </li>
+                                <li class="channel">
+                                    <a href='http://www.instagram.com/aditus.life' target='_blank'>
+                                        <img src='/dist/images/channel-instagram.png' alt='Instagram'>
+                                        <span>{{ $globe.Param "social_media.text_5" | safeHTML }}</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id='featured-in' class='container-fluid clear'>
+        <div class='container'>
+            <h2>{{ $.Param "featured_section.text_1" | safeHTML }}</h2>
+
+            <div class="row">
+                <div class="col-md-6 featured-video">
+                    <div class="embed-responsive embed-responsive-21by9">
+                        <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/245853383?title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    </div>
+
+                    <div class="text-center">
+                        {{ $.Param "featured_section.text_2" | safeHTML }} <a href="http://www.channelnewsasia.com/news/business/more-singapore-based-companies-find-appeal-in-initial-coin-9437706" target="_blank">{{ $.Param "featured_section.text_3" | safeHTML }}</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class='row justify-content-center'>
+                        <div class='col-md-4 col-4 item_logo'>
+                            <a href='https://www.forbes.com/sites/outofasia/2017/11/28/ico-hype-bitcoin-gold-rush-bullish-markets-should-we-trust-the-brave-new-world-of-finance/#6b2ffd2a7008'>
+                                <img src='/dist/images/featured_in_forbes.png' alt='Forbes'>
+                            </a>
+                        </div>
+                        <div class='col-md-4 col-4 item_logo'>
+                            <a href='http://www.channelnewsasia.com/news/business/more-singapore-based-companies-find-appeal-in-initial-coin-9437706'>
+                                <img src='/dist/images/featured_in_cna.png' alt='Channel News Asia'>
+                            </a>
+                        </div>
+                        <div class='col-md-4 col-4 item_logo'>
+                            <a href='https://finance.yahoo.com/news/aditus-network-worlds-first-luxury-145600925.html'>
+                                <img src='/dist/images/featured_in_yn.png' alt='Yahoo Finance'>
+                            </a>
+                        </div>
+                        <div class='col-md-4 col-4 item_logo'>
+                            <a href='https://seekingalpha.com/pr/17010805-aditus-network-worlds-first-luxury-access-service-crypto-affluents'>
+                                <img src='/dist/images/featured_in_sa.png' alt='Seeking Alpha'>
+                            </a>
+                        </div>
+                        <div class='col-md-4 col-4 item_logo'>
+                            <a href='http://www.luxuo.com/the-lux-list/aditus-and-pundi-x-enable-luxury-merchants-to-accept-aditus-tokens-through-pundi-x-pos-devices.html'>
+                                <img src='/dist/images/featured_in_luxuo.png' alt='Luxuo'>
+                            </a>
+                        </div>
+                        <div class='col-md-4 col-4 item_logo'>
+                            <a href='https://bitcoinexchangeguide.com/aditus/'>
+                                <img src='/dist/images/featured_in_bexg.png' alt='Bitcoin Exchange Guide'>
+                            </a>
+                        </div>
+                        <div class='col-md-4 col-4 item_logo'>
+                            <a href='https://www.cryptoninjas.net/2017/11/16/luxury-crypto-network-aditus-partners-digix-global/'>
+                                <img src='/dist/images/featured_in_cn.png' alt='CryptoNinjas'>
+                            </a>
+                        </div>
+                        <div class='col-md-4 col-4 item_logo'>
+                            <a href='http://www.luxuo.id/aditus-menjembatani-gaya-hidup-mewah-crypto-affluents-2218'>
+                                <img src='/dist/images/featured_in_luxuo_id.png' alt='Luxuo Indonesia'>
+                            </a>
+                        </div>
+                        <div class='col-md-4 col-4 item_logo'>
+                            <a href='http://sbr.com.sg/media-marketing/exclusive/everything-you-need-know-about-luxury-access-platform-crypto-affluents'>
+                                <img src='/dist/images/featured_in_sbr.png' alt='Singapore Business Review'>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="opportunity" class="container-fluid clear opportunity">
+        <div class='container'>
+            <h2>{{ $.Param "opportunity_brewing.text_1" | safeHTML }}</h2>
+
+            <div class='row'>
+                <div class='col-md-5'>
+                    <div class="opportunityChart">
+                        <canvas id="myChartLine" width="500px" height="600"></canvas>
+                    </div>
+                    <div class="opportunityChartMobile">
+                        <canvas id="myChartLineMobile" width="400px" height="500"></canvas>
+                    </div>
+                </div>
+
+                <div class='col-md-7'>
+                    <div class="opportunityChartDescription">
+                        <p>{{ $.Param "opportunity_brewing.text_3" | safeHTML }}</p>
+
+                        <p>{{ $.Param "opportunity_brewing.text_4" | safeHTML }}</p>
+
+                        <ul>
+                            <li>
+                                {{ $.Param "opportunity_brewing.text_4_1.text_1" | safeHTML }}
+                            </li>
+                            <li>
+                                {{ $.Param "opportunity_brewing.text_4_1.text_2" | safeHTML }}
+                            </li>
+                            <li>
+                                {{ $.Param "opportunity_brewing.text_4_1.text_3" | safeHTML }}
+                            </li>
+                        </ul>
+                        <p>
+                            {{ $.Param "opportunity_brewing.text_5" | safeHTML }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="membership" class="container-fluid clear">
+        <div class='container'>
+            <h2>{{ $.Param "membership.text_1" | safeHTML }}</h2>
+            <div class='row'>
+                <div class='col-md-6'>
+                    <img src="/dist/images/phones.png" alt="phone" class="phone float-md-right">
+                </div>
+                <div class='col-md-6 order-md-first'>
+                    <div class='ordinary'>
+                        <h4>{{ $.Param "membership.text_2" | safeHTML }}</h4>
+                        <p>
+                            {{ $.Param "membership.text_3" | safeHTML }}
+                        </p>
+                    </div>
+
+                    <div class='vip'>
+                        <h4>{{ $.Param "membership.text_4" | safeHTML }}</h4>
+                        <p>
+                            {{ $.Param "membership.text_5" | safeHTML }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="privacy" class="container-fluid">
+        <div class='container'>
+            <h2>{{ $.Param "platform_components.text_1" | safeHTML }}</h2>
+
+            <div class="row privacy-item-2">
+                <div class="privacy-item col-lg-4">
+                    <img src="/dist/images/privacy/aditus_rewards.png" class="priv-icon">
+                    <p>{{ $.Param "platform_components.text_2" | safeHTML }}</p>
+                </div>
+                <div class="privacy-item col-lg-4">
+                    <img src="/dist/images/privacy/aditus_pay.png" class="priv-icon">
+                    <p>{{ $.Param "platform_components.text_3" | safeHTML }}</p>
+                </div>
+                <div class="privacy-item col-lg-4">
+                    <img src="/dist/images/privacy/aditus_vip.png" class="priv-icon">
+                    <p>{{ $.Param "platform_components.text_4" | safeHTML }}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits container-fluid clear" id='access'>
+        <div class='container'>
+            <h2>{{ $.Param "benefits_section.text_1" | safeHTML }}</h2>
+
+            <h3 class='subtitle'>{{ $.Param "benefits_section.text_2" | safeHTML }}</h3>
+        </div>
+        <div class='container-fluid'>
+            <div class="allRoundAccessOffering">
+                <div class="allRoundAccessOfferingEntry">
+                    <div id="allRoundAccessOfferingEntry1" class="allRoundAccessOfferingEntryImg"></div>
+                    <div class="allRoundAccessOfferingEntryText">
+                        {{ $.Param "benefits_section.text_3.text_1" | safeHTML }}
+                    </div>
+                </div>
+                <div class="allRoundAccessOfferingEntry">
+                    <div id="allRoundAccessOfferingEntry2" class="allRoundAccessOfferingEntryImg"></div>
+                    <div class="allRoundAccessOfferingEntryText">
+                        {{ $.Param "benefits_section.text_3.text_2" | safeHTML }}
+                    </div>
+                </div>
+                <div class="allRoundAccessOfferingEntry">
+                    <div id="allRoundAccessOfferingEntry7" class="allRoundAccessOfferingEntryImg"></div>
+                    <div class="allRoundAccessOfferingEntryText">
+                        {{ $.Param "benefits_section.text_3.text_3" | safeHTML }}
+                    </div>
+                </div>
+                <div class="allRoundAccessOfferingEntry">
+                    <div id="allRoundAccessOfferingEntry9" class="allRoundAccessOfferingEntryImg"></div>
+                    <div class="allRoundAccessOfferingEntryText">
+                        {{ $.Param "benefits_section.text_3.text_4" | safeHTML }}
+                    </div>
+                </div>
+                <div class="allRoundAccessOfferingEntry">
+                    <div id="allRoundAccessOfferingEntry5" class="allRoundAccessOfferingEntryImg"></div>
+                    <div class="allRoundAccessOfferingEntryText">
+                        {{ $.Param "benefits_section.text_3.text_5" | safeHTML }}
+                    </div>
+                </div>
+                <div class="allRoundAccessOfferingEntry">
+                    <div id="allRoundAccessOfferingEntry6" class="allRoundAccessOfferingEntryImg"></div>
+                    <div class="allRoundAccessOfferingEntryText">
+                        {{ $.Param "benefits_section.text_3.text_6" | safeHTML }}
+                    </div>
+                </div>
+                <div class="allRoundAccessOfferingEntry">
+                    <div id="allRoundAccessOfferingEntry3" class="allRoundAccessOfferingEntryImg"></div>
+                    <div class="allRoundAccessOfferingEntryText">
+                        {{ $.Param "benefits_section.text_3.text_7" | safeHTML }}
+                    </div>
+                </div>
+                <div class="allRoundAccessOfferingEntry">
+                    <div id="allRoundAccessOfferingEntry8" class="allRoundAccessOfferingEntryImg"></div>
+                    <div class="allRoundAccessOfferingEntryText">
+                        {{ $.Param "benefits_section.text_3.text_8" | safeHTML }}
+                    </div>
+                </div>
+                <div class="allRoundAccessOfferingEntry">
+                    <div id="allRoundAccessOfferingEntry4" class="allRoundAccessOfferingEntryImg"></div>
+                    <div class="allRoundAccessOfferingEntryText">
+                        {{ $.Param "benefits_section.text_3.text_9" | safeHTML }}
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section id="privacy" class="container-fluid">
+        <div class='container'>
+            <h2>{{ $.Param "privacy_section.text_1" | safeHTML }}</h2>
+
+            <h3 class="subtitle">{{ $.Param "privacy_section.text_2" | safeHTML }}</h3>
+            <div class="row">
+                <div class="privacy-item col-lg-4">
+                    <img src="/dist/images/decentralised.png" class="priv-icon">
+                    <h4>{{ $.Param "privacy_section.text_3" | safeHTML }}</h4>
+                    <p>{{ $.Param "privacy_section.text_4" | safeHTML }}</p>
+                </div>
+                <div class="privacy-item col-lg-4">
+                    <img src="/dist/images/privacy2.png" class="priv-icon">
+                    <h4>{{ $.Param "privacy_section.text_5" | safeHTML }}</h4>
+                    <p>{{ $.Param "privacy_section.text_6" | safeHTML }}</p>
+                </div>
+                <div class="privacy-item col-lg-4">
+                    <img src="/dist/images/privacy3.png" class="priv-icon">
+                    <h4>{{ $.Param "privacy_section.text_7" | safeHTML }}</h4>
+                    <p>{{ $.Param "privacy_section.text_8" | safeHTML }}</p>
+                </div>
+            </div>
+        </div>
+<<<<<<< HEAD
       </div>
     </div>
   </section>
 
-  <section id='blog' class='container-fluid'>
-    <div class='container'>
-      <div class='row'>
-        <div class='latest-post col-md-8'>
-          <h2><a name='blog'><img src='/dist/images/channel-medium.png' /> {{ $.Param "blog.text_1" | safeHTML }}</a></h2>
 
-          <div class='posts-wrap'>
-              {{ if eq .Site.Language.Lang "en" }}
-                  {{ range $i, $e := (where .Site.RegularPages "Section" "news") }}
+    <section id="team" class="container-fluid clear">
+        <div class='container'>
+            <h2>{{ $.Param "team_section.text_1" | safeHTML }}</h2>
+            <h3 class='subtitle'>{{ $.Param "team_section.text_2" | safeHTML }}</h3>
 
-                  <div class='post'>
-                      <div class='row'>
-                          <div class='thumb col-md-3'>
-                              <a href='{{ .Params.link }}'>
-                                  <img src='{{ .Params.thumb }}' />
-                              </a>
-                          </div>
+            <div class="team">
+                <div class="team-people">
+                    <img src="/dist/images/team2.png" alt="Julian Peh">
+                    <h5>Julian Peh</h5>
+                    <h6>Co-Founder, CEO</h6><a href="https://linkedin.com/in/julianpeh" class="linkedin" target="_blank"></a>
+                    <p>
+                        {{ $.Param "team_members.member_1" | safeHTML }}
+                        <span class="aditus-button1">{{ $.Param "global_text.text_1" | safeHTML }}</span>
+                        <span class='deshide'>
+                            {{ $.Param "team_members.member_1_1" | safeHTML }}
+                            <br/><br/>
+                            {{ $.Param "team_members.member_1_2" | safeHTML }}
+                            <br/><br/>
+                            {{ $.Param "team_members.member_1_3" | safeHTML }}
+                            <br/><br/>
+                            {{ $.Param "team_members.member_1_4" | safeHTML }}
 
-                          <div class='summary col-md-9'>
-                              <h3><a href='{{ .Params.link }}'>{{ .Params.title }}</a></h3>
-                              <p>
-                                  {{ .Summary }}
-                                  <a href='{{ .Params.link }}' class='readmore'>{{ $.Param "blog.text_2" | safeHTML }}</a>
-                              </p>
-                          </div>
-                      </div>
-                  </div>
+                            <span class="aditus-button2">{{ $globe.Param "global_text.text_2" | safeHTML }}</span>
+                        </span>
+                    </p>
+                </div>
 
-                  {{ end }}
-              {{ end }}
+                <div class="team-people">
+                    <img src="/dist/images/team1.png" alt="Olivier Burlot">
+                    <h5>Olivier Burlot</h5>
+                    <h6>Co-Founder, President</h6><a href="https://linkedin.com/in/olivierburlot" class="linkedin" target="_blank"></a>
+                    <p>
+                        {{ $.Param "team_members.member_2" | safeHTML }}
+                        </br></br>
+                        {{ $.Param "team_members.member_2_1" | safeHTML }}
+                        <span class="aditus-button1">{{ $globe.Param "global_text.text_1" | safeHTML }}</span>
+                        <span class="deshide">
+                            {{ $.Param "team_members.member_2_2" | safeHTML }}
+                            </br></br>
+                            {{ $.Param "team_members.member_2_3" | safeHTML }}
+                            <span class="aditus-button2">{{ $globe.Param "global_text.text_2" | safeHTML }}</span>
+                        </span>
+                    </p>
+                </div>
 
-              {{ if eq .Site.Language.Lang "cn" }}
-                  {{ range $i, $e := (where .Site.RegularPages "Section" "blog") }}
+                <div class="team-people">
+                    <img src="/dist/images/team3.png" alt="Prakash Somosundram">
+                    <h5>Prakash Somosundram</h5>
+                    <h6>Co-Founder</h6><a href="https://linkedin.com/in/prakashsomo" class="linkedin" target="_blank"></a>
+                    <p>
+                        {{ $.Param "team_members.member_3" | safeHTML }}
+                        <span class="aditus-button1">{{ $globe.Param "global_text.text_1" | safeHTML }}</span>
+                        <span class="deshide">
+                            {{ $.Param "team_members.member_3_1" | safeHTML }}
+                            </br></br>
+                            {{ $.Param "team_members.member_3_2" | safeHTML }}
+                            <span class="aditus-button2">{{ $globe.Param "global_text.text_2" | safeHTML }}</span>
+                        </span>
+                    </p>
+                </div>
 
-                  <div class='post'>
-                      <div class='row'>
-                          <div class='thumb col-md-3'>
-                              <a href='{{ .Params.url }}' target="_blank">
-                                  <img src='{{ .Params.thumb }}' />
-                              </a>
-                          </div>
-
-                          <div class='summary col-md-9'>
-                              <h3><a href='{{ .Params.url }}' target="_blank">{{ .Params.title }}</a></h3>
-                              <p>
-                                  {{ .Summary }}
-                                  <a href='{{ .Params.url }}' target="_blank" class='readmore'>{{ $.Param "blog.text_2" | safeHTML }}</a>
-                              </p>
-                          </div>
-                      </div>
-                  </div>
-
-                  {{ end }}
-              {{ end }}
-          </div>
-        </div>
-
-        <div class='channels col-md-4'>
-          <div class='row'>
-            <div class='col'>
-              <h2>{{ $globe.Param "social_media.text_1" | safeHTML }}</h2>
+                <div class="team-people">
+                    <img src="/dist/images/team-jason-kwong.png" alt="Jason Kwong">
+                    <h5>Jason Kwong</h5>
+                    <h6>VP, Business Development</h6>
+                    <a href="https://www.linkedin.com/in/jason-kwong-424831152/" class="linkedin" target="_blank"></a>
+                    <p>
+                        {{ $.Param "team_members.member_4" | safeHTML }}
+                        <span class="aditus-button1">{{ $globe.Param "global_text.text_1" | safeHTML }}</span>
+                        <span class="deshide">
+                            {{ $.Param "team_members.member_4_1" | safeHTML }}
+                            <span class="aditus-button2">{{ $globe.Param "global_text.text_2" | safeHTML }}</span>
+                        </span>
+                    </p>
+                </div>
             </div>
-          </div>
 
-          <div class='row'>
-            <div class='col col-md-12'>
-              <ul>
-                <li class="channel">
-                  <a href='https://www.linkedin.com/in/aditus-network-38b545152/' target='_blank'>
-                    <img src='/dist/images/channel-linkedin.png' alt='LinkedIn'>
-                    <span>{{ $globe.Param "social_media.text_2" | safeHTML }}</span>
-                  </a>
-                </li>
-                <li class="channel">
-                  <a href='http://t.me/aditusnetwork' target='_blank'>
-                    <img src='/dist/images/channel-telegram.png' alt='Telegram'>
-                    <span>{{ $globe.Param "social_media.text_3" | safeHTML }}</span>
-                  </a>
-                </li>
-                <li class="channel">
-                  <a href='https://medium.com/aditusnetwork' target='_blank'>
-                    <img src='/dist/images/channel-medium.png' alt='Medium'>
-                    <span>{{ $globe.Param "social_media.text_4" | safeHTML }}</span>
-                  </a>
-                </li>
-                <li class="channel">
-                  <a href='http://www.instagram.com/aditus.life' target='_blank'>
-                    <img src='/dist/images/channel-instagram.png' alt='Instagram'>
-                    <span>{{ $globe.Param "social_media.text_5" | safeHTML }}</span>
-                  </a>
-                </li>
-              </ul>
+            <div class="team">
+                <div class="team-people">
+                    <img src="/dist/images/team4.png" alt="Tony Chew">
+                    <h5>Tony Chew</h5>
+                    <h6>Lead Blockchain Developer</h6><a href="https://linkedin.com/in/tonychew1986" class="linkedin" target="_blank"></a>
+                    <p>
+                        {{ $.Param "team_members.member_5" | safeHTML }}
+                        <span class="aditus-button1">{{ $globe.Param "global_text.text_1" | safeHTML }}</span>
+                        <span class="deshide">
+                            {{ $.Param "team_members.member_5_1" | safeHTML }}
+                            <span class="aditus-button2">{{ $globe.Param "global_text.text_2" | safeHTML }}</span>
+                        </span>
+                    </p>
+                </div>
+
+                <div class="team-people">
+                    <img src="/dist/images/team-ahmed-zulkamal.png" alt='Ahmed Zulkamal'>
+                    <h5>Zulkamal Ahmed</h5>
+                    <h6>Director, Operations</h6>
+                    <a href="https://www.linkedin.com/in/zulkamal" class="linkedin" target="_blank"></a>
+                    <p>
+                        {{ $.Param "team_members.member_6" | safeHTML }}
+                        <span class="aditus-button1">{{ $globe.Param "global_text.text_1" | safeHTML }}</span>
+                        <span class="deshide">
+                            {{ $.Param "team_members.member_6_1" | safeHTML }}
+                            <br />
+                            <br />
+                            {{ $.Param "team_members.member_6_2" | safeHTML }}
+                            <span class="aditus-button2">{{ $globe.Param "global_text.text_2" | safeHTML }}</span>
+                        </span>
+                    </p>
+                </div>
+
+                <div class="team-people">
+                    <img src="/dist/images/team-prabhu-sengal.png" alt="Prabhu Sengal">
+                    <h5>Prabhu Sengal</h5>
+                    <h6>Lead Developer</h6><a href="https://www.linkedin.com/in/prabhusengal/" class="linkedin" target="_blank"></a>
+                    <p>
+                        {{ $.Param "team_members.member_7" | safeHTML }}
+                        <span class="aditus-button1">{{ $globe.Param "global_text.text_1" | safeHTML }}</span>
+                        <span class="deshide">
+                        {{ $.Param "team_members.member_7_1" | safeHTML }}
+                        <br /><br />
+                        {{ $.Param "team_members.member_7_2" | safeHTML }}
+                        <span class="aditus-button2">{{ $globe.Param "global_text.text_2" | safeHTML }}</span></span>
+                    </p>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section id='featured-in' class='container-fluid clear'>
-    <div class='container'>
-      <h2>{{ $.Param "featured_section.text_1" | safeHTML }}</h2>
+            <h2>{{ $.Param "team_section.text_3" | safeHTML }}</h2>
 
-      <div class="row">
-        <div class="col-md-6 featured-video">
-          <div class="embed-responsive embed-responsive-21by9">
-            <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/245853383?title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-          </div>
+            <div class="team advisor">
+                <div class="team-people">
+                    <img src="/dist/images/shaun.png">
+                    <h5>Shaun Djie</h5>
+                    <h6>Advisor</h6><a href="https://www.linkedin.com/in/shaundjie/" class="linkedin" target="_blank"></a>
+                    <p>{{ $.Param "team_members.advisor_1" | safeHTML }}</p>
+                </div>
 
-          <div class="text-center">
-            {{ $.Param "featured_section.text_2" | safeHTML }} <a href="http://www.channelnewsasia.com/news/business/more-singapore-based-companies-find-appeal-in-initial-coin-9437706" target="_blank">{{ $.Param "featured_section.text_3" | safeHTML }}</a>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class='row justify-content-center'>
-            <div class='col-md-4 col-4 item_logo'>
-              <a href='https://www.forbes.com/sites/outofasia/2017/11/28/ico-hype-bitcoin-gold-rush-bullish-markets-should-we-trust-the-brave-new-world-of-finance/#6b2ffd2a7008'>
-                <img src='/dist/images/featured_in_forbes.png' alt='Forbes'>
-              </a>
+                <div class="team-people">
+                    <img src="/dist/images/advisors-jeremy-kerbel.png">
+                    <h5>Jeremy Kerbel</h5>
+                    <h6>Advisor</h6><a href="https://www.linkedin.com/in/jeremy-k-a0711b9/" class="linkedin" target="_blank"></a>
+                    <p>{{ $.Param "team_members.advisor_2" | safeHTML }}</p>
+                </div>
+
+                <div class="team-people">
+                    <img src="/dist/images/advisors-samuel-reid.png">
+                    <h5>Samuel Reid</h5>
+                    <h6>Advisor</h6>
+                    <a href="https://www.linkedin.com/in/samuel-mark-reid/" class="linkedin" target="_blank"></a>
+                    <p>{{ $.Param "team_members.advisor_3" | safeHTML }}</p>
+                </div>
+
+                <div class="team-people">
+                    <img src="/dist/images/kenneth.png">
+                    <h5>Kenneth Oh</h5>
+                    <h6>Advisor</h6><a href="https://www.linkedin.com/in/kenneth-oh-3187a111a/" class="linkedin" target="_blank"></a>
+                    <p>{{ $.Param "team_members.advisor_4" | safeHTML }}</p>
+                </div>
             </div>
-            <div class='col-md-4 col-4 item_logo'>
-              <a href='http://www.channelnewsasia.com/news/business/more-singapore-based-companies-find-appeal-in-initial-coin-9437706'>
-                <img src='/dist/images/featured_in_cna.png' alt='Channel News Asia'>
-              </a>
+
+            <div class="team advisor">
+                <div class="team-people">
+                    <img src="/dist/images/advisors-lee-tsun-ngai.png">
+                    <h5>Lee Tsun Ngai</h5>
+                    <h6>Advisor</h6><a href="https://www.linkedin.com/in/leetsunngai/" class="linkedin" target="_blank"></a>
+                    <p>{{ $.Param "team_members.advisor_5" | safeHTML }}</p>
+                </div>
+
+                <div class="team-people">
+                    <img src="/dist/images/advisors-akash-aggarwal.png">
+                    <h5>Akash Aggarwal</h5>
+                    <h6>Advisor</h6><a href="https://www.linkedin.com/in/akashaggarwal009/" class="linkedin" target="_blank"></a>
+                    <p>{{ $.Param "team_members.advisor_6" | safeHTML }}</p>
+                </div>
+
+                <div class="team-people">
+                    <img src="/dist/images/advisors-francis-gouten.png">
+                    <h5>Francis Gouten </h5>
+                    <h6>Advisor</h6><a href="https://www.linkedin.com/in/francis-gouten-a973444/" class="linkedin" target="_blank"></a>
+                    <p>{{ $.Param "team_members.advisor_7" | safeHTML }}</p>
+                </div>
+
+                <div class="team-people">
+                    <img src="/dist/images/regina.png">
+                    <h5>Regina Lam</h5>
+                    <h6>Advisor</h6><a href="https://www.linkedin.com/in/regina-lam-2013/" class="linkedin" target="_blank"></a>
+                    <p>{{ $.Param "team_members.advisor_8" | safeHTML }}</p>
+                </div>
             </div>
-            <div class='col-md-4 col-4 item_logo'>
-              <a href='https://finance.yahoo.com/news/aditus-network-worlds-first-luxury-145600925.html'>
-                <img src='/dist/images/featured_in_yn.png' alt='Yahoo Finance'>
-              </a>
+
+            <div class="team advisor">
+                <div class="team-people">
+                    <img src="/dist/images/francis.png">
+                    <h5>Francis Srun</h5>
+                    <h6>Advisor</h6><a href="https://www.linkedin.com/in/fsrun/" class="linkedin" target="_blank"></a>
+                    <p>{{ $.Param "team_members.advisor_9" | safeHTML }}</p>
+                </div>
             </div>
-            <div class='col-md-4 col-4 item_logo'>
-              <a href='https://seekingalpha.com/pr/17010805-aditus-network-worlds-first-luxury-access-service-crypto-affluents'>
-                <img src='/dist/images/featured_in_sa.png' alt='Seeking Alpha'>
-              </a>
+
+        </div>
+    </section>
+
+    <section id='partners' class='container-fluid clear'>
+        <div class='container'>
+            <h2>{{ $.Param "partners_section.text_1" | safeHTML }}</h2>
+            <div class='row justify-content-center'>
+                <div class='col'>
+                    <a href='https://medium.com/aditusnetwork/aditus-network-offers-exclusive-rewards-for-kybernetworks-kgt-early-investors-909c41e47df9'>
+                        <img src='/dist/images/partners-kyber-netword.png' alt='Kyber Network' class="rounded">
+                    </a>
+                </div>
+                <div class='col'>
+                    <a href='http://d13.vc/'>
+                        <img src='/dist/images/partners-d13.png' alt='District 13' class="rounded">
+                    </a>
+                </div>
+                <div class='col'>
+                    <a href='https://medium.com/aditusnetwork/digix-x-aditus-live-luxuriously-shop-and-receive-tokenised-gold-aka-dgx-tokens-for-engagement-15556946cd61'>
+                        <img src='/dist/images/partners-digix.png' alt='Digix Global' class="rounded">
+                    </a>
+                </div>
+                <div class='col'>
+                    <a href='https://medium.com/aditusnetwork/aditus-and-pundi-x-enable-luxury-merchants-to-accept-aditus-tokens-through-pundi-x-pos-devices-b03ed668cb91'>
+                        <img src='/dist/images/partners-pundix.png' alt='Pundi X' class="rounded">
+                    </a>
+                </div>
             </div>
-            <div class='col-md-4 col-4 item_logo'>
-              <a href='http://www.luxuo.com/the-lux-list/aditus-and-pundi-x-enable-luxury-merchants-to-accept-aditus-tokens-through-pundi-x-pos-devices.html'>
-                <img src='/dist/images/featured_in_luxuo.png' alt='Luxuo'>
-              </a>
+            <div class='row justify-content-center'>
+                <div class='col'>
+                    <a href='http://www.singaporerendezvous.com'>
+                        <img src='/dist/images/partners-singapore-rv.png' alt='Singapore Rendezvous'>
+                    </a>
+                </div>
+                <div class='col'>
+                    <a href='http://www.thephuketrendezvous.com'>
+                        <img src='/dist/images/partners-phuket-rv.png' alt='Phuket Rendezvous'>
+                    </a>
+                </div>
+                <div class='col'>
+                    <img src='/dist/images/partners-penangrv.png' alt='Penang Rendezvous'>
+                </div>
             </div>
-            <div class='col-md-4 col-4 item_logo'>
-              <a href='https://bitcoinexchangeguide.com/aditus/'>
-                <img src='/dist/images/featured_in_bexg.png' alt='Bitcoin Exchange Guide'>
-              </a>
+        </div>
+    </section>
+
+    <section id="aditus-token" class="container-fluid clear">
+        <div class='container'>
+            <h2>{{ $.Param "token_utility.text_1" | safeHTML }}</h2>
+            <h3 class="subtitle">{{ $.Param "token_utility.text_2" | safeHTML }}</h3>
+
+            <img src="/dist/images/logo-app.png" class="token-logo"/>
+            <div class="utility-wrap row">
+                <div class="utility col-md-3">
+                    <h4>{{ $.Param "token_utility.text_3" | safeHTML }}</h4>
+                    <p>{{ $.Param "token_utility.text_4" | safeHTML }}</p>
+                </div>
+                <div class="utility col-md-3">
+                    <h4>{{ $.Param "token_utility.text_5" | safeHTML }}</h4>
+                    <p>{{ $.Param "token_utility.text_6" | safeHTML }}</p>
+                </div>
+                <div class="utility col-md-3">
+                    <h4>{{ $.Param "token_utility.text_7" | safeHTML }}</h4>
+                    <p>{{ $.Param "token_utility.text_8" | safeHTML }}</p>
+                </div>
+    </section>
+
+    <section id='partners' class='container-fluid clear'>
+        <div class='container'>
+            <h2>{{ $.Param "partners_section.text_1" | safeHTML }}</h2>
+            <div class='row justify-content-center'>
+                <div class='col'>
+                    <a href='https://medium.com/aditusnetwork/aditus-network-offers-exclusive-rewards-for-kybernetworks-kgt-early-investors-909c41e47df9'>
+                        <img src='/dist/images/partners-kyber-netword.png' alt='Kyber Network' class="rounded">
+                    </a>
+                </div>
+                <div class='col'>
+                    <a href='http://d13.vc/'>
+                        <img src='/dist/images/partners-d13.png' alt='District 13' class="rounded">
+                    </a>
+                </div>
+                <div class='col'>
+                    <a href='https://medium.com/aditusnetwork/digix-x-aditus-live-luxuriously-shop-and-receive-tokenised-gold-aka-dgx-tokens-for-engagement-15556946cd61'>
+                        <img src='/dist/images/partners-digix.png' alt='Digix Global' class="rounded">
+                    </a>
+                </div>
+                <div class='col'>
+                    <a href='https://medium.com/aditusnetwork/aditus-and-pundi-x-enable-luxury-merchants-to-accept-aditus-tokens-through-pundi-x-pos-devices-b03ed668cb91'>
+                        <img src='/dist/images/partners-pundix.png' alt='Pundi X' class="rounded">
+                    </a>
+                </div>
             </div>
-            <div class='col-md-4 col-4 item_logo'>
-              <a href='https://www.cryptoninjas.net/2017/11/16/luxury-crypto-network-aditus-partners-digix-global/'>
-                <img src='/dist/images/featured_in_cn.png' alt='CryptoNinjas'>
-              </a>
+            <div class='row justify-content-center'>
+                <div class='col'>
+                    <a href='http://www.singaporerendezvous.com'>
+                        <img src='/dist/images/partners-singapore-rv.png' alt='Singapore Rendezvous'>
+                    </a>
+                </div>
+                <div class='col'>
+                    <a href='http://www.thephuketrendezvous.com'>
+                        <img src='/dist/images/partners-phuket-rv.png' alt='Phuket Rendezvous'>
+                    </a>
+                </div>
+                <div class='col'>
+                    <img src='/dist/images/partners-penangrv.png' alt='Penang Rendezvous'>
+                </div>
             </div>
-            <div class='col-md-4 col-4 item_logo'>
-              <a href='http://www.luxuo.id/aditus-menjembatani-gaya-hidup-mewah-crypto-affluents-2218'>
-                <img src='/dist/images/featured_in_luxuo_id.png' alt='Luxuo Indonesia'>
-              </a>
-            </div>
-            <div class='col-md-4 col-4 item_logo'>
-              <a href='http://sbr.com.sg/media-marketing/exclusive/everything-you-need-know-about-luxury-access-platform-crypto-affluents'>
-                <img src='/dist/images/featured_in_sbr.png' alt='Singapore Business Review'>
-              </a>
-            </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="opportunity" class="container-fluid clear opportunity">
-    <div class='container'>
-      <h2>{{ $.Param "opportunity_brewing.text_1" | safeHTML }}</h2>
-
-      <div class='row'>
-        <div class='col-md-5'>
-          <div class="opportunityChart">
-            <canvas id="myChartLine" width="500px" height="600"></canvas>
-          </div>
-          <div class="opportunityChartMobile">
-            <canvas id="myChartLineMobile" width="400px" height="500"></canvas>
-          </div>
-        </div>
-
-        <div class='col-md-7'>
-          <div class="opportunityChartDescription">
-            <p>{{ $.Param "opportunity_brewing.text_3" | safeHTML }}</p>
-
-            <p>{{ $.Param "opportunity_brewing.text_4" | safeHTML }}</p>
-
-            <ul>
-              <li>
-                {{ $.Param "opportunity_brewing.text_4_1.text_1" | safeHTML }}
-              </li>
-              <li>
-                {{ $.Param "opportunity_brewing.text_4_1.text_2" | safeHTML }}
-              </li>
-              <li>
-                {{ $.Param "opportunity_brewing.text_4_1.text_3" | safeHTML }}
-              </li>
-            </ul>
-            <p>
-              {{ $.Param "opportunity_brewing.text_5" | safeHTML }}
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="membership" class="container-fluid clear">
-    <div class='container'>
-      <h2>{{ $.Param "membership.text_1" | safeHTML }}</h2>
-      <div class='row'>
-        <div class='col-md-6'>
-          <img src="/dist/images/phones.png" alt="phone" class="phone float-md-right">
-        </div>
-        <div class='col-md-6 order-md-first'>
-          <div class='ordinary'>
-            <h4>{{ $.Param "membership.text_2" | safeHTML }}</h4>
-            <p>
-              {{ $.Param "membership.text_3" | safeHTML }}
-            </p>
-          </div>
-
-          <div class='vip'>
-            <h4>{{ $.Param "membership.text_4" | safeHTML }}</h4>
-            <p>
-              {{ $.Param "membership.text_5" | safeHTML }}
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="privacy" class="container-fluid">
-    <div class='container'>
-      <h2>{{ $.Param "platform_components.text_1" | safeHTML }}</h2>
-
-      <div class="row privacy-item-2">
-        <div class="privacy-item col-lg-4">
-          <img src="/dist/images/privacy/aditus_rewards.png" class="priv-icon">
-          <p>{{ $.Param "platform_components.text_2" | safeHTML }}</p>
-        </div>
-        <div class="privacy-item col-lg-4">
-          <img src="/dist/images/privacy/aditus_pay.png" class="priv-icon">
-          <p>{{ $.Param "platform_components.text_3" | safeHTML }}</p>
-        </div>
-        <div class="privacy-item col-lg-4">
-          <img src="/dist/images/privacy/aditus_vip.png" class="priv-icon">
-          <p>{{ $.Param "platform_components.text_4" | safeHTML }}</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="benefits container-fluid clear" id='access'>
-    <div class='container'>
-      <h2>{{ $.Param "benefits_section.text_1" | safeHTML }}</h2>
-
-      <h3 class='subtitle'>{{ $.Param "benefits_section.text_2" | safeHTML }}</h3>
-    </div>
-    <div class='container-fluid'>
-      <div class="allRoundAccessOffering">
-        <div class="allRoundAccessOfferingEntry">
-          <div id="allRoundAccessOfferingEntry1" class="allRoundAccessOfferingEntryImg"></div>
-          <div class="allRoundAccessOfferingEntryText">
-            {{ $.Param "benefits_section.text_3.text_1" | safeHTML }}
-          </div>
-        </div>
-        <div class="allRoundAccessOfferingEntry">
-          <div id="allRoundAccessOfferingEntry2" class="allRoundAccessOfferingEntryImg"></div>
-          <div class="allRoundAccessOfferingEntryText">
-            {{ $.Param "benefits_section.text_3.text_2" | safeHTML }}
-          </div>
-        </div>
-        <div class="allRoundAccessOfferingEntry">
-          <div id="allRoundAccessOfferingEntry7" class="allRoundAccessOfferingEntryImg"></div>
-          <div class="allRoundAccessOfferingEntryText">
-            {{ $.Param "benefits_section.text_3.text_3" | safeHTML }}
-          </div>
-        </div>
-        <div class="allRoundAccessOfferingEntry">
-          <div id="allRoundAccessOfferingEntry9" class="allRoundAccessOfferingEntryImg"></div>
-          <div class="allRoundAccessOfferingEntryText">
-            {{ $.Param "benefits_section.text_3.text_4" | safeHTML }}
-          </div>
-        </div>
-        <div class="allRoundAccessOfferingEntry">
-          <div id="allRoundAccessOfferingEntry5" class="allRoundAccessOfferingEntryImg"></div>
-          <div class="allRoundAccessOfferingEntryText">
-            {{ $.Param "benefits_section.text_3.text_5" | safeHTML }}
-          </div>
-        </div>
-        <div class="allRoundAccessOfferingEntry">
-          <div id="allRoundAccessOfferingEntry6" class="allRoundAccessOfferingEntryImg"></div>
-          <div class="allRoundAccessOfferingEntryText">
-            {{ $.Param "benefits_section.text_3.text_6" | safeHTML }}
-          </div>
-        </div>
-        <div class="allRoundAccessOfferingEntry">
-          <div id="allRoundAccessOfferingEntry3" class="allRoundAccessOfferingEntryImg"></div>
-          <div class="allRoundAccessOfferingEntryText">
-            {{ $.Param "benefits_section.text_3.text_7" | safeHTML }}
-          </div>
-        </div>
-        <div class="allRoundAccessOfferingEntry">
-          <div id="allRoundAccessOfferingEntry8" class="allRoundAccessOfferingEntryImg"></div>
-          <div class="allRoundAccessOfferingEntryText">
-            {{ $.Param "benefits_section.text_3.text_8" | safeHTML }}
-          </div>
-        </div>
-        <div class="allRoundAccessOfferingEntry">
-          <div id="allRoundAccessOfferingEntry4" class="allRoundAccessOfferingEntryImg"></div>
-          <div class="allRoundAccessOfferingEntryText">
-            {{ $.Param "benefits_section.text_3.text_9" | safeHTML }}
-          </div>
-        </div>
-      </div>
-  </section>
-
-  <section id="privacy" class="container-fluid">
-    <div class='container'>
-      <h2>{{ $.Param "privacy_section.text_1" | safeHTML }}</h2>
-
-      <h3 class="subtitle">{{ $.Param "privacy_section.text_2" | safeHTML }}</h3>
-      <div class="row">
-        <div class="privacy-item col-lg-4">
-          <img src="/dist/images/decentralised.png" class="priv-icon">
-          <h4>{{ $.Param "privacy_section.text_3" | safeHTML }}</h4>
-          <p>{{ $.Param "privacy_section.text_4" | safeHTML }}</p>
-        </div>
-        <div class="privacy-item col-lg-4">
-          <img src="/dist/images/privacy2.png" class="priv-icon">
-          <h4>{{ $.Param "privacy_section.text_5" | safeHTML }}</h4>
-          <p>{{ $.Param "privacy_section.text_6" | safeHTML }}</p>
-        </div>
-        <div class="privacy-item col-lg-4">
-          <img src="/dist/images/privacy3.png" class="priv-icon">
-          <h4>{{ $.Param "privacy_section.text_7" | safeHTML }}</h4>
-          <p>{{ $.Param "privacy_section.text_8" | safeHTML }}</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="team" class="container-fluid clear">
-    <div class='container'>
-      <h2>{{ $.Param "team_section.text_1" | safeHTML }}</h2>
-      <h3 class='subtitle'>{{ $.Param "team_section.text_2" | safeHTML }}</h3>
-
-      <div class="team">
-        <div class="team-people">
-          <img src="/dist/images/team2.png" alt="Julian Peh">
-          <h5>Julian Peh</h5>
-          <h6>Co-Founder, CEO</h6><a href="https://linkedin.com/in/julianpeh" class="linkedin" target="_blank"></a>
-          <p>
-            {{ $.Param "team_members.member_1" | safeHTML }}
-            <span class="aditus-button1">{{ $globe.Param "global_text.text_1" | safeHTML }}</span>
-            <span class='deshide'>
-            {{ $.Param "team_members.member_1_1" | safeHTML }}
-            <br/><br/>
-            {{ $.Param "team_members.member_1_2" | safeHTML }}
-            <br/><br/>
-            {{ $.Param "team_members.member_1_3" | safeHTML }}
-            <br/><br/>
-            {{ $.Param "team_members.member_1_4" | safeHTML }}
-            <span class="aditus-button2">{{ $globe.Param "global_text.text_2" | safeHTML }}</span></span>
-          </p>
-        </div>
-
-        <div class="team-people">
-          <img src="/dist/images/team1.png" alt="Olivier Burlot">
-          <h5>Olivier Burlot</h5>
-          <h6>Co-Founder, President</h6><a href="https://linkedin.com/in/olivierburlot" class="linkedin" target="_blank"></a>
-          <p>
-            {{ $.Param "team_members.member_2" | safeHTML }}
-            </br></br>
-            {{ $.Param "team_members.member_2_1" | safeHTML }}
-            <span class="aditus-button1">{{ $globe.Param "global_text.text_1" | safeHTML }}</span>
-            <span class="deshide">
-            {{ $.Param "team_members.member_2_2" | safeHTML }}
-              </br></br>
-            {{ $.Param "team_members.member_2_3" | safeHTML }}
-            <span class="aditus-button2">{{ $globe.Param "global_text.text_2" | safeHTML }}</span></span>
-          </p>
-        </div>
-
-        <div class="team-people">
-          <img src="/dist/images/team3.png" alt="Prakash Somosundram">
-          <h5>Prakash Somosundram</h5>
-          <h6>Co-Founder</h6><a href="https://linkedin.com/in/prakashsomo" class="linkedin" target="_blank"></a>
-          <p>
-            {{ $.Param "team_members.member_3" | safeHTML }}
-            <span class="aditus-button1">{{ $globe.Param "global_text.text_1" | safeHTML }}</span>
-            <span class="deshide">
-            {{ $.Param "team_members.member_3_1" | safeHTML }}
-              </br></br>
-            {{ $.Param "team_members.member_3_2" | safeHTML }}
-            <span class="aditus-button2">{{ $globe.Param "global_text.text_2" | safeHTML }}</span></span>
-          </p>
-        </div>
-
-        <div class="team-people">
-          <img src="/dist/images/team-jason-kwong.png" alt="Jason Kwong">
-          <h5>Jason Kwong</h5>
-          <h6>VP, Business Development</h6>
-          <a href="https://www.linkedin.com/in/jason-kwong-424831152/" class="linkedin" target="_blank"></a>
-          <p>
-            {{ $.Param "team_members.member_4" | safeHTML }}
-            <span class="aditus-button1">{{ $globe.Param "global_text.text_1" | safeHTML }}</span>
-            <span class="deshide">
-            {{ $.Param "team_members.member_4_1" | safeHTML }}
-            <span class="aditus-button2">{{ $globe.Param "global_text.text_2" | safeHTML }}</span></span>
-          </p>
-        </div>
-      </div>
-
-      <div class="team">
-        <div class="team-people">
-          <img src="/dist/images/team4.png" alt="Tony Chew">
-          <h5>Tony Chew</h5>
-          <h6>Lead Blockchain Developer</h6><a href="https://linkedin.com/in/tonychew1986" class="linkedin" target="_blank"></a>
-          <p>
-            {{ $.Param "team_members.member_5" | safeHTML }}
-            <span class="aditus-button1">{{ $globe.Param "global_text.text_1" | safeHTML }}</span>
-            <span class="deshide">
-              {{ $.Param "team_members.member_5_1" | safeHTML }}
-              <span class="aditus-button2">{{ $globe.Param "global_text.text_2" | safeHTML }}</span>
-            </span>
-          </p>
-        </div>
-
-        <div class="team-people">
-          <img src="/dist/images/team-ahmed-zulkamal.png" alt='Ahmed Zulkamal'>
-          <h5>Zulkamal Ahmed</h5>
-          <h6>Director, Operations</h6>
-          <a href="https://www.linkedin.com/in/zulkamal" class="linkedin" target="_blank"></a>
-          <p>
-            {{ $.Param "team_members.member_6" | safeHTML }}
-            <span class="aditus-button1">{{ $globe.Param "global_text.text_1" | safeHTML }}</span>
-            <span class="deshide">
-            {{ $.Param "team_members.member_6_1" | safeHTML }}
-            <br />
-            <br />
-            {{ $.Param "team_members.member_6_2" | safeHTML }}
-            <span class="aditus-button2">{{ $globe.Param "global_text.text_2" | safeHTML }}</span>
-            </span>
-          </p>
-        </div>
-
-        <div class="team-people">
-          <img src="/dist/images/team-prabhu-sengal.png" alt="Prabhu Sengal">
-          <h5>Prabhu Sengal</h5>
-          <h6>Lead Developer</h6><a href="https://www.linkedin.com/in/prabhusengal/" class="linkedin" target="_blank"></a>
-          <p>
-            {{ $.Param "team_members.member_7" | safeHTML }}
-            <span class="aditus-button1">{{ $globe.Param "global_text.text_1" | safeHTML }}</span>
-            <span class="deshide">
-            {{ $.Param "team_members.member_7_1" | safeHTML }}
-            <br /><br />
-            {{ $.Param "team_members.member_7_2" | safeHTML }}
-            <span class="aditus-button2">{{ $globe.Param "global_text.text_2" | safeHTML }}</span></span>
-          </p>
-        </div>
-      </div>
-
-      <h2>{{ $.Param "team_section.text_3" | safeHTML }}</h2>
-      <div class="team advisor">
-        <div class="team-people">
-          <img src="/dist/images/shaun.png">
-          <h5>Shaun Djie</h5>
-          <h6>Advisor</h6><a href="https://www.linkedin.com/in/shaundjie/" class="linkedin" target="_blank"></a>
-          <p>{{ $.Param "team_members.advisor_1" | safeHTML }}</p>
-        </div>
-
-        <div class="team-people">
-          <img src="/dist/images/advisors-jeremy-kerbel.png">
-          <h5>Jeremy Kerbel</h5>
-          <h6>Advisor</h6><a href="https://www.linkedin.com/in/jeremy-k-a0711b9/" class="linkedin" target="_blank"></a>
-          <p>{{ $.Param "team_members.advisor_2" | safeHTML }}</p>
-        </div>
-
-        <div class="team-people">
-          <img src="/dist/images/advisors-samuel-reid.png">
-          <h5>Samuel Reid</h5>
-          <h6>Advisor</h6>
-          <a href="https://www.linkedin.com/in/samuel-mark-reid/" class="linkedin" target="_blank"></a>
-          <p>{{ $.Param "team_members.advisor_3" | safeHTML }}</p>
-        </div>
-
-        <div class="team-people">
-          <img src="/dist/images/kenneth.png">
-          <h5>Kenneth Oh</h5>
-          <h6>Advisor</h6><a href="https://www.linkedin.com/in/kenneth-oh-3187a111a/" class="linkedin" target="_blank"></a>
-          <p>{{ $.Param "team_members.advisor_4" | safeHTML }}</p>
-        </div>
-      </div>
-
-      <div class="team advisor">
-        <div class="team-people">
-          <img src="/dist/images/advisors-lee-tsun-ngai.png">
-          <h5>Lee Tsun Ngai</h5>
-          <h6>Advisor</h6><a href="https://www.linkedin.com/in/leetsunngai/" class="linkedin" target="_blank"></a>
-          <p>{{ $.Param "team_members.advisor_5" | safeHTML }}</p>
-        </div>
-
-        <div class="team-people">
-          <img src="/dist/images/advisors-akash-aggarwal.png">
-          <h5>Akash Aggarwal</h5>
-          <h6>Advisor</h6><a href="https://www.linkedin.com/in/akashaggarwal009/" class="linkedin" target="_blank"></a>
-          <p>{{ $.Param "team_members.advisor_6" | safeHTML }}</p>
-        </div>
-
-        <div class="team-people">
-          <img src="/dist/images/advisors-francis-gouten.png">
-          <h5>Francis Gouten </h5>
-          <h6>Advisor</h6><a href="https://www.linkedin.com/in/francis-gouten-a973444/" class="linkedin" target="_blank"></a>
-          <p>{{ $.Param "team_members.advisor_7" | safeHTML }}</p>
-        </div>
-
-        <div class="team-people">
-          <img src="/dist/images/regina.png">
-          <h5>Regina Lam</h5>
-          <h6>Advisor</h6><a href="https://www.linkedin.com/in/regina-lam-2013/" class="linkedin" target="_blank"></a>
-          <p>{{ $.Param "team_members.advisor_8" | safeHTML }}</p>
-        </div>
-      </div>
-
-      <div class="team advisor">
-        <div class="team-people">
-          <img src="/dist/images/francis.png">
-          <h5>Francis Srun</h5>
-          <h6>Advisor</h6><a href="https://www.linkedin.com/in/fsrun/" class="linkedin" target="_blank"></a>
-          <p>{{ $.Param "team_members.advisor_9" | safeHTML }}</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id='partners' class='container-fluid clear'>
-    <div class='container'>
-      <h2>{{ $.Param "partners_section.text_1" | safeHTML }}</h2>
-      <div class='row justify-content-center'>
-        <div class='col'>
-          <a href='https://medium.com/aditusnetwork/aditus-network-offers-exclusive-rewards-for-kybernetworks-kgt-early-investors-909c41e47df9'>
-            <img src='/dist/images/partners-kyber-netword.png' alt='Kyber Network' class="rounded">
-          </a>
-        </div>
-        <div class='col'>
-          <a href='http://d13.vc/'>
-            <img src='/dist/images/partners-d13.png' alt='District 13' class="rounded">
-          </a>
-        </div>
-        <div class='col'>
-          <a href='https://medium.com/aditusnetwork/digix-x-aditus-live-luxuriously-shop-and-receive-tokenised-gold-aka-dgx-tokens-for-engagement-15556946cd61'>
-            <img src='/dist/images/partners-digix.png' alt='Digix Global' class="rounded">
-          </a>
-        </div>
-        <div class='col'>
-          <a href='https://medium.com/aditusnetwork/aditus-and-pundi-x-enable-luxury-merchants-to-accept-aditus-tokens-through-pundi-x-pos-devices-b03ed668cb91'>
-            <img src='/dist/images/partners-pundix.png' alt='Pundi X' class="rounded">
-          </a>
-        </div>
-      </div>
-      <div class='row justify-content-center'>
-        <div class='col'>
-          <a href='http://www.singaporerendezvous.com'>
-            <img src='/dist/images/partners-singapore-rv.png' alt='Singapore Rendezvous'>
-          </a>
-        </div>
-        <div class='col'>
-          <a href='http://www.thephuketrendezvous.com'>
-            <img src='/dist/images/partners-phuket-rv.png' alt='Phuket Rendezvous'>
-          </a>
-        </div>
-        <div class='col'>
-          <img src='/dist/images/partners-penangrv.png' alt='Penang Rendezvous'>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="aditus-token" class="container-fluid clear">
-    <div class='container'>
-      <h2>{{ $.Param "token_utility.text_1" | safeHTML }}</h2>
-      <h3 class="subtitle">{{ $.Param "token_utility.text_2" | safeHTML }}</h3>
-
-      <img src="/dist/images/logo-app.png" class="token-logo"/>
-      <div class="utility-wrap row">
-        <div class="utility col-md-3">
-          <h4>{{ $.Param "token_utility.text_3" | safeHTML }}</h4>
-          <p>{{ $.Param "token_utility.text_4" | safeHTML }}</p>
-        </div>
-        <div class="utility col-md-3">
-          <h4>{{ $.Param "token_utility.text_5" | safeHTML }}</h4>
-          <p>{{ $.Param "token_utility.text_6" | safeHTML }}</p>
-        </div>
-        <div class="utility col-md-3">
-          <h4>{{ $.Param "token_utility.text_7" | safeHTML }}</h4>
-          <p>{{ $.Param "token_utility.text_8" | safeHTML }}</p>
-        </div>
-        <div class="utility col-md-3">
-          <h4>{{ $.Param "token_utility.text_9" | safeHTML }}</h4>
-          <p>{{ $.Param "token_utility.text_10" | safeHTML }}</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
     <section id='tokensale' class='container-fluid clear exchange-listing'>
         <div class='container'>
             <h2>{{ $.Param "exchange_listing.text_1" | safeHTML }}</h2>
+            <h3 class='subtitle'>{{ $.Param "exchange_listing.text_1_2" | safeHTML }}</h2>
 
-            <div class='row justify-content-center'>
-                <div class='col'>
-                    <a href="https://coinbene.com">
-                        <img src='/dist/images/exchange/coinbene.jpg' alt='Coinbene' class="rounded ">
-                    </a>
+                <div class='row justify-content-center'>
+                    <div class='col'>
+                        <a href="https://coinbene.com">
+                            <img src='/dist/images/exchange/coinbene.jpg' alt='Coinbene' class="rounded ">
+                        </a>
+                    </div>
+                    <div class='col'>
+                        <img src='/dist/images/exchange/comingsoon.jpg' alt='Coinbene' class="rounded ">
+                    </div>
+                    <div class='col'>
+                        <img src='/dist/images/exchange/comingsoon.jpg' alt='Coinbene' class="rounded ">
+                    </div>
                 </div>
-            </div>
 
-            <p class='subtitle'>{{ $.Param "exchange_listing.text_2_1" | safeHTML }} <a href='https://medium.com/aditusnetwork'>{{ $.Param "exchange_listing.text_2_2" | safeHTML }}</a> {{ $.Param "exchange_listing.text_2_3" | safeHTML }}</p>
+                <p class='subtitle'>{{ $.Param "exchange_listing.text_2" | safeHTML }}</p>
         </div>
     </section>
 </main>
