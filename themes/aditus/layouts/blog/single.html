@@ -3,18 +3,16 @@
 {{ $globe := $.Site.GetPage "section" "globe" }}
 
 <main id="main-container">
-    <section id='blog' class='container-fluid blog-details'>
+    <section id='blog' class='container-fluid blog-content'>
         <div class='container'>
             <div class='row justify-content-md-center'>
                 <div class='latest-post col-md-8'>
                     <h2>
-                        <a name='blog'>{{ .Params.title | safeHTML }}</a>
+                      <a name='blog'>{{ .Params.title | safeHTML }}</a>
                     </h2>
 
                     <div class='posts-wrap22'>
-                        <p>
-                            {{ .Summary | safeHTML }}
-                        </p>
+                      {{ .Content | safeHTML }}
                     </div>
                 </div>
             </div>
