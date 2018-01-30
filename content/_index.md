@@ -18,7 +18,7 @@ main_menu:
 hero_content:
     content_1: "Luxury Access Platform for Crypto-Affluents"
     content_2: "Aditus is a revolutionary new platform bringing the world of luxury to crypto-affluents, through a privacy-centric decentralised network utilising smart contracts and blockchain technology."
-    content_3: "Buy Aditus Token <br> <span>Click here!</span>"
+    content_3: "Buy Aditus Token"
     content_4: "Download Whitepaper <span>Updated 29 Nov 2017</span>"
 blog:
     text_1: "Latest From Our Blog"

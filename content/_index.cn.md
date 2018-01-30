@@ -18,7 +18,7 @@ main_menu:
 hero_content:
     content_1: "加密货币富人奢侈品接入平台"
     content_2: "Aditus，是一个革命性的全新平台，通过采用智能合约和区块链技术并以保护隐私为目的打造去中心化网络，让加密货币富人对奢侈品世界触手可及。"
-    content_3: "代币销售已完成 <br> <span>谢谢!</span>"
+    content_3: "购买阿帝币"
     content_4: "下载白皮书 <span>于2017年11月29日更新</span>"
 blog:
     text_1: "最新媒体报道"
@@ -136,7 +136,7 @@ team_members:
 exchange_listing:
     text_1: "购买ADI阿帝币"
     text_1_2: "您可以在以下交易所购买ADI阿帝币:"
-    text_2: "高端商家：如有意为了开通Aditus平台购买ADI阿帝币, <a href='mailto:merchantsales@aditus.net'>请联系我们.</a>"
+    text_2: "高端商户：如有意入驻Aditus平台并采购ADI阿帝币, <a href='mailto:merchantsales@aditus.net'>请联系我们.</a>"
 global_text:
     text_1: "更多..."
     text_2: "收起"    
