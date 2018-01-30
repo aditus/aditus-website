@@ -13,3 +13,7 @@ languageName = "English"
 [languages.cn]
 weight = 2
 languageName = "Chinese"
+[[languages.cn.menu.main]]
+url = "/cn/blog"
+name = "Blog"
+weight = 1

@@ -3,7 +3,7 @@ title : "Home"
 url : "/"
 groups : ["en"]
 main_menu:
-    menu_1: "Opportunity Global" 
+    menu_1: "Opportunity" 
     menu_2: "Aditus Membership" 
     menu_3: "All Round Access" 
     menu_4: "Uniquely Private" 
@@ -18,7 +18,7 @@ main_menu:
 hero_content:
     content_1: "Luxury Access Platform for Crypto-Affluents"
     content_2: "Aditus is a revolutionary new platform bringing the world of luxury to crypto-affluents, through a privacy-centric decentralised network utilising smart contracts and blockchain technology."
-    content_3: "Token Sale Completed <br> <span>Thank you!</span>"
+    content_3: "Buy Aditus Token"
     content_4: "Download Whitepaper <span>Updated 29 Nov 2017</span>"
 social_media:
     text_1: "Connect With Us"
@@ -28,5 +28,7 @@ social_media:
     text_5: "see us on instagram"
 global_text:
     text_1: "more..."
-    text_2: "less"
+    text_2: "less"    
+global_url:
+    dl_whitepaper: "/Aditus-Whitepaper.pdf"
 ---

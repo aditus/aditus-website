@@ -1,6 +1,6 @@
 {{ define "main" }}
 
-{{ $globe := $.Site.GetPage "section" "globe" }}
+{{ $global := $.Site.GetPage "section" "global" }}
 
 <main id="main-container">
 
@@ -16,13 +16,13 @@
                  </div>-->
                 <div class='col-lg-7 align-self-center'>
                     <div class="landing text-container">
-                        <h1>{{ $globe.Param "hero_content.content_1" | safeHTML }}</h1>
-                        <p class='intro'>{{ $globe.Param "hero_content.content_2" | safeHTML }}</p>
+                        <h1>{{ $global.Param "hero_content.content_1" | safeHTML }}</h1>
+                        <p class='intro'>{{ $global.Param "hero_content.content_2" | safeHTML }}</p>
                         <p class="call-to-actions">
-                            <a href="#tokensale" class='join-mailing-list'>{{ $globe.Param "hero_content.content_3" | safeHTML }}
+                            <a href="#tokensale" class='join-mailing-list'>{{ $global.Param "hero_content.content_3" | safeHTML }}
                             </a>
                             <a href="/Aditus-Whitepaper.pdf" class='whitepaper-download-nav'>
-                                {{ $globe.Param "hero_content.content_4" | safeHTML }}
+                                {{ $global.Param "hero_content.content_4" | safeHTML }}
                             </a>
                         </p>
                     </div>
@@ -105,7 +105,7 @@
                 <div class='channels col-md-4'>
                     <div class='row'>
                         <div class='col'>
-                            <h2>{{ $globe.Param "social_media.text_1" | safeHTML }}</h2>
+                            <h2>{{ $global.Param "social_media.text_1" | safeHTML }}</h2>
                         </div>
                     </div>
 
@@ -115,25 +115,25 @@
                                 <li class="channel">
                                     <a href='https://www.linkedin.com/in/aditus-network-38b545152/' target='_blank'>
                                         <img src='/dist/images/channel-linkedin.png' alt='LinkedIn'>
-                                        <span>{{ $globe.Param "social_media.text_2" | safeHTML }}</span>
+                                        <span>{{ $global.Param "social_media.text_2" | safeHTML }}</span>
                                     </a>
                                 </li>
                                 <li class="channel">
                                     <a href='http://t.me/aditusnetwork' target='_blank'>
                                         <img src='/dist/images/channel-telegram.png' alt='Telegram'>
-                                        <span>{{ $globe.Param "social_media.text_3" | safeHTML }}</span>
+                                        <span>{{ $global.Param "social_media.text_3" | safeHTML }}</span>
                                     </a>
                                 </li>
                                 <li class="channel">
                                     <a href='https://medium.com/aditusnetwork' target='_blank'>
                                         <img src='/dist/images/channel-medium.png' alt='Medium'>
-                                        <span>{{ $globe.Param "social_media.text_4" | safeHTML }}</span>
+                                        <span>{{ $global.Param "social_media.text_4" | safeHTML }}</span>
                                     </a>
                                 </li>
                                 <li class="channel">
                                     <a href='http://www.instagram.com/aditus.life' target='_blank'>
                                         <img src='/dist/images/channel-instagram.png' alt='Instagram'>
-                                        <span>{{ $globe.Param "social_media.text_5" | safeHTML }}</span>
+                                        <span>{{ $global.Param "social_media.text_5" | safeHTML }}</span>
                                     </a>
                                 </li>
                             </ul>
@@ -386,11 +386,7 @@
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
-      </div>
-    </div>
-  </section>
-
+    </section>
 
     <section id="team" class="container-fluid clear">
         <div class='container'>
@@ -404,7 +400,7 @@
                     <h6>Co-Founder, CEO</h6><a href="https://linkedin.com/in/julianpeh" class="linkedin" target="_blank"></a>
                     <p>
                         {{ $.Param "team_members.member_1" | safeHTML }}
-                        <span class="aditus-button1">{{ $.Param "global_text.text_1" | safeHTML }}</span>
+                        <span class="aditus-button1">{{ $global.Param "global_text.text_1" | safeHTML }}</span>
                         <span class='deshide'>
                             {{ $.Param "team_members.member_1_1" | safeHTML }}
                             <br/><br/>
@@ -414,7 +410,7 @@
                             <br/><br/>
                             {{ $.Param "team_members.member_1_4" | safeHTML }}
 
-                            <span class="aditus-button2">{{ $globe.Param "global_text.text_2" | safeHTML }}</span>
+                            <span class="aditus-button2">{{ $global.Param "global_text.text_2" | safeHTML }}</span>
                         </span>
                     </p>
                 </div>
@@ -427,12 +423,12 @@
                         {{ $.Param "team_members.member_2" | safeHTML }}
                         </br></br>
                         {{ $.Param "team_members.member_2_1" | safeHTML }}
-                        <span class="aditus-button1">{{ $globe.Param "global_text.text_1" | safeHTML }}</span>
+                        <span class="aditus-button1">{{ $global.Param "global_text.text_1" | safeHTML }}</span>
                         <span class="deshide">
                             {{ $.Param "team_members.member_2_2" | safeHTML }}
                             </br></br>
                             {{ $.Param "team_members.member_2_3" | safeHTML }}
-                            <span class="aditus-button2">{{ $globe.Param "global_text.text_2" | safeHTML }}</span>
+                            <span class="aditus-button2">{{ $global.Param "global_text.text_2" | safeHTML }}</span>
                         </span>
                     </p>
                 </div>
@@ -443,12 +439,12 @@
                     <h6>Co-Founder</h6><a href="https://linkedin.com/in/prakashsomo" class="linkedin" target="_blank"></a>
                     <p>
                         {{ $.Param "team_members.member_3" | safeHTML }}
-                        <span class="aditus-button1">{{ $globe.Param "global_text.text_1" | safeHTML }}</span>
+                        <span class="aditus-button1">{{ $global.Param "global_text.text_1" | safeHTML }}</span>
                         <span class="deshide">
                             {{ $.Param "team_members.member_3_1" | safeHTML }}
                             </br></br>
                             {{ $.Param "team_members.member_3_2" | safeHTML }}
-                            <span class="aditus-button2">{{ $globe.Param "global_text.text_2" | safeHTML }}</span>
+                            <span class="aditus-button2">{{ $global.Param "global_text.text_2" | safeHTML }}</span>
                         </span>
                     </p>
                 </div>
@@ -460,10 +456,10 @@
                     <a href="https://www.linkedin.com/in/jason-kwong-424831152/" class="linkedin" target="_blank"></a>
                     <p>
                         {{ $.Param "team_members.member_4" | safeHTML }}
-                        <span class="aditus-button1">{{ $globe.Param "global_text.text_1" | safeHTML }}</span>
+                        <span class="aditus-button1">{{ $global.Param "global_text.text_1" | safeHTML }}</span>
                         <span class="deshide">
                             {{ $.Param "team_members.member_4_1" | safeHTML }}
-                            <span class="aditus-button2">{{ $globe.Param "global_text.text_2" | safeHTML }}</span>
+                            <span class="aditus-button2">{{ $global.Param "global_text.text_2" | safeHTML }}</span>
                         </span>
                     </p>
                 </div>
@@ -476,10 +472,10 @@
                     <h6>Lead Blockchain Developer</h6><a href="https://linkedin.com/in/tonychew1986" class="linkedin" target="_blank"></a>
                     <p>
                         {{ $.Param "team_members.member_5" | safeHTML }}
-                        <span class="aditus-button1">{{ $globe.Param "global_text.text_1" | safeHTML }}</span>
+                        <span class="aditus-button1">{{ $global.Param "global_text.text_1" | safeHTML }}</span>
                         <span class="deshide">
                             {{ $.Param "team_members.member_5_1" | safeHTML }}
-                            <span class="aditus-button2">{{ $globe.Param "global_text.text_2" | safeHTML }}</span>
+                            <span class="aditus-button2">{{ $global.Param "global_text.text_2" | safeHTML }}</span>
                         </span>
                     </p>
                 </div>
@@ -491,13 +487,13 @@
                     <a href="https://www.linkedin.com/in/zulkamal" class="linkedin" target="_blank"></a>
                     <p>
                         {{ $.Param "team_members.member_6" | safeHTML }}
-                        <span class="aditus-button1">{{ $globe.Param "global_text.text_1" | safeHTML }}</span>
+                        <span class="aditus-button1">{{ $global.Param "global_text.text_1" | safeHTML }}</span>
                         <span class="deshide">
                             {{ $.Param "team_members.member_6_1" | safeHTML }}
                             <br />
                             <br />
                             {{ $.Param "team_members.member_6_2" | safeHTML }}
-                            <span class="aditus-button2">{{ $globe.Param "global_text.text_2" | safeHTML }}</span>
+                            <span class="aditus-button2">{{ $global.Param "global_text.text_2" | safeHTML }}</span>
                         </span>
                     </p>
                 </div>
@@ -508,12 +504,12 @@
                     <h6>Lead Developer</h6><a href="https://www.linkedin.com/in/prabhusengal/" class="linkedin" target="_blank"></a>
                     <p>
                         {{ $.Param "team_members.member_7" | safeHTML }}
-                        <span class="aditus-button1">{{ $globe.Param "global_text.text_1" | safeHTML }}</span>
+                        <span class="aditus-button1">{{ $global.Param "global_text.text_1" | safeHTML }}</span>
                         <span class="deshide">
                         {{ $.Param "team_members.member_7_1" | safeHTML }}
                         <br /><br />
                         {{ $.Param "team_members.member_7_2" | safeHTML }}
-                        <span class="aditus-button2">{{ $globe.Param "global_text.text_2" | safeHTML }}</span></span>
+                        <span class="aditus-button2">{{ $global.Param "global_text.text_2" | safeHTML }}</span></span>
                     </p>
                 </div>
             </div>
@@ -655,46 +651,9 @@
                     <h4>{{ $.Param "token_utility.text_7" | safeHTML }}</h4>
                     <p>{{ $.Param "token_utility.text_8" | safeHTML }}</p>
                 </div>
-    </section>
-
-    <section id='partners' class='container-fluid clear'>
-        <div class='container'>
-            <h2>{{ $.Param "partners_section.text_1" | safeHTML }}</h2>
-            <div class='row justify-content-center'>
-                <div class='col'>
-                    <a href='https://medium.com/aditusnetwork/aditus-network-offers-exclusive-rewards-for-kybernetworks-kgt-early-investors-909c41e47df9'>
-                        <img src='/dist/images/partners-kyber-netword.png' alt='Kyber Network' class="rounded">
-                    </a>
-                </div>
-                <div class='col'>
-                    <a href='http://d13.vc/'>
-                        <img src='/dist/images/partners-d13.png' alt='District 13' class="rounded">
-                    </a>
-                </div>
-                <div class='col'>
-                    <a href='https://medium.com/aditusnetwork/digix-x-aditus-live-luxuriously-shop-and-receive-tokenised-gold-aka-dgx-tokens-for-engagement-15556946cd61'>
-                        <img src='/dist/images/partners-digix.png' alt='Digix Global' class="rounded">
-                    </a>
-                </div>
-                <div class='col'>
-                    <a href='https://medium.com/aditusnetwork/aditus-and-pundi-x-enable-luxury-merchants-to-accept-aditus-tokens-through-pundi-x-pos-devices-b03ed668cb91'>
-                        <img src='/dist/images/partners-pundix.png' alt='Pundi X' class="rounded">
-                    </a>
-                </div>
-            </div>
-            <div class='row justify-content-center'>
-                <div class='col'>
-                    <a href='http://www.singaporerendezvous.com'>
-                        <img src='/dist/images/partners-singapore-rv.png' alt='Singapore Rendezvous'>
-                    </a>
-                </div>
-                <div class='col'>
-                    <a href='http://www.thephuketrendezvous.com'>
-                        <img src='/dist/images/partners-phuket-rv.png' alt='Phuket Rendezvous'>
-                    </a>
-                </div>
-                <div class='col'>
-                    <img src='/dist/images/partners-penangrv.png' alt='Penang Rendezvous'>
+                <div class="utility col-md-3">
+                    <h4>{{ $.Param "token_utility.text_9" | safeHTML }}</h4>
+                    <p>{{ $.Param "token_utility.text_10" | safeHTML }}</p>
                 </div>
             </div>
         </div>
@@ -703,23 +662,23 @@
     <section id='tokensale' class='container-fluid clear exchange-listing'>
         <div class='container'>
             <h2>{{ $.Param "exchange_listing.text_1" | safeHTML }}</h2>
-            <h3 class='subtitle'>{{ $.Param "exchange_listing.text_1_2" | safeHTML }}</h2>
+            <h3 class='subtitle'>{{ $.Param "exchange_listing.text_1_2" | safeHTML }}</h3>
 
-                <div class='row justify-content-center'>
-                    <div class='col'>
-                        <a href="https://coinbene.com">
-                            <img src='/dist/images/exchange/coinbene.jpg' alt='Coinbene' class="rounded ">
-                        </a>
-                    </div>
-                    <div class='col'>
-                        <img src='/dist/images/exchange/comingsoon.jpg' alt='Coinbene' class="rounded ">
-                    </div>
-                    <div class='col'>
-                        <img src='/dist/images/exchange/comingsoon.jpg' alt='Coinbene' class="rounded ">
-                    </div>
+            <div class='row justify-content-center'>
+                <div class='col'>
+                    <a href="https://coinbene.com">
+                        <img src='/dist/images/exchange/coinbene.jpg' alt='Coinbene' class="rounded ">
+                    </a>
                 </div>
+                <div class='col'>
+                    <img src='/dist/images/exchange/comingsoon.jpg' alt='Coinbene' class="rounded ">
+                </div>
+                <div class='col'>
+                    <img src='/dist/images/exchange/comingsoon.jpg' alt='Coinbene' class="rounded ">
+                </div>
+            </div>
 
-                <p class='subtitle'>{{ $.Param "exchange_listing.text_2" | safeHTML }}</p>
+            <p class='subtitle'>{{ $.Param "exchange_listing.text_2" | safeHTML }}</p>
         </div>
     </section>
 </main>
