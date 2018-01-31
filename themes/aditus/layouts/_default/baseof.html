@@ -35,19 +35,19 @@
 
 {{ $t := $.Site.GetPage "section" "global" }}
 
-
-
-
 <body class="{{ $.Param "body_classes"  | default ""}}{{ with getenv "HUGO_ENV" }} {{ . }}{{ end }}">
 <div class="wrapper">
 
-    {{ $baseUrl := .Site.BaseURL }}
-
-    {{ if eq .Site.Language.Lang "en" }}
-    {{ $baseUrl := .Site.BaseURL }}
-    {{ end }}
-
     <header class="header clear" role="banner">
+
+        {{ if eq .Site.Language.Lang "en" }}
+            {{ $.Scratch.Set "menuUrl" "" }}
+        {{ else }}
+            {{ $lang := printf "%s%s/" .Site.BaseURL .Site.Language.Lang }}
+            {{ $.Scratch.Set "menuUrl" $lang }}
+        {{ end }}
+
+        {{ $menuUrl :=  $.Scratch.Get "menuUrl" }}
 
         <div class="menu-div">
             <span></span>
@@ -58,15 +58,15 @@
         <nav class="mobile-nav" role="navigation">
             <img src="/dist/images/adituslogo.png" alt="Logo" class="logo-mobile">
             <ul>
-                <li><a href="#opportunity">{{ $t.Param "main_menu.menu_1" }}</a></li>
-                <li><a href="#membership">{{ $t.Param "main_menu.menu_2" }}</a></li>
-                <li><a href="#access">{{ $t.Param "main_menu.menu_3" }}</a></li>
-                <li><a href="#privacy">{{ $t.Param "main_menu.menu_4" }}</a></li>
-                <li><a href="#team">{{ $t.Param "main_menu.menu_5" }}</a></li>
-                <li><a href="#blog">{{ $t.Param "main_menu.menu_6" }}</a></li>
-                <li><a href="#aditus-token">{{ $t.Param "main_menu.menu_7" }}</a></li>
-                <li><a href="#partners">{{ $t.Param "main_menu.menu_8" }}</a></li>
-                <li><a href="#tokensale">{{ $t.Param "main_menu.menu_9" }}</a></li>
+                <li><a href="{{ $menuUrl }}#opportunity">{{ $t.Param "main_menu.menu_1" }}</a></li>
+                <li><a href="{{ $menuUrl }}#membership">{{ $t.Param "main_menu.menu_2" }}</a></li>
+                <li><a href="{{ $menuUrl }}#access">{{ $t.Param "main_menu.menu_3" }}</a></li>
+                <li><a href="{{ $menuUrl }}#privacy">{{ $t.Param "main_menu.menu_4" }}</a></li>
+                <li><a href="{{ $menuUrl }}#team">{{ $t.Param "main_menu.menu_5" }}</a></li>
+                <li><a href="{{ $menuUrl }}#blog">{{ $t.Param "main_menu.menu_6" }}</a></li>
+                <li><a href="{{ $menuUrl }}#aditus-token">{{ $t.Param "main_menu.menu_7" }}</a></li>
+                <li><a href="{{ $menuUrl }}#partners">{{ $t.Param "main_menu.menu_8" }}</a></li>
+                <li><a href="{{ $menuUrl }}#tokensale">{{ $t.Param "main_menu.menu_9" }}</a></li>
                 <li class="downloadButton">
                     <div class="btn-group">
                         <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -95,13 +95,13 @@
             <a class="fixed-logo" href="#"><img src="/dist/images/logo.png" alt="Logo" /></a>
             <nav class="nav" role="navigation">
                 <ul>
-                    <li><a href="{{ $baseUrl }}#opportunity">{{ $t.Param "main_menu.menu_1" }}</a></li>
-                    <li><a href="{{ $baseUrl }}#membership">{{ $t.Param "main_menu.menu_2" }}</a></li>
-                    <li><a href="#access">{{ $t.Param "main_menu.menu_3" }}</a></li>
-                    <li><a href="#privacy">{{ $t.Param "main_menu.menu_4" }}</a></li>
-                    <li><a href="#team">{{ $t.Param "main_menu.menu_5" }}</a></li>
-                    <li><a href="#blog">{{ $t.Param "main_menu.menu_6" }}</a></li>
-                    <li><a href="#tokensale">{{ $t.Param "main_menu.menu_7" }}</a></li>
+                    <li><a href="{{ $menuUrl }}#opportunity">{{ $t.Param "main_menu.menu_1" }}</a></li>
+                    <li><a href="{{ $menuUrl }}#membership">{{ $t.Param "main_menu.menu_2" }}</a></li>
+                    <li><a href="{{ $menuUrl }}#access">{{ $t.Param "main_menu.menu_3" }}</a></li>
+                    <li><a href="{{ $menuUrl }}#privacy">{{ $t.Param "main_menu.menu_4" }}</a></li>
+                    <li><a href="{{ $menuUrl }}#team">{{ $t.Param "main_menu.menu_5" }}</a></li>
+                    <li><a href="{{ $menuUrl }}#blog">{{ $t.Param "main_menu.menu_6" }}</a></li>
+                    <li><a href="{{ $menuUrl }}#tokensale">{{ $t.Param "main_menu.menu_7" }}</a></li>
                     <li class="downloadButton">
                         <div class="btn-group">
                             <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

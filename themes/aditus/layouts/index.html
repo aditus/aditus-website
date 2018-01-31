@@ -75,13 +75,13 @@
                             <div class='post'>
                                 <div class='row'>
                                     <div class='thumb col-md-3'>
-                                        <a href='{{ .Params.url }}' target="_blank">
+                                        <a href='{{ .Params.url }}'>
                                             <img src='{{ .Params.thumb }}' />
                                         </a>
                                     </div>
 
                                     <div class='summary col-md-9'>
-                                        <h3><a href='{{ .Params.url }}' target="_blank">{{ .Params.title }}</a></h3>
+                                        <h3><a href='{{ .Params.url }}'>{{ .Params.title }}</a></h3>
 
                                         {{ if .Params.youtube }}
                                         <div>
@@ -91,7 +91,7 @@
 
                                         <p>
                                             {{ .Params.description }}
-                                            <a href='{{ .Params.url }}' target="_blank" class='readmore'>{{ $.Param "blog.text_2" | safeHTML }}</a>
+                                            <a href='{{ .Params.url }}' class='readmore'>{{ $.Param "blog.text_2" | safeHTML }}</a>
                                         </p>
                                     </div>
                                 </div>
