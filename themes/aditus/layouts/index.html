@@ -37,9 +37,9 @@
                 <div class='latest-post col-md-8'>
                     <h2><a name='blog'><img src='/dist/images/channel-medium.png' /> {{ $.Param "blog.text_1" | safeHTML }}</a></h2>
 
-                    <div class='posts-wrap'>
-                        {{ if eq .Site.Language.Lang "en" }}
-                            {{ range $i, $e := (where .Site.RegularPages "Section" "news") }}
+                    {{ if eq .Site.Language.Lang "en" }}
+                        <div class='posts-wrap'>
+                            {{ range first 4 (where .Site.RegularPages "Section" "news") }}
 
                             <div class='post'>
                                 <div class='row'>
@@ -65,11 +65,12 @@
                                     </div>
                                 </div>
                             </div>
-
                             {{ end }}
-                        {{ end }}
+                        </div>
+                    {{ end }}
 
-                        {{ if eq .Site.Language.Lang "cn" }}
+                    {{ if eq .Site.Language.Lang "cn" }}
+                        <div class='posts-wrap-cn'>
                             {{ range $i, $e := (where .Site.RegularPages "Section" "blog") }}
 
                             <div class='post'>
@@ -96,10 +97,9 @@
                                     </div>
                                 </div>
                             </div>
-
                             {{ end }}
-                        {{ end }}
-                    </div>
+                        </div>
+                    {{ end }}
                 </div>
 
                 <div class='channels col-md-4'>
