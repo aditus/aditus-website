@@ -26,15 +26,14 @@ jQuery(document).ready(function($) {
 	  $(this).parents('.team-people').find('.deshide').hide();
   });
 
-  // blog vertical carousel
-  $('.posts-wrap').slick({
-    dots: false,
-    vertical: true,
-    slidesToShow: 2,
-    slidesToScroll: 1,
-    autoPlay: false,
-    infinite: false,
-  });
+    $('.posts-wrap-cn').slick({
+        dots: false,
+        vertical: true,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        autoPlay: false,
+        infinite: false,
+    });
 
   $('.dropdown-toggle').dropdown();
 });
