@@ -4,4 +4,18 @@
   h2 {
     color: #e9c157;
   }
+
+  img {
+    max-width: 100%;
+  }
+
+  p, video {
+    margin-bottom: 1.5em;
+
+    img {
+      display: block;
+      margin: 1em auto;
+      border: 5px solid #282727;
+    }
+  }
 }
