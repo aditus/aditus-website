@@ -29,7 +29,7 @@ jQuery(document).ready(function($) {
     $('.posts-wrap-cn').slick({
         dots: false,
         vertical: true,
-        slidesToShow: 2,
+        slidesToShow: 5,
         slidesToScroll: 1,
         autoPlay: false,
         infinite: false,
