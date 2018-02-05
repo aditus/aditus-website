@@ -1,5 +1,5 @@
 baseURL = "https://www.aditus.net/"
-defaultContentLanguage = ""
+defaultContentLanguage = "en"
 defaultContentLanguageInSubdir= false
 title = "Aditus"
 theme = "aditus"
