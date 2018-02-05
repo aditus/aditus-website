@@ -38,8 +38,8 @@
                     <h2><a name='blog'><img src='/dist/images/channel-medium.png' /> {{ $.Param "blog.text_1" | safeHTML }}</a></h2>
 
                     {{ if eq .Site.Language.Lang "en" }}
-                        <div class='posts-wrap'>
-                            {{ range first 4 (where .Site.RegularPages "Section" "news") }}
+                        <div class='posts-wrap-cn'>
+                            {{ range $i, $e := (where .Site.RegularPages "Section" "news") }}
 
                             <div class='post'>
                                 <div class='row'>
